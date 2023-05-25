@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ -->
+<!-- === European Certificate Of Succession (ECS) XML Schema File                 === -->
+<!-- ================================================================================ -->
+<!--
+    Schema agency: European Commission / Estonian Centre for Registers and Information Systems
+    Schema version: 1.1
+    Schema date: 31 May 2016
+    Copyright  (C) - 2016 - Estonian Centre for Registers and Information Systems. All Rights Reserved. Licenced to the European Union under conditions.
+-->
+<xsd:schema
+    targetNamespace="urn:ec:ejustice:succession:documentation:europeancertificateofsuccession:1:standard"
+    xmlns:ecs="urn:ec:ejustice:succession:documentation:europeancertificateofsuccession:1:standard"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+    xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+    xmlns:acomp="urn:ec:ejustice:succession:common:ecs-bie1:1:standard"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- =================================================================================== -->
+    <!-- ===== Imports                                                                  ==== -->
+    <!-- =================================================================================== -->
+    <!-- =================================================================================== -->
+    <!-- ===== Import of External Business Document Header (EBDH)                       ==== -->
+    <!-- =================================================================================== -->
+    <xsd:import namespace="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+        schemaLocation="common/SBDH/StandardBusinessDocumentHeader.xsd"/>
+    <!-- =================================================================================== -->
+    <!-- === Import of Definitions from EuropeanCertificateOfSuccession-BIE1.xsd (acomp) === -->
+    <!-- =================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:ecs-bie1:1:standard"
+        schemaLocation="common/EuropeanCertificateOfSuccession-BIE1_v1.1.xsd"/>
+
+    <!-- =========================================================================== -->
+    <!-- === Element Declarations                                                === -->
+    <!-- =========================================================================== -->
+    <!-- =========================================================================== -->
+    <!-- === Root Element                                                        === -->
+    <!-- =========================================================================== -->
+    <xsd:element name="EuropeanCertificateOfSuccession"
+        type="ecs:EuropeanCertificateOfSuccessionType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:UniqueID>ECS01</ccts:UniqueID>
+                <ccts:VersionID>1.0</ccts:VersionID>
+                <ccts:DictionaryEntryName>EuropeanCertificateOfSuccession</ccts:DictionaryEntryName>
+                <ccts:Definition>
+                    A Certificate of succession, established by the Regulation (EU) No 650/2012 of the European Parliament and of the Council of 4 July 2012 on jurisdiction, 
+                    applicable law, recognition and enforcement of decisions and acceptance and enforcement of authentic instruments in matters of 
+                    succession and on the creation of a European Certificate of Succession, in order for a succession with cross-border implications within the European Union 
+                    to be settled speedily, smoothly and efficiently, the heirs, legatees, executors of the will or administrators of the estate should be able to demonstrate 
+                    easily their status and/or rights and powers in another Member State, in which succession property is located.
+                </ccts:Definition>
+                <ccts:ObjectClassTermName>European Certificate Of Succession</ccts:ObjectClassTermName>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <!-- =========================================================================== -->
+    <!-- === Standard Header Element                                             === -->
+    <!-- =========================================================================== -->
+    <xsd:element name="StandardBusinessDocumentHeader" type="sbdh:StandardBusinessDocumentHeader"/>
+    <!-- =========================================================================== -->
+    <!-- === ECS Business Information Entity Elements                           ==== -->
+    <!-- =========================================================================== -->
+    <xsd:element name="Applicant" type="acomp:ApplicantType"/>
+    <xsd:element name="Authority" type="acomp:AuthorityType"/>
+    <xsd:element name="Case" type="acomp:CaseType"/>
+    <xsd:element name="Deceased" type="acomp:DeceasedType"/>
+    <xsd:element name="NonApplicant" type="acomp:NonApplicantType"/>
+
+    <!-- =========================================================================== -->
+    <!-- === Root Element Type Definition                                        === -->
+    <!-- =========================================================================== -->
+    <xsd:complexType name="EuropeanCertificateOfSuccessionType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:UniqueID>ESC001</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>European Certificate Of Succession</ccts:ObjectClassTermName>
+                <ccts:Cardinality>1..1</ccts:Cardinality>
+                <ccts:DictionaryEntryName>EuropeanCertificateOfSuccession. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>European Certificate of Succession according the the EU Regulation 650/2012.</ccts:Definition>
+                <ccts:BusinessTermName>ECS</ccts:BusinessTermName>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="sbdh:StandardBusinessDocumentHeader"/>
+            <xsd:element ref="acomp:Authority" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESC003</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Issuing Authority</ccts:ObjectClassTermName>
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Authority. Details</ccts:DictionaryEntryName>
+                        <ccts:Definition>An authority issuing an European Certificate of Succession.</ccts:Definition>
+                        <ccts:BusinessTermName>Authority</ccts:BusinessTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:Applicant" minOccurs="1" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESC004</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Applicant</ccts:ObjectClassTermName> 
+                        <ccts:Cardinality>1..n</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Applicant. Details</ccts:DictionaryEntryName>
+                        <ccts:Definition>A natural or legal person applying for the European Certificate of Succession.</ccts:Definition>
+                        <ccts:BusinessTermName>Applicant</ccts:BusinessTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:Deceased" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESC005</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased</ccts:ObjectClassTermName>                       
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Details</ccts:DictionaryEntryName>
+                        <ccts:Definition>A deceased person regarding whom the succession proceeding is conducted.</ccts:Definition>
+                        <ccts:BusinessTermName>Deceased</ccts:BusinessTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:NonApplicant" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESC007</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Non-Appilcant</ccts:ObjectClassTermName>                       
+                        <ccts:Cardinality>0..n</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Non-applicant. Details</ccts:DictionaryEntryName>
+                        <ccts:Definition>A heir, a legatee, an executor or an administrator, who is not an applicant.</ccts:Definition>
+                        <ccts:BusinessTermName>NonApplicant</ccts:BusinessTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:Case" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESC006</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Case</ccts:ObjectClassTermName> 
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Case. Details</ccts:DictionaryEntryName>
+                        <ccts:Definition>Case details of an European Certificate of Succession.</ccts:Definition>
+                        <ccts:BusinessTermName>Case</ccts:BusinessTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

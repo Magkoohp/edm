@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1.0/ns/forms/finland#"
+	xmlns="http://data.europa.eu/edm/1.0/ns/forms/finland#"
+	xmlns:pdc="http://data.europa.eu/edm/1.0/ns/pdc"	
+	xmlns:forms="http://data.europa.eu/edm/1.0/ns/forms"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<xsd:annotation>	
+		<xsd:documentation xml:lang="en">
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com)
+		</xsd:documentation>
+	</xsd:annotation>
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://data.europa.eu/edm/1.0/ns/pdc"
+			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-1.0.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/edm/1.0/ns/forms"
+			   schemaLocation="../../../xsd/common/core/forms-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../../xsd/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<!-- ===================================================== -->
+	<!-- ===== Includes======================================= -->
+	<xsd:include schemaLocation="commonPart-1.0.xsd"/>
+	<!-- ===================================================== -->
+	<xsd:complexType name="ExaminationOfImpedimentsToMarriageType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			
+					Stereotype capacityToMarryForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		
+		<xsd:complexContent>
+			<xsd:extension base="pdc:CanMarryType">
+				<xsd:sequence>
+					<xsd:element name="ExaminationRequestNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ExaminationRequestState" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+					<xsd:element name="ExaminationRequestDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+						<xsd:annotation>
+						    <xsd:documentation xml:lang="en">
+								
+						    </xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="FrmCapacityToMarryFinland" type="FrmCapacityToMarryFinlandType" />
+	<xsd:complexType name="FrmCapacityToMarryFinlandType">
+		<xsd:annotation>
+		    <xsd:documentation xml:lang="en">
+			
+					Stereotype capacityToMarryForm
+		    </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence> 
+			<xsd:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						
+				    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						
+				    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Extension" type="ext:UBLExtensionsType" minOccurs="0" maxOccurs="1" >
+				<xsd:annotation>
+				    <xsd:documentation xml:lang="en">
+						
+				    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			
+		</xsd:sequence>
+		
+	</xsd:complexType>
+</xsd:schema>

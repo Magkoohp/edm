@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- ====================================================================== -->
+ <!-- ===== Reusable Aggregate Business Information Entity Schema Module ===== -->
+ <!-- ===== European Core ===== -->
+ <!--
+
+  Courtesy of Judicial Information Agency of the Dutch Department of Security and Justice
+ 
+
+ -->
+ <xsd:schema xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:11" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" xmlns:ec="http://data.ecodex.eu/ec/dictionary-0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://data.ecodex.eu/ec/dictionary-0" version="1.8" xmlns="http://data.ecodex.eu/ec/dictionary-0">
+<!-- =================================================================== -->
+<!-- ===== Imports                                                       -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Import of Unqualified DataType Schema Module                  -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="UnqualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11"/>
+<!-- =================================================================== -->
+<!-- ===== Element Declarations                                          -->
+<!-- =================================================================== -->
+  <xsd:element type="ec:PersonType" name="Person">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Person. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Person</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+<!-- =================================================================== -->
+<!-- ===== Type Definitions                                              -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Type Definition: PersonType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="PersonType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Person. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Person</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:NameType" name="FamilyNameName">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A family name is usually shared by members of a family. This attribute also carries prefixes or&#13;suffixes which are part of the Family Name, e.g. “de Boer”, “van de Putte”, “von und zu Orlow”.&#13;Multiple family names, such as are commonly found in Hispanic countries, are recorded in the&#13;single Family Name field so that, for example, Miguel de Cervantes Saavedra's Family Name&#13;would be recorded as "Cervantes Saavedra."</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Person</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Family Name</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Person. Family Name. Name</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:NameType" name="GivenNameName">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A given name, or multiple given names, are the denominator(s) that identify an individual within&#13;a family. These are given to a person by his or her parents at birth or may be legally recognised&#13;as 'given names' through a formal process. All given names are ordered in one field so that, for&#13;example, the Given Name for Johan Sebastian Bach is 'Johan Sebastian.'</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Person</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Given Name</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Person. Given Name. Name</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:TextType" name="Occupation" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The occupation of a person</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Person</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Occupation</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Person. Occupation. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" content="en">
+	<head>
+		<title>Public Documents XML schema</title>
+		<meta name="description" content="=An XML schema for describing Public Documents Forms">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+		<style>
+			body{
+				color: black;
+	    		background-color: white;
+	    		background-position: top left;
+	    		background-attachment: fixed;
+	    		background-repeat: no-repeat;}
+			.generatedTable tr.even:hover{background-color: #cccccc;}
+			.generatedTable tr.odd:hover{background-color: #cccccc;}
+			.generatedTable {border: 1px solid #ddd;width:100% !important}
+			.generatedTable th{color: white; background-color: #3182CC;vertical-align: top !important;}
+			#namespaces {width:50% !important;}
+			h1, h2, h3 {color: #005A9C; background: white;}
+			h5 {font-weight: 700; color: darkgoldenrod; }
+			:visited {color: #609;background: transparent;}
+			:link {color: #00C;background: transparent;}
+			.modal {background-color: white;}
+			#generatedToC ul { list-style-type: none; }
+	
+	
+	#return-to-top {
+	    position: fixed;
+	    bottom: 20px;
+	    right: 20px;
+	    background: rgb(204, 204, 204);
+	    background: rgba(204, 204, 204, 0.7);
+	    width: 50px;
+	    height: 50px;
+	    display: block;
+	    text-decoration: none;
+	    -webkit-border-radius: 35px;
+	    -moz-border-radius: 35px;
+	    border-radius: 35px;
+	    display: none;
+	    -webkit-transition: all 0.3s linear;
+	    -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	#return-to-top i {
+	    color: #fff;
+	    margin: 0;
+	    position: relative;
+	    left: 16px;
+	    top: 13px;
+	    font-size: 19px;
+	    -webkit-transition: all 0.3s ease;
+	    -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	#return-to-top:hover {
+	    /* background: rgba(49, 130, 204, 0.9); */
+		background: rgba(0, 0, 0, 0.7);
+	}
+	#return-to-top:hover i {
+	    color: #fff;
+	    top: 5px;
+	}
+	
+	
+	/* Extra Things */
+	h3 i{color: #444;}
+		</style>
+	</head>
+	<body>
+		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
+			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-09-22">2017</time></h2>
+			  <dl> 
+				<dt>This version:</dt>
+			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
+			    <dt>Latest published version:</dt>
+			    <dd><a href="http://e-documents.semic.eu/publicdocuments/latest/doc">http://e-documents.semic.eu/publicdocuments/latest/doc</a></dd>
+			        
+			    <dt>Editors:</dt>
+			    	<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Suzanne Wigard" href="mailto:suzanne.wigard@ec.europa.eu">Suzanne Wigard</a>, <a href="https://ec.europa.eu/isa2/home_en">European Commission</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Emidio Stani" href="mailto:emidio.stani@be.pwc.com">Emidio Stani</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Ioana Novacean" href="mailto:ioana.novacean@be.pwc.com">Ioana Novacean</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Inge Gielis" href="mailto:inge.gielis@be.pwc.com">Inge Gielis</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+			    </dl>
+			  
+			    <p>
+			      The English version of this specification is the only normative version. Non-normative translations may also be available.
+			    </p>
+			      <p class="copyright">
+			        <a href="https://ec.europa.eu/info/legal-notice_en#copyright-notice">Copyright</a> ©
+			        2017 
+			        
+			        <a href="https://ec.europa.eu/info/index_en">European Commission</a>, 
+			        
+			        All Rights Reserved.
+				<p>
+					The XML schemas are released under 
+						<a href="https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11">ISA Open Metadata Licence</a>.
+				</p>
+			        
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
+			 	<h2 id="h2_abstract" aria-level="1">Abstract</h2>
+			 		<p align="justify">The <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">Regulation on Public Documents</a> foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.
+					</p>
+			 		      
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="sotd" class="introductory">
+			<h2 id="h2_sotd" aria-level="1">Status of This Document</h2>
+			
+			        
+			  <p align="justify">This document has been reviewed by <a href="https://ec.europa.eu/isa2/home_en">ISA</a> staff members and <a href="http://ec.europa.eu/justice/index_en.htm">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
+			
+			    
+			    
+			  <p align="justify">The original Public Documents XML schemas were developed at <a href="https://ec.europa.eu/isa2/home_en">ISA</a>.</p>
+			  <p align="justify">The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
+			</section>
+			<section id="generatedToC">
+				<h2 id="h2_toc" aria-level="1" class="introductory">Table of Contents</h2>
+				<ul id="toc"></ul>
+			</section>
+			<section id="introduction" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+				<h3 aria-level="1" id="intro">1. Introduction</h3>
+				<p align="justify">The Regulation of the European Parliament and of the Council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.</p>
+			
+				<h3 aria-level="1" id="intro">2. Standards used</h3>
+				<p align="justify">The XML schemas generated contain the <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and the <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a> standards. </p> 
+							
+			</section>
+			
+			<section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
+				<h3 aria-level="1" id="ns">3. Namespaces</h3>
+				<p align = "justify">A full set of namespaces and prefixes used in this document is shown in the table below.</p>
+				
+				<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
+				  <thead>
+					<tr>
+						<th>Prefix</th>
+						<th>Namespace</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr><td>pdc</td><td>http://data.europa.eu/edm/1.0/ns/pdc</td></tr>
+					<tr><td>forms</td><td>http://data.europa.eu/edm/1.0/ns/forms</td></tr>
+				    <tr><td>cva</td><td>http://www.w3.org/ns/corevocabulary/AggregateComponents</td></tr>
+				    <tr><td>cvb</td><td>http://www.w3.org/ns/corevocabulary/BasicComponents</td></tr>
+				    <tr><td>udt</td><td>urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</td></tr>
+				    <tr><td>ext</td><td>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</td></tr>
+				    <tr><td>xs</td><td>http://www.w3.org/2001/XMLSchema</td></tr>
+				  </tbody>
+				</table>
+			</section>
+			
+			<section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
+				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
+				<ul>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="">formBelgium1</a>;</li>
+						<li><a href="">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/croatia#">formCroatia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
+				</ul>
+				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
+				</section>
+			<section id="generatedContent">
+				<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
+				<div class="contentTables">
+				<h4 id="formSlovakia">5.1 Package formSlovakia</h4>
+				<img alt="UML model of formSlovakia package" src="formSlovakia.jpeg" width = 100%> UML class diagram </img>
+							<h5 id="Address">5.1.1 Class Address
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>ResidencePartOfTheMunicipality</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+									<tr>
+										<td>ResidenceFlatNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DomicilePartOfTheMunicipality</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+									<tr>
+										<td>DomicileBuildingNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DomicileDistrict</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DomicileFlatNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>ResidenceBuildingNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="BirthPerson">5.1.2 Class BirthPerson
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mother</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>Father</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="ConfirmationIssuedForChoice">5.1.3 Class ConfirmationIssuedForChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>NaturalPerson</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSlovakia:Person</td>
+									</tr>
+									<tr>
+										<td>LegalPerson</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSlovakia:LegalPerson</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DocumentInfo">5.1.4 Class DocumentInfo
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Volume</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DocumentPage</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>OfficialSignature</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DocumentSignature</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>NumberOfPages</td>
+										<td></td>
+										<td>1..1</td>
+										<td>xsd:integer</td>
+									</tr>
+									<tr>
+										<td>DocumentYear</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DocumentRegistrar</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>IssuePlace</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+									<tr>
+										<td>IssueTime</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TimeType</td>
+									</tr>
+									<tr>
+										<td>ApplicationNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>Stamp</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DocumentKindChoice">5.1.5 Class DocumentKindChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>ExtractFromMarriagesRegister</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>ExtractFromBirthsRegister</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>ExtractFromDeathsRegister</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>BirthCertificate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>MarriageCertificate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>DeathCertificate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DomicileAndOrResidence">5.1.6 Class DomicileAndOrResidence
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>ConfirmationIssuedFor</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSlovakia:ConfirmationIssuedForChoice</td>
+									</tr>
+									<tr>
+										<td>ToStay</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSlovakia:PermanentTemporaryStayChoice</td>
+									</tr>
+									<tr>
+										<td>FromStay</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSlovakia:PermanentTemporaryStayChoice</td>
+									</tr>
+									<tr>
+										<td>PermanentTemporaryStay</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formSlovakia:PermanentTemporaryStayChoice</td>
+									</tr>
+									<tr>
+										<td>RegistrationOfficeNotes</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="ExtractFromTheCivilStatusRegister">5.1.7 Class ExtractFromTheCivilStatusRegister
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to extracts from the civil status register. </p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>BirthCertificate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>RegisterOfBirths</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="LegalPerson">5.1.8 Class LegalPerson
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>LegalPersonName</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>RegisteredOffice</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Marriage">5.1.9 Class Marriage
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>BrideFather</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>GroomFather</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>Notes</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>GroomMother</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>BrideCivilStatus</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:MaritalStatusChoice</td>
+									</tr>
+									<tr>
+										<td>BrideMother</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>GroomMaritalStatus</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:MaritalStatusChoice</td>
+									</tr>
+									<tr>
+										<td>SurnameSpousesChildren</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Official">5.1.10 Class Official
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>TitleOfficial</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="PermanentTemporaryStayChoice">5.1.11 Class PermanentTemporaryStayChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>PermanentStay</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>TemporaryStay</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Person">5.1.12 Class Person
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Notes</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>Title</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>PersonalIdentificationNumber</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							</div>
+			</section>
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
+				<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
+				<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
+			<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
+					<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+						<dl about class = "bibliography">
+							<dt id : "bib-PD">Public Documents Regulation</dt>
+							<dd rel = "dcterms: requires ">
+							"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191"> 
+								<cite>Regulation (EU) 2016/1191</cite>	 				
+								</a>
+							. July 2016. EU Regulation. URL:
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191</a>
+							</dd>
+							</dt>
+						</dl>
+				</section>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
+					<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
+				</section>
+			</section>
+		</div>
+		<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src='jquery.toc.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
+		<script type="text/javascript">
+		    var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
+			var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex","formSlovakia":""};
+		</script>
+		<script src='initialize.js'></script>
+	</body>
+</html>

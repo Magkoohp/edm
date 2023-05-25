@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_2/test/data/TestData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+	xmlns:bac="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_2/test/data/TestData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.2.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+		schemaLocation="../common/BRIS-BasicComponents.xsd" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+		schemaLocation="../common/BRIS-AggregateComponents.xsd" />
+
+	<xsd:element name="BusinessRegister" type="BusinessRegisterType" />
+
+	<xsd:complexType name="BusinessRegisterType">
+		<xsd:sequence>
+			<xsd:element name="DataSetVersion" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1" />
+			<xsd:element ref="bbc:BusinessRegisterID" />
+			<xsd:element ref="bbc:BusinessRegisterCountry" />
+			<xsd:element name="Company" type="CompanyType" maxOccurs="unbounded" />
+			<xsd:element name="Subscription" type="SubscriptionType" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CompanyType">
+		<xsd:sequence>
+			<xsd:element ref="bac:CompanyNames" maxOccurs="unbounded" />
+			<xsd:element ref="bbc:CompanyRegistrationNumber" />
+			<xsd:element ref="bac:Address" />
+			<xsd:element ref="bbc:CompanyLegalForm" />
+			<xsd:element ref="bbc:CompanyEUID" />
+			<xsd:element ref="bac:Document" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element ref="bac:Particular" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SubscriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				CompanyEUID: the EUID of the Foreign Parent Company
+				which the BR is interested/no longer interested in receiving
+				branch disclosure notifications
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CompanyEUID" type="bbc:CompanyEUIDType" />
+			<xsd:element name="BranchEUID" type="bbc:CompanyEUIDType"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

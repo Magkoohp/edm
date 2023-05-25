@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/forms/slovakia"
+	xmlns="http://e-documents.semic.eu/publicdocuments/0.1/ns/forms/slovakia"
+	xmlns:forms="http://e-documents.semic.eu/publicdocuments/0.1/ns/forms"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.1">
+	<xs:annotation>	
+		<xs:documentation xml:lang="en">
+	        Public Documents XML schema 0.1
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com)
+		</xs:documentation>
+	</xs:annotation>
+	<!-- ===== Imports======================================== -->
+	<xs:import namespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/forms"
+			   schemaLocation="../../xsd/common/core/forms-0.1.xsd"/>
+	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../xsd/common/external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===================================================== -->
+	
+	<xs:complexType name="ExtractFromTheCivilStatusRegisterType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to extracts from the civil status register. 
+					Stereotype xsdChoice
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="RodnyList" minOccurs="1" maxOccurs="1">
+			<xs:complexType/>
+			</xs:element>
+			
+			
+			<xs:element name="KnihaNarodeni" minOccurs="1" maxOccurs="1">
+			<xs:complexType/>
+			</xs:element>
+			
+			
+			
+		</xs:choice>
+	</xs:complexType>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			
+	<xs:complexType name="ReferenceNumberTestType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to a document's reference number. 
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+				
+				<xs:extension base="forms:ReferenceNumberType">
+				<xs:sequence>
+					<xs:element name="Zwazok" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					
+					<xs:element name="Rocnik" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					
+					<xs:element name="Strana" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					
+					
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+	
+	
+	
+	
+	
+	
+	</xs:schema>

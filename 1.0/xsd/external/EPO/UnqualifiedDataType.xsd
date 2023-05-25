@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- ====================================================================== -->
+ <!-- =====  Unqualified Data Type Schema Module                       ===== -->
+ <!-- ====================================================================== -->
+ <!--
+  Courtesy of Judicial Information Agency of the Dutch Department of Security and Justice
+ 
+
+ -->
+ <xsd:schema xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" version="9.0" xmlns="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11">
+<!-- =================================================================== -->
+<!-- ===== Type Definitions                                              -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Amount. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="AmountType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000001</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Amount. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>A number of monetary units specificed in a currency where the unit of currencyis explicit or implied.</ccts:Definition>
+        <ccts:PrimitiveType>Decimal</ccts:PrimitiveType>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Code. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="CodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000007</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Code. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an attribute.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Date. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="DateType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000009</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Date. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>The particular point in the progression of time.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:date"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Identifier. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="IdentifierType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000011</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Identifier. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>A character string used to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects within the same scheme.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Indicator. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="IndicatorType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000012</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Indicator. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>The value of the indicator.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:boolean"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Name. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="NameType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000020</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Name. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>A character string (I.e. a finite set of characters) generally in the form of words of a language.</ccts:Definition>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Numeric. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="NumericType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000014</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Numeric. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>Numeric information that is assigned or is determined by calculation, counting or sequencing.</ccts:Definition>
+        <ccts:PrimitiveType>Decimal</ccts:PrimitiveType>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Percent. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="PercentType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000017</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Percent. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>Numeric information that is assigned or is determined by calculation, counting or sequencing.</ccts:Definition>
+        <ccts:PrimitiveType>Decimal</ccts:PrimitiveType>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal"/>
+  </xsd:simpleType>
+<!-- =================================================================== -->
+<!-- ===== Text. Type -->
+<!-- =================================================================== -->
+  <xsd:simpleType name="TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>UDT000019</ccts:UniqueID>
+        <ccts:Acronym>UDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Text. Content</ccts:DictionaryEntryName>
+        <ccts:Definition>A character string (I.e. a finite set of characters) generally in the form of words of a language.</ccts:Definition>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>

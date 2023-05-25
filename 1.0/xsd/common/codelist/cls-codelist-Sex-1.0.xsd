@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://data.europa.eu/edm/1.0/ns/codelist/sex"
+	xmlns="http://data.europa.eu/edm/1.0/ns/codelist/sex"
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.0">
+	<xsd:annotation>	
+		<xsd:documentation xml:lang="en">
+	        Public Documents XML schema 1.0
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com),
+	        Inge Gielis (inge.gielis@be.pwc.com)
+		</xsd:documentation>
+	</xsd:annotation>
+<!-- ===== Imports======================================== -->
+<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+		   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+<!-- ===================================================== -->
+
+<xsd:complexType name="SexCodeListType">
+  <xsd:simpleContent>
+	<xsd:restriction base="udt:CodeType">
+	 	<xsd:enumeration value="female">
+			<xsd:annotation>
+			    <xsd:documentation xml:lang="en">
+					This property contains the female gender specification.
+			    </xsd:documentation>
+			</xsd:annotation>
+		</xsd:enumeration>
+	 	<xsd:enumeration value="male">
+			<xsd:annotation>
+			    <xsd:documentation xml:lang="en">
+					This property contains the male gender specification.
+			    </xsd:documentation>
+			</xsd:annotation>
+		</xsd:enumeration>
+	 	<xsd:enumeration value="undetermined">
+			<xsd:annotation>
+			    <xsd:documentation xml:lang="en">
+					This property contains the undetermined gender specification.
+			    </xsd:documentation>
+			</xsd:annotation>
+		</xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="SexType">
+  <xsd:simpleContent>
+    <xsd:restriction base="SexCodeListType">
+      <xsd:attribute name="listVersionID" type="xsd:normalizedString" use="required" fixed="1.0" />
+    </xsd:restriction>
+  </xsd:simpleContent>
+</xsd:complexType>
+</xsd:schema>

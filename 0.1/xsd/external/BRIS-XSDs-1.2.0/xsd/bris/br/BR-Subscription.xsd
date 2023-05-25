@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_2/br/Subscription"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:brcc="http://ec.europa.eu/bris/v1_2/br/CommonComponents"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+	xmlns:bac="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+	xmlns:sub="http://ec.europa.eu/bris/v1_2/br/Subscription"
+	targetNamespace="http://ec.europa.eu/bris/v1_2/br/Subscription"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.2.0">
+
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/br/CommonComponents"
+		schemaLocation="BR-CommonComponents.xsd" />
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+		schemaLocation="../../common/BRIS-BasicComponents.xsd" />
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+		schemaLocation="../../common/BRIS-AggregateComponents.xsd" />
+
+	<xsd:element name="BR-ManageSubscriptionRequest">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="brcc:BRMessageObjectType">
+					<xsd:sequence>
+						<xsd:element ref="bac:BusinessRegisterReference" />
+						<xsd:element name="Action" type="bac:ManageSubscriptionRequestType"
+							minOccurs="1" maxOccurs="200">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+		<xsd:unique name="UniqueManageSubscriptionIDRequest">
+			<xsd:selector xpath="sub:Action" />
+			<xsd:field xpath="bbc:ManageSubscriptionID" />
+		</xsd:unique>
+	</xsd:element>
+	<xsd:element name="BR-ManageSubscriptionStatus">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="brcc:BRMessageObjectType">
+					<xsd:sequence>
+						<xsd:element name="Status" type="bac:ManageSubscriptionStatusType"
+							minOccurs="1" maxOccurs="200" />
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+		<xsd:unique name="UniqueManageSubscriptionIDStatus">
+			<xsd:selector xpath="sub:Status" />
+			<xsd:field xpath="bbc:ManageSubscriptionID" />
+		</xsd:unique>
+	</xsd:element>
+</xsd:schema>
+

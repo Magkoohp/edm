@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- ====================================================================== -->
+ <!-- ===== Reusable Aggregate Business Information Entity Schema Module ===== -->
+ <!-- ===== EPO ===== -->
+ <!--
+
+  Courtesy of Judicial Information Agency of the Dutch Department of Security and Justice
+ 
+
+ -->
+ <xsd:schema xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:11" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" xmlns:epo="http://data.ecodex.eu/epo/dictionary-0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://data.ecodex.eu/epo/dictionary-0" version="1.8" xmlns="http://data.ecodex.eu/epo/dictionary-0">
+<!-- =================================================================== -->
+<!-- ===== Imports                                                       -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Import of Unqualified DataType Schema Module                  -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="UnqualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11"/>
+<!-- =================================================================== -->
+<!-- ===== Element Declarations                                          -->
+<!-- =================================================================== -->
+  <xsd:element type="epo:AdditionalSpecificationsType" name="AdditionalSpecifications">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A group of indicators for claims relating to consumer contracts</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Additional Specifications. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Additional Specifications</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+<!-- =================================================================== -->
+<!-- ===== Type Definitions                                              -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Type Definition: AdditionalSpecificationsType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="AdditionalSpecificationsType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A group of indicators for claims relating to consumer contracts</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Additional Specifications. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Additional Specifications</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:IndicatorType" name="ConsumerContractIndicator">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A group of indicators for claims relating to consumer contracts</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Additional Specifications</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Indicator</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Consumer Contract</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Indicator</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Additional Specifications. Consumer Contract Indicator. Indicator</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IndicatorType" name="DefendantIsConsumerIndicator" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Is the defendant the consumer?</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Additional Specifications</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Indicator</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Defendant Is Consumer</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Indicator</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Additional Specifications. Defendant Is Consumer Indicator. Indicator</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IndicatorType" name="DefendantDomiciledArt59Indicator" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Is the defendant domiciled within the meaning of Article 59 of Council Regulation (EC) No 44/2001 in the Member State where the court is seised?</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Additional Specifications</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Indicator</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Defendant Domiciled Art59</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Indicator</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Additional Specifications. Defendant Domiciled Art59 Indicator. Indicator</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

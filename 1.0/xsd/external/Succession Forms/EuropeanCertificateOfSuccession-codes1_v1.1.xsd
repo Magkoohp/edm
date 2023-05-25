@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================================== -->
+<!-- === European Certificate Of Succession - Code List XML Schema FileXML Schema       === -->
+<!-- ====================================================================================== -->
+<!--
+    Schema agency: European Commission / Estonian Centre for Registers and Information Systems
+    Schema version: 1.1
+    Schema date: 31 May 2016
+    Copyright  (C) - 2016 - Estonian Centre for Registers and Information Systems. All Rights Reserved. Licenced to the European Union under conditions.
+-->
+<xsd:schema 
+    targetNamespace="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+         xmlns:code="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+    xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+    xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+    <!-- ======================================================================================= -->
+    <!-- ===== Imports                                                                       === -->
+    <!-- ======================================================================================= -->
+    <!-- ======================================================================================= -->
+    <!-- === Import of definitions from EuropeanCoreVocabulary-BasicComponents-1.1.xsd.(cvb) === -->
+    <!-- ======================================================================================= -->
+    <xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+        schemaLocation="../common/EuropeanCoreVocabulary-BasicComponents-1.1.xsd"/>
+    <!-- ======================================================================================= -->
+    <!-- === Import of UBL unqualified data types. (udt)                                     === -->
+    <!-- ======================================================================================= --> 
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+        schemaLocation="http://docs.oasis-open.org/ubl/prd2-UBL-2.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+    
+    <!-- ======================================================================================= -->
+    <!-- === Element Declarations                                                            === -->
+    <!-- ======================================================================================= -->
+    <xsd:element name="Action" type="code:ActionType" />
+    <xsd:element name="ActionCode" type="code:ActionCodeType" />
+    <xsd:element name="AuthorityDesignation" type="code:AuthorityDesignationType" />
+    <xsd:element name="AuthorityDesignationCode" type="code:AuthorityDesignationCodeType" />
+    <xsd:element name="Article" type="code:ArticleType"/>
+    <xsd:element name="Channel" type="code:ChannelType" /> 
+    <xsd:element name="DocumentReference" type="code:DocumentReferenceType" />
+    <xsd:element name="EUState" type="code:EUStateType" />
+    <xsd:element name="Gender" type="code:GenderType" />
+    <xsd:element name="RegimeApplied" type="code:RegimeAppliedType" />
+    <xsd:element name="RegimeAppliedCode" type="code:RegimeAppliedRuleIDType" />
+    <xsd:element name="Relationship" type="code:RelationshipType" />
+    <xsd:element name="Status" type="code:StatusType" />
+    
+    <!-- ========================= Type Definitions ========================== -->
+    <!-- === Code List Element Type Definitions                            === -->
+    <!-- ===================================================================== -->  
+
+    <xsd:complexType name="ActionType">
+        <xsd:simpleContent>
+            <xsd:restriction base="code:ActionCodeType">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>obtain_information</ccts:Name>
+                            <ccts:Description>Powers to obtain all information concerning the assets and debts of the estate.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>take_cognisance</ccts:Name>
+                            <ccts:Description>Powers to take cognisance of all wills and other documents relating to the estate.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="03">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>protective_measures</ccts:Name>
+                            <ccts:Description>Powers to take or apply for any protective measures.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="04">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>urgent_measures</ccts:Name>
+                            <ccts:Description>Powers to take any urgent measures.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="05">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>collect_assets</ccts:Name>
+                            <ccts:Description>Powers to collect the assets.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="06">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>collect_debts</ccts:Name>
+                            <ccts:Description>Powers to collect the debts and give a valid receipt.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="07">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>perform_contracts</ccts:Name>
+                            <ccts:Description>Powers to perform and rescind contracts.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="08">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>operate_account</ccts:Name>
+                            <ccts:Description>Powers to open, operate and close a bank account.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="09">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>borrow</ccts:Name>
+                            <ccts:Description>Powers to borrow.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="10">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>transfer_charges</ccts:Name>
+                            <ccts:Description>Powers to transfer or constitute charges on the assets.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="11">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>constitute_rights</ccts:Name>
+                            <ccts:Description>Powers to constitute rights in rem or mortgage on the assets.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="12a">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>sell_immovable</ccts:Name>
+                            <ccts:Description>Powers to sell an immovable property.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="12b">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>sell_other</ccts:Name>
+                            <ccts:Description>Powers to sell other property.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="13">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>lend</ccts:Name>
+                            <ccts:Description>Powers to lend.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="14">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>carry_business</ccts:Name>
+                            <ccts:Description>Powers to carry on a business.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="15">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>exercise_rights</ccts:Name>
+                            <ccts:Description>Powers to exercise the rights of a shareholder.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="16">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>sue</ccts:Name>
+                            <ccts:Description>Powers to sue and be sued.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="17">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>settle_debts</ccts:Name>
+                            <ccts:Description>Powers to settle debts.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>   
+                <xsd:enumeration value="18">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>distribute_legacies</ccts:Name>
+                            <ccts:Description>Powers to distribute legacies.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>   
+                <xsd:enumeration value="19">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>divide_estate</ccts:Name>
+                            <ccts:Description>Powers to divide the estate.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>   
+                <xsd:enumeration value="20">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>distribute_residue</ccts:Name>
+                            <ccts:Description>Powers to distribute the residue.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>                   
+                <xsd:enumeration value="21">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>record_rights</ccts:Name>
+                            <ccts:Description>Powers to request the recording of rights in immovable or movable property in a register.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>                    
+                <xsd:enumeration value="22">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>donate</ccts:Name>
+                        <ccts:Description>Powers to donate.</ccts:Description>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            </xsd:restriction>  
+         </xsd:simpleContent>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="ActionCodeType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:DictionaryEntryName>ApplyingPowersCode</ccts:DictionaryEntryName>
+                <ccts:Definition>List of actions possible in applying powers.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="udt:TextType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="ArticleType">
+        <xsd:simpleContent>
+            <xsd:restriction base="cvb:RuleIDType">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Article4</ccts:Name>
+                            <ccts:Description>Article 4 of Regulation (EU) No 650/2012 (General Jurisdiction)</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Article7A</ccts:Name>
+                            <ccts:Description>Article 7(a) of  Regulation (EU) No 650/2012 (Jurisdiction in the event of a choice of law)</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="03">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Article7B</ccts:Name>
+                            <ccts:Description>Article 7(b) of  Regulation (EU) No 650/2012 (Jurisdiction in the event of a choice of law)</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="04">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Article7C</ccts:Name>
+                            <ccts:Description>Article 7(c) of  Regulation (EU) No 650/2012 (Jurisdiction in the event of a choice of law)</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="05">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Article10</ccts:Name>
+                            <ccts:Description>Article 10 of  Regulation (EU) No 650/2012 (Subsidiary Jurisdiction)</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="06">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Article11</ccts:Name>
+                            <ccts:Description>Article 11 of  Regulation (EU) No 650/2012 (Forum necessitatis)</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+
+
+
+    <xsd:complexType name="AuthorityDesignationType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                List of authority types.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="code:AuthorityDesignationCodeType">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Court authority</ccts:Name>
+                            <ccts:Description>A court authority issuing a ECS.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation> 
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>A notary</ccts:Name>
+                            <ccts:Description>A notary issuing a ECS.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation> 
+                </xsd:enumeration>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+
+
+    <xsd:complexType name="AuthorityDesignationCodeType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:UniqueID>ESCC02</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:DictionaryEntryName>AuthorityDesignationCode</ccts:DictionaryEntryName>
+                <ccts:Definition>List of authorities issuing an ECS</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="udt:CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+   
+
+    <xsd:complexType name="ChannelType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Communication channels available: phone, fax or/and e-mail address.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cvb:ChannelIDType">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Telephone</ccts:Name>
+                            <ccts:Description>Contact telephone number.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Fax</ccts:Name>
+                            <ccts:Description>Contact fax number.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="03">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>E-mail address</ccts:Name>
+                            <ccts:Description>Contact e-mail address.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation> 
+                </xsd:enumeration>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+  
+  
+  
+    <xsd:simpleType name="DocumentReferenceType">
+            <xsd:restriction base="xsd:token">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Death Certificate</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Will</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="03">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Joint Will</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="04">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Agreement as to succession</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="05">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Any other document</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+            </xsd:restriction>
+        </xsd:simpleType>
+  
+  
+    <xsd:complexType name="EUStateType">
+         <xsd:simpleContent>
+                <xsd:restriction base="cvb:JurisdictionNameType">
+                    <xsd:enumeration value="01">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Belgium</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="02">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Bulgaria</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="03">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Czech Republic</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="04">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Germany</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="05">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Estonia</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="06">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Greece</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="07">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Spain</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>              
+                    <xsd:enumeration value="08">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>France</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>
+                    <xsd:enumeration value="09">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Croatia</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="10">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Italy</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                                   
+                    <xsd:enumeration value="11">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Cyprus</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="12">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Latvia</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="13">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Lithuania</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="14">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Luxembourg</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="15">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Hungary</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="16">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Malta</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="17">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Netherlands</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="18">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Austria</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="19">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Poland</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="20">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Portugal</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="21">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Romania</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="22">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Slovenia</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="23">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Slovakia</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="24">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Finland</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                    <xsd:enumeration value="25">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <ccts:Name>Sweden</ccts:Name>
+                            </xsd:documentation>
+                        </xsd:annotation>  
+                    </xsd:enumeration>                 
+                </xsd:restriction>
+             </xsd:simpleContent>
+            </xsd:complexType>        
+
+
+    <xsd:complexType name="GenderType">
+     <xsd:simpleContent>
+         <xsd:restriction base="cvb:PersonGenderCodeType">
+           <xsd:enumeration value="M">
+               <xsd:annotation>
+                   <xsd:documentation xml:lang="en">
+                       <ccts:Name>Male</ccts:Name>
+                       <ccts:Description>Male person.</ccts:Description>
+                   </xsd:documentation>
+               </xsd:annotation>  
+           </xsd:enumeration>
+            <xsd:enumeration value="F">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:Name>Female</ccts:Name>
+                            <ccts:Description>Female person.</ccts:Description>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+            </xsd:enumeration>
+         </xsd:restriction>
+     </xsd:simpleContent>
+ </xsd:complexType>
+ 
+     
+    <xsd:simpleType name="RelationshipType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Applicant’s relationship to the deceased.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="01">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Son</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="02">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Daughter</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="03">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Father</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="04">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Mother</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="05">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Grandson</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="06">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Granddaughter</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="07">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Grandfather</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="08">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Grandmother</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="09">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Spouse</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="10">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Registered Partner</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="11">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>De Facto Partner</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="12">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Brother</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="13">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Sister</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="14">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Nephew</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="15">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Niece</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="16">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Uncle</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="17">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Aunt</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+            <xsd:enumeration value="18">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Name>Cousin</ccts:Name>
+                    </xsd:documentation>
+                </xsd:annotation>  
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>           
+      
+      
+    <xsd:complexType name="RegimeAppliedType">
+        <xsd:simpleContent>
+            <xsd:restriction base="code:RegimeAppliedRuleIDType">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Separation of property</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Universal community of property</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="03">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Community of property</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="04">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Community of accrued gains</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+                <xsd:enumeration value="05">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Deferred community property</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:enumeration>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+ 
+   
+    <xsd:complexType name="RegimeAppliedRuleIDType">
+        <xsd:simpleContent>
+            <xsd:extension base="udt:IdentifierType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    
+    <xsd:complexType name="StatusType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Options for indicating a person's civil status.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="udt:IdentifierType">
+                <xsd:enumeration value="01">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Single</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="02">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Married</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="03">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Partner</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="04">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Divorced</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+                <xsd:enumeration value="05">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Name>Widowed</ccts:Name>
+                        </xsd:documentation>
+                    </xsd:annotation>  
+                </xsd:enumeration>
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    
+</xsd:schema>

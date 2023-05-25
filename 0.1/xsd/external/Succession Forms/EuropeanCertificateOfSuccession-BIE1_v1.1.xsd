@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ========================================================================================== -->
+<!-- === European Certificate of Succession - Business Information Entity XML Schema File   === -->
+<!-- ========================================================================================== -->
+<!--
+    Schema agency: European Commission / Estonian Centre for Registers and Information Systems
+    Schema version: 1.1
+    Schema date: 31 May 2016
+    Copyright  (C) - 2016 - Estonian Centre for Registers and Information Systems. All Rights Reserved. Licenced to the European Union under conditions.
+-->
+<xsd:schema targetNamespace="urn:ec:ejustice:succession:common:ecs-bie1:1:standard"
+    xmlns:acomp="urn:ec:ejustice:succession:common:ecs-bie1:1:standard"
+    xmlns:a2comp="urn:ec:ejustice:succession:common:ecs-bie2:1:standard"
+    xmlns:bcomp="urn:ec:ejustice:succession:common:ecs-bie3:1:standard"
+    xmlns:code="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+    xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+    xmlns:nc="http://niem.gov/niem/iso_3166/2.0"
+    xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- ====================================================================================== -->
+    <!-- ===   Imports                                                                      === -->
+    <!-- ====================================================================================== -->
+
+    <!-- ====================================================================================== -->
+    <!-- === Import of core vocabulary elements  (cvb)                                      === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+        schemaLocation="../common/EuropeanCoreVocabulary-BasicComponents-1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of country codes (nc)                                                   === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="http://niem.gov/niem/iso_3166/2.0"
+        schemaLocation="https://release.niem.gov/niem/iso_3166/2.0/iso_3166.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of country codes (ids5ISO316612A)                                       === -->
+    <!-- ====================================================================================== -->
+    <xsd:import
+        namespace="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+        schemaLocation="http://www.unece.org/fileadmin/DAM//uncefact/standard/ISO_ISOTwoletterCountryCode_SecondEdition2006.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of business information entities and data type definitions (a2comp)      === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:ecs-bie2:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-BIE2_v1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of business information entities and data type definitions (bcomp)      === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:ecs-bie3:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-BIE3_v1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of business information entities and business code lists (code)         === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-codes1_v1.1.xsd"/>
+
+    <!-- ====================================================================================== -->
+    <!-- === Element Declarations                                                           === -->
+    <!-- ====================================================================================== -->
+    <xsd:element name="Applicant" type="acomp:ApplicantType"/>
+    <xsd:element name="ApplicantCompany" type="acomp:ApplicantCompanyType"/>
+    <xsd:element name="ApplicantCompanyDetails" type="bcomp:BusinessType"/>
+    <xsd:element name="ApplicantCompanyInformation" type="xsd:string"/>
+    <xsd:element name="ApplicantCompanyPersonName" type="bcomp:PersonNameType"/>
+    <xsd:element name="ApplicantHasPowers" type="bcomp:HasPowersType"/>
+    <xsd:element name="ApplicantIndividual" type="acomp:ApplicantIndividualType"/>
+    <xsd:element name="ApplicantIndividualAddress" type="a2comp:AddressType"/>
+    <xsd:element name="ApplicantIndividualChannel" type="code:ChannelType"/>
+    <xsd:element name="ApplicantIndividualCountry" type="bcomp:CoreLocationType"/>
+    <xsd:element name="ApplicantIndividualNationality" type="bcomp:CoreLocationType"/>
+    <xsd:element name="ApplicantIndividualNaturalPerson" type="a2comp:NaturalPersonType"/>
+    <xsd:element name="ApplicantIndividualRelation" type="bcomp:RelationType"/>
+    <xsd:element name="ApplicantIsHeir" type="a2comp:IsHeirType"/>
+    <xsd:element name="ApplicantIsLegatee" type="a2comp:IsLegateeType"/>
+    <xsd:element name="ApplicantRepresentative" type="a2comp:RepresentativeType"/>
+    <xsd:element name="Authority" type="acomp:AuthorityType"/>
+    <xsd:element name="AuthorityAddress" type="a2comp:AddressType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>The address of the issuing authority.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="AuthorityChannel" type="code:ChannelType"/>
+    <xsd:element name="AuthorityCompetence" type="bcomp:CompetenceType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>Legal basis of the Jurisdiction according to article 64 of Regulation (EU) No 650/2012.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="AuthorityDesignation" type="code:AuthorityDesignationType"/>
+    <xsd:element name="AuthorityDesignationOther" type="bcomp:SpecificationType"/>
+    <xsd:element name="AuthorityMemberState" type="code:EUStateType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>List of EU Member States taking part in the adoption of the Regulation 650/2012.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="AuthorityName" type="cvb:LegalEntityLegalNameType"/>
+    <xsd:element name="Case" type="acomp:CaseType"/>
+    <xsd:element name="CaseAnnexes" type="bcomp:AnnexListType"/>
+    <xsd:element name="CaseCopy" type="bcomp:CopyType"/> 
+    <xsd:element name="CaseFile" type="bcomp:FileType"/>
+    <xsd:element name="CaseLaw" type="bcomp:ApplicableType"/>
+    <xsd:element name="CaseNonApplicant" type="acomp:NonApplicantType"/>
+    <xsd:element name="CasePlace" type="bcomp:PlaceType"/>
+    <xsd:element name="CaseTestation" type="bcomp:TestationType"/>
+    <xsd:element name="Deceased" type="acomp:DeceasedType"/>
+    <xsd:element name="DeceasedAddress" type="a2comp:AddressType"/>
+    <xsd:element name="DeceasedBirthCountry" type="bcomp:CoreLocationType"/>
+    <xsd:element name="DeceasedBirthDate" type="bcomp:OccasionType"/>
+    <xsd:element name="DeceasedBirthPlace" type="bcomp:PlaceType"/>
+    <xsd:element name="DeceasedBirthSurname" type="cvb:PersonFamilyNameType"/>
+    <xsd:element name="DeceasedCivilStatus" type="a2comp:CivilStatusType"/>
+    <xsd:element name="DeceasedCountry" type="bcomp:CoreLocationType"/>
+    <xsd:element name="DeceasedDeathCertificate" type="bcomp:DocumentType"/>
+    <xsd:element name="DeceasedDeathCountry" type="bcomp:CoreLocationType"/>
+    <xsd:element name="DeceasedDeathDate" type="bcomp:PersonDeathDateType"/>
+    <xsd:element name="DeceasedDeathPlace" type="bcomp:PlaceType"/>
+    <xsd:element name="DeceasedGivenName" type="cvb:PersonGivenNameType"/>
+    <xsd:element name="DeceasedIdentifier" type="bcomp:IdentificationType"/>
+    <xsd:element name="DeceasedNationality" type="bcomp:CoreLocationType"/>
+    <xsd:element name="DeceasedSex" type="code:GenderType"/>
+    <xsd:element name="DeceasedSpouse" type="a2comp:SpouseType"/>
+    <xsd:element name="DeceasedSurname" type="cvb:PersonFamilyNameType"/>
+    <xsd:element name="NonApplicant" type="acomp:NonApplicantType"/>
+    <xsd:element name="NonApplicantExecutor" type="a2comp:ExecutorType"/>
+    <xsd:element name="NonApplicantHeir" type="a2comp:HeirType"/>
+    <xsd:element name="NonApplicantLegatee" type="a2comp:LegateeType"/>
+    <xsd:element name="Representative" type="a2comp:RepresentativeType"/>
+    <xsd:element name="PropertyRegime" type="bcomp:PropertyRegimeType"/>
+    <xsd:element name="StreetPOBox" type="cvb:AddressThoroughfareType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>Name of the street/location; a number of house and/or apartment if exists; and other local area indicators. Or/and an addressable mail box.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Succession" type="bcomp:SuccessionType"/>
+    <xsd:element name="Testation" type="bcomp:TestationType"/>
+    <xsd:element name="Town" type="cvb:AddressPostNameType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>Town and/or municipality.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- ========================= Type Definitions ============================= -->
+    <!-- === Aggregate Business Information Entity Type Definitions           === -->
+    <!-- ======================================================================== -->
+
+    <!-- ======================================================================== -->
+    <!-- === Applicants of an ECS.                                            === -->
+    <!-- ======================================================================== -->
+    <xsd:complexType name="ApplicantType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:UniqueID>ESC101</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>Applicant</ccts:ObjectClassTermName>
+                <ccts:Cardinality>1..n</ccts:Cardinality>
+                <ccts:DictionaryEntryName>Applicant. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>A natural or legal person applying for the European Certificate of Succession.</ccts:Definition>
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:ObjectClass>Applicant</ccts:ObjectClass>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:choice>
+                <xsd:element ref="acomp:ApplicantIndividual" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element ref="acomp:ApplicantCompany" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+                <xsd:element ref="acomp:ApplicantRepresentative" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element ref="acomp:ApplicantIsHeir" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="acomp:ApplicantIsLegatee" minOccurs="0" maxOccurs="1"/> 
+                <xsd:element ref="acomp:ApplicantHasPowers" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- ======================================================================== -->
+    <!-- === Applicant of an ECS as a natural person.                         === -->
+    <!-- ======================================================================== -->
+    <xsd:complexType name="ApplicantIndividualType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                <ccts:UniqueID>ESC102</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>Applying Natural Person</ccts:ObjectClassTermName>
+                <ccts:Cardinality>1..n</ccts:Cardinality>
+                <ccts:DictionaryEntryName>Applying Natural Person. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Details about the applicant as a natural person.</ccts:Definition>
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:ObjectClass>Applying Natural Person</ccts:ObjectClass>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element ref="acomp:ApplicantIndividualNaturalPerson" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element ref="acomp:ApplicantIndividualNationality" minOccurs="1"
+                maxOccurs="unbounded"/>
+            <xsd:element ref="acomp:ApplicantIndividualAddress" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:ApplicantIndividualCountry" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:ApplicantIndividualChannel" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="acomp:ApplicantIndividualRelation" minOccurs="0" maxOccurs="1"/>       
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- ======================================================================== -->
+    <!-- === Applicant of an ECS as a legal person.                           === -->
+    <!-- ======================================================================== -->
+    <xsd:complexType name="ApplicantCompanyType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                <ccts:UniqueID>ESC103</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>Applying Legal Person</ccts:ObjectClassTermName>
+                <ccts:Cardinality>0..n</ccts:Cardinality>
+                <ccts:DictionaryEntryName>Applying Legal Person. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Details about the applicant as a legal person.</ccts:Definition>
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:ObjectClass>Applying Legal Person</ccts:ObjectClass>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element ref="acomp:ApplicantCompanyDetails" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="acomp:ApplicantCompanyPersonName" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="acomp:ApplicantCompanyInformation" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- ========================================================================= -->
+    <!-- === Authority issuing an ECS.                                         === -->
+    <!-- ========================================================================= -->
+    <xsd:complexType name="AuthorityType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:UniqueID>ESC104</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>Issuing Authority</ccts:ObjectClassTermName>
+                <ccts:Cardinality>1..1</ccts:Cardinality>
+                <ccts:DictionaryEntryName>Authority. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Information about the authority issuing an ECS</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="acomp:AuthorityMemberState" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                    <ccts:Definition>An EU Member State taking part in the adoption of the Regulation 650/2012, where the authority in located.</ccts:Definition>
+                    <ccts:DefaultIndicator/>
+                </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:AuthorityName" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Definition>A formal name of the issuing authority.</ccts:Definition>
+                        <ccts:DefaultIndicator/>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+                <xsd:element ref="acomp:AuthorityDesignation">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Definition>A predefined list of authorities issuing a ECS.</ccts:Definition>
+                            <ccts:DefaultIndicator/>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element ref="acomp:AuthorityDesignationOther">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Definition>Other authority not mentioned in the previous list of options.</ccts:Definition>
+                            <ccts:DefaultIndicator/>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element ref="acomp:AuthorityAddress" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:AuthorityChannel" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="acomp:AuthorityCompetence" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- ========================================================================= -->
+    <!-- === Case Details of an ECS.                                           === -->
+    <!-- ========================================================================= -->
+    <xsd:complexType name="CaseType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                <ccts:UniqueID>ESC105</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>Issuing Case</ccts:ObjectClassTermName>
+                <ccts:Cardinality>1..1</ccts:Cardinality>
+                <ccts:DictionaryEntryName>Case. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Various parts of the ECS certificate, which form a case of issuing an ECS.</ccts:Definition>
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:ObjectClass>Authority</ccts:ObjectClass>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="acomp:CaseAnnexes" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="acomp:CaseFile" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:CaseTestation" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:CaseLaw" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="CaseUnfilledPoints" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="CaseTotalPages" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="CaseMemberState" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:CasePlace" minOccurs="1" maxOccurs="1"/>    
+            <xsd:element name="CaseIssueDate" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="acomp:CaseCopy" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- ========================================================================= -->
+    <!-- === Deceased person, related to the issuance of an ECS.               === -->
+    <!-- ========================================================================= -->
+    <xsd:complexType name="DeceasedType">
+        <xsd:annotation>
+            <xsd:documentation>
+                    <ccts:UniqueID>ESC106</ccts:UniqueID>
+                    <ccts:Version>1</ccts:Version>
+                    <ccts:ObjectClassQualifierName/>
+                    <ccts:ObjectClassTermName>Deceased Person</ccts:ObjectClassTermName>
+                    <ccts:Cardinality>1..1</ccts:Cardinality>
+                    <ccts:DictionaryEntryName>Deceased. Details</ccts:DictionaryEntryName>
+                    <ccts:Definition>Details about the deceased person.</ccts:Definition>
+                    <ccts:ComponentType>ABIE</ccts:ComponentType>
+                    <ccts:ObjectClass>Deceased</ccts:ObjectClass>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="1">
+            <xsd:element ref="acomp:DeceasedSurname" minOccurs="1" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.1</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Surname</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_Surname. Name</ccts:DictionaryEntryName>
+                        <ccts:Definition>A deceased person regarding whom the succession proceeding is conducted.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedSurname</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedGivenName" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                            <ccts:UniqueID>ESCA06.2</ccts:UniqueID>
+                            <ccts:Version>1</ccts:Version>
+                            <ccts:ObjectClassQualifierName/>
+                            <ccts:ObjectClassTermName>Deceased Given Name</ccts:ObjectClassTermName>    
+                            <ccts:Cardinality>1..n</ccts:Cardinality>
+                            <ccts:DictionaryEntryName>Deceased. Deceased_GivenName. Name</ccts:DictionaryEntryName>
+                            <ccts:Definition>A legally recognised given name, or multiple given names of the deceased person.</ccts:Definition>
+                            <ccts:PropertyTermName>DeceasedGivenName</ccts:PropertyTermName>
+                        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedBirthSurname" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.3</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Birth Surname</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..n</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_BirthSurname. Name</ccts:DictionaryEntryName>
+                        <ccts:Definition>The surname of the deceased person given at the time of birth.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedBirthSurName</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedSex" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.4</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Sex</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_Sex. Code</ccts:DictionaryEntryName>
+                        <ccts:Definition>Deseased person’s state of being male or female.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedSex</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedBirthDate" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.5</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Birth Date</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_Birth Date. Occasion</ccts:DictionaryEntryName>
+                        <ccts:Definition>The date on which the deceased was born.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedBirthDate</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedBirthPlace" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                    <ccts:UniqueID>ESCA06.6</ccts:UniqueID>
+                    <ccts:Version>1</ccts:Version>
+                    <ccts:ObjectClassQualifierName/>
+                    <ccts:ObjectClassTermName>Deceased Birth Place</ccts:ObjectClassTermName>    
+                    <ccts:Cardinality>0..1</ccts:Cardinality>
+                    <ccts:DictionaryEntryName>Deceased. Person Place Of Birth_ Place. Place</ccts:DictionaryEntryName>
+                    <ccts:Definition>A place, where the deceased was born.</ccts:Definition>
+                    <ccts:PropertyTermName>DeceasedBirthPlace</ccts:PropertyTermName>
+                </xsd:documentation>
+            </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedBirthCountry" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.7</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Birth Country</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Core Person. Person Country Of Birth_ Core Location. Core Location</ccts:DictionaryEntryName>
+                        <ccts:Definition>Country of birth of the deceased person.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedBirthCountry</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedCivilStatus" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                    <ccts:UniqueID>ESCA06.8</ccts:UniqueID>
+                    <ccts:Version>1</ccts:Version>
+                    <ccts:ObjectClassQualifierName/>
+                    <ccts:ObjectClassTermName>Deceased Civil Status</ccts:ObjectClassTermName>    
+                    <ccts:Cardinality>1..1</ccts:Cardinality>
+                    <ccts:DictionaryEntryName>Deceased. Deceased_ Civil Status. Code</ccts:DictionaryEntryName>
+                    <ccts:Definition>Civil status of the deceased at the time of death.</ccts:Definition>
+                    <ccts:PropertyTermName>DeceasedCivilStatus</ccts:PropertyTermName>
+                </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedNationality" minOccurs="1" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.9</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Nationality</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_ Nationality. Code</ccts:DictionaryEntryName>
+                        <ccts:Definition>Civil status of the deceased at the time of death.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedCivilStatus</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedIdentifier" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.10</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Identifier</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>0..5</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Person Identifier. Identifier</ccts:DictionaryEntryName>
+                        <ccts:Definition>Any unique number, which identifies a person.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedIdentifier</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedAddress" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.11</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Last address of the Deceased</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_Address. Address</ccts:DictionaryEntryName>
+                        <ccts:Definition>The date on which a person died or has officially been deemed to be dead.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedDeathDate</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedCountry" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.12</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Country of address</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_Country. Country</ccts:DictionaryEntryName>
+                        <ccts:Definition>Country indication as part of the ddress at the time of death.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedCountry</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedDeathDate" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.13</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Death Date</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>1..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Deceased_Death Date. Date</ccts:DictionaryEntryName>
+                        <ccts:Definition>The date on which a person died or has officially been deemed to be dead.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedDeathDate</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedDeathPlace" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                            <ccts:UniqueID>ESCA06.14</ccts:UniqueID>
+                            <ccts:Version>1</ccts:Version>
+                            <ccts:ObjectClassQualifierName/>
+                            <ccts:ObjectClassTermName>Deceased Death Place</ccts:ObjectClassTermName>    
+                            <ccts:Cardinality>0..1</ccts:Cardinality>
+                            <ccts:DictionaryEntryName>Deceased. Deceased_Death Place. Location</ccts:DictionaryEntryName>
+                            <ccts:Definition>Town or municipality, where the person died or has officially been deemed to die.</ccts:Definition>
+                            <ccts:PropertyTermName>DeceasedDeathPlace</ccts:PropertyTermName>
+                        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedDeathCountry" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.15</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Deceased Country of Death </ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Deceased. Person Country Of Death_ Core Location. Core Location</ccts:DictionaryEntryName>
+                        <ccts:Definition>The country where the person died or has officially been deemed to die.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedDeathCountry</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedDeathCertificate" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.16</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Certificate of Death</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Document. Document_ Death Certificate. Input</ccts:DictionaryEntryName>
+                        <ccts:Definition>Reference to a death certificate of the deceased person.</ccts:Definition>
+                        <ccts:PropertyTermName>DeceasedDeathCertificate</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="acomp:DeceasedSpouse" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCA06.17</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:ObjectClassQualifierName/>
+                        <ccts:ObjectClassTermName>Spouse</ccts:ObjectClassTermName>    
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                        <ccts:DictionaryEntryName>Spouse. Details</ccts:DictionaryEntryName>
+                        <ccts:Definition>Details about the spouse of a deceased person.</ccts:Definition>
+                        <ccts:PropertyTermName>Spouse</ccts:PropertyTermName>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <!-- ================================================================================= -->
+    <!-- ===  A Heir, who is not at the same time also the Applicant                  === -->
+    <!-- ================================================================================= -->
+    <xsd:complexType name="NonApplicantType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:UniqueID>ESC107</ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:ObjectClassQualifierName/>
+                <ccts:ObjectClassTermName>Non-Applicant Person</ccts:ObjectClassTermName>
+                <ccts:Cardinality>0..n</ccts:Cardinality>
+                <ccts:DictionaryEntryName>Non-Applicant. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>A natural or legal person, who is not an Applicant of ECS.</ccts:Definition>
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:ObjectClass>Non-Applicant</ccts:ObjectClass>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:choice>
+                <xsd:element ref="acomp:NonApplicantHeir" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="acomp:NonApplicantLegatee" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="acomp:NonApplicantExecutor" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

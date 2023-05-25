@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
+	xmlns="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
+	xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.1">
+	<xs:annotation>	
+		<xs:documentation xml:lang="en">
+	        Public Documents XML schema 0.1
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com)
+		</xs:documentation>
+	</xs:annotation>
+<!-- ===== Imports======================================== -->
+<xs:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+		   schemaLocation="../../external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
+<!-- ===================================================== -->
+
+<xs:complexType name="SexCodeListType">
+  <xs:simpleContent>
+	<xs:restriction base="cvb:PersonGenderCodeType">
+	 	<xs:enumeration value="female">
+			<xs:annotation>
+			    <xs:documentation>
+					This property contains the female gender specification.
+			    </xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+	 	<xs:enumeration value="male">
+			<xs:annotation>
+			    <xs:documentation>
+					This property contains the male gender specification.
+			    </xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+	 	<xs:enumeration value="undetermined">
+			<xs:annotation>
+			    <xs:documentation>
+					This property contains the undetermined gender specification.
+			    </xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+    </xs:restriction>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="SexType">
+  <xs:complexContent>
+    <xs:restriction base="SexCodeListType">
+      <xs:attribute name="listVersionID" type="xs:normalizedString" use="required" fixed="0.1" />
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+</xs:schema>

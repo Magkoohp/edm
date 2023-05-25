@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ========================================================================================== -->
+<!-- === European Certificate of Succession - Business Information Entity XML Schema File   === -->
+<!-- ========================================================================================== -->
+<!--
+    Schema agency: European Commission / Estonian Centre for Registers and Information Systems
+    Schema version: 1.1
+    Schema date: 31 May 2016
+    Copyright  (C) - 2016 - Estonian Centre for Registers and Information Systems. All Rights Reserved. Licenced to the European Union under conditions.
+-->
+<xsd:schema targetNamespace="urn:ec:ejustice:succession:common:ecs-bie2:1:standard"
+    xmlns:a2comp="urn:ec:ejustice:succession:common:ecs-bie2:1:standard"
+    xmlns:bcomp="urn:ec:ejustice:succession:common:ecs-bie3:1:standard"
+    xmlns:code="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+    xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+    xmlns:nc="http://niem.gov/niem/iso_3166/2.0"
+    xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- ====================================================================================== -->
+    <!-- ===   Imports                                                                      === -->
+    <!-- ====================================================================================== -->
+
+    <!-- ====================================================================================== -->
+    <!-- === Import of core vocabulary elements  (cvb)                                      === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+        schemaLocation="../common/EuropeanCoreVocabulary-BasicComponents-1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of country codes (nc)                                                   === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="http://niem.gov/niem/iso_3166/2.0"
+        schemaLocation="https://release.niem.gov/niem/iso_3166/2.0/iso_3166.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of country codes (ids5ISO316612A)                                       === -->
+    <!-- ====================================================================================== -->
+    <xsd:import
+        namespace="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+        schemaLocation="http://www.unece.org/fileadmin/DAM//uncefact/standard/ISO_ISOTwoletterCountryCode_SecondEdition2006.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of business information entities and data type definitions (bcomp)      === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:ecs-bie3:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-BIE3_v1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of business information entities and business code lists (code)         === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-codes1_v1.1.xsd"/>
+
+    <!-- ====================================================================================== -->
+    <!-- === Element Declarations                                                           === -->
+    <!-- ====================================================================================== -->
+    <xsd:element name="Address" type="a2comp:AddressType"/>
+    <xsd:element name="CivilStatusKind" type="code:StatusType"/>
+    <xsd:element name="Country" type="bcomp:CoreLocationType"/>
+    <xsd:element name="Document" type="bcomp:DocumentType"/>
+    <xsd:element name="IsHeir" type="a2comp:IsHeirType"/>
+    <xsd:element name="IsLegatee" type="a2comp:IsLegateeType"/>
+    <xsd:element name="NaturalPerson" type="a2comp:NaturalPersonType"/>
+    <xsd:element name="NaturalPersonBirthCountry" type="bcomp:CoreLocationType"/>
+    <xsd:element name="NaturalPersonBirthDate" type="xsd:date"/>
+    <xsd:element name="NaturalPersonBirthGivenName" type="cvb:PersonGivenNameType"/>
+    <xsd:element name="NaturalPersonBirthPlace" type="bcomp:PlaceType"/>
+    <xsd:element name="NaturalPersonBirthSurname" type="cvb:PersonFamilyNameType"/>
+    <xsd:element name="NaturalPersonCivilStatus" type="a2comp:CivilStatusType"/>
+    <xsd:element name="NaturalPersonGivenName" type="cvb:PersonGivenNameType"/>
+    <xsd:element name="NaturalPersonIdentifier" type="bcomp:IdentificationType"/>
+    <xsd:element name="NaturalPersonSex" type="code:GenderType"/>
+    <xsd:element name="NaturalPersonSurname" type="cvb:PersonFamilyNameType"/>
+    <xsd:element name="PostCode" type="cvb:AddressPostCodeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>Code of letters and digits used a part of an address.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Region" type="cvb:AddressAdminUnitLocationTwoType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>An additional address line for a region.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Representative" type="a2comp:RepresentativeType"/>
+    <xsd:element name="Spouse" type="a2comp:SpouseType"/>
+    <xsd:element name="StreetPOBox" type="cvb:AddressThoroughfareType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>Name of the street/location; a number of house and/or apartment if exists; and other local area indicators. Or/and an addressable mail box.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Succession" type="bcomp:SuccessionType"/>
+    <xsd:element name="Testation" type="bcomp:TestationType"/>
+    <xsd:element name="Town" type="cvb:AddressPostNameType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>Town and/or municipality.</ccts:Definition>
+                <ccts:DefaultIndicator/>
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <!-- ========================= Type Definitions ================================================== -->
+    <!-- === Aggregate Business Information Entity Type Definitions                                === -->
+    <!-- ============================================================================================= -->
+
+    <!-- ============================================================================================= -->
+    <!-- === Address details before the country name.                                              === -->
+    <!-- ============================================================================================= -->
+    <xsd:complexType name="AddressType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:DictionaryEntryName>Address. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>An address representing a location.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="a2comp:StreetPOBox" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Address. Address_ StreetPOBox. Text</ccts:DictionaryEntryName>
+                        <ccts:Definition>Name of the street/location; a number of house and/or apartment if exists; and other local area indicators. Or/and an addressable mail box.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="a2comp:Town" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Address. Address_ Town. Text</ccts:DictionaryEntryName>
+                        <ccts:Definition>The key postal division of the address, usually the city.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="a2comp:Region" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:ComponentType>BBIE</ccts:ComponentType>
+                        <ccts:DictionaryEntryName>Address. Address_ Region. Text</ccts:DictionaryEntryName>
+                        <ccts:Definition>An additional address line for a region.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="a2comp:PostCode" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Address. Address_ Post Code. Text</ccts:DictionaryEntryName>
+                        <ccts:Definition>Code of letters and digits used a part of an address.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="CivilStatusType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:Definition>A legal marital/civil status of a deceased or an applicant at the time of applying.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:choice>
+                <xsd:element ref="a2comp:CivilStatusKind"/>
+                <xsd:element name="CivilStatusOther" type="xsd:string"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- ============================================================================================= -->
+    <!-- ===  A Heir, who is not at the same time also an Applicant.                               === -->
+    <!-- ============================================================================================= -->
+    <xsd:complexType name="ExecutorType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:DictionaryEntryName>Non-Applicant Executor. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Details about the executor, who has been given the powers to execute a will or to administer the estate, who is not an at the same time an applicant.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="ExecutorIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:element name="ExecutorPrivatePerson" type="a2comp:PrivatePersonType"
+                    minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="ExecutorLegalPerson" type="a2comp:LegalPersonType"
+                    minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="ExecutorHasPowers" type="bcomp:PowersType"
+                minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- ============================================================================================= -->
+    <!-- === An Applicant Heir as a Natural Person or a Legal Person.                              === -->
+    <!-- ============================================================================================= -->
+    <xsd:complexType name="IsHeirType">
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="IsHeirIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:element name="IsHeirPersonName" type="bcomp:PersonNameType" minOccurs="0" maxOccurs="1"/> 
+                <xsd:element name="IsHeirCompanyName" type="cvb:LegalEntityLegalNameType" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="IsHeirInheritance" type="bcomp:SuccessionType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+   
+   
+    <!-- ============================================================================================= -->
+    <!-- === An Applicant Legatee as a Natural Person or a Legal Person.                           === -->
+    <!-- ============================================================================================= -->
+    <xsd:complexType name="IsLegateeType">
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="IsLegateeIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:element name="IsLegateePersonName" type="bcomp:PersonNameType" minOccurs="0" maxOccurs="1"/> 
+                <xsd:element name="IsLegateeCompanyName" type="cvb:LegalEntityLegalNameType" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="IsLegateeLegacy" type="bcomp:LegacyType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <!-- ============================================================================================= -->
+    <!-- === Details about a Non-Applicant (heir, legatee, manager) as a Legal Person.             === -->
+    <!-- ============================================================================================= -->
+    <xsd:complexType name="LegalPersonType">
+        <xsd:sequence>
+            <xsd:element name="LegalPersonDetails" type="bcomp:BusinessType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="LegalPersonCountry" type="bcomp:CoreLocationType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- ================================================================================================ -->
+    <!-- ===  A Legatee, who is not at the same time also an Applicant.                               === -->
+    <!-- ================================================================================================ -->
+    <xsd:complexType name="LegateeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:DictionaryEntryName>Non-Applicant Legatee. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Details about the legatee, who is not an applicant.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="LegateeIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:element name="LegateePrivatePerson" type="a2comp:PrivatePersonType"
+                    minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="LegateeLegalPerson" type="a2comp:LegalPersonType"
+                    minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="LegateeLegacy" type="bcomp:LegacyType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="LegateeHasPowers" type="bcomp:PowersType"
+                minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+    
+    <!-- ================================================================================= -->
+    <!-- ===  A Heir, who is not at the same time also an Applicant.                === -->
+    <!-- ================================================================================= -->
+    <xsd:complexType name="HeirType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                <ccts:ComponentType>ABIE</ccts:ComponentType>
+                <ccts:DictionaryEntryName>Non-Applicant Heir. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Details about the Heir, who is not an applicant.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="HeirIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:element name="HeirPrivatePerson" type="a2comp:PrivatePersonType"
+                    minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="HeirLegalPerson" type="a2comp:LegalPersonType"
+                    minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="HeirSuccession" type="bcomp:SuccessionType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="HeirHasPowers" type="bcomp:PowersType"
+                minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+
+
+    <!-- ================================================================================= -->
+    <!-- === Personal Details of Any Natural Persons.                                  === -->
+    <!-- ================================================================================= -->
+    <xsd:complexType name="NaturalPersonType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Details of a person in a role of an individual.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="a2comp:NaturalPersonSurname" minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element ref="a2comp:NaturalPersonGivenName" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="a2comp:NaturalPersonBirthSurname" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="a2comp:NaturalPersonBirthGivenName" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element ref="a2comp:NaturalPersonSex" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="a2comp:NaturalPersonBirthDate" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="a2comp:NaturalPersonBirthPlace" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="a2comp:NaturalPersonBirthCountry" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="a2comp:NaturalPersonCivilStatus" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="a2comp:NaturalPersonIdentifier" minOccurs="0" maxOccurs="5"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <!-- ============================================================================================= -->
+    <!-- === Details about a Non-Applicant (heir, legatee, manager) as a Natural Person.           === -->
+    <!-- ============================================================================================= -->
+    <xsd:complexType name="PrivatePersonType">
+        <xsd:sequence>
+            <xsd:element name="PrivatePersonName" type="bcomp:PersonNameType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="PrivatePersonBirthName" type="bcomp:PersonNameType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="PrivatePersonBirthDate" type="bcomp:OccasionType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="PrivatePersonBirthPlace" type="bcomp:PlaceType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="PrivatePersonBirthCountry" type="bcomp:CoreLocationType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="PrivatePersonIdentifier" type="bcomp:IdentificationType"
+                minOccurs="0" maxOccurs="5"/>
+            <xsd:element name="PrivatePersonAddress" type="a2comp:AddressType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="PrivatePersonCountry" type="bcomp:CoreLocationType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="PrivatePersonChannel" type="code:ChannelType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <!-- ================================================================================= -->
+    <!-- === Representative of an Applicant.                                           === -->
+    <!-- ================================================================================= -->
+    <xsd:complexType name="RepresentativeType">
+        <xsd:annotation>
+            <xsd:documentation>Details about the representative of an applicant. A choice is made whether the representative is an individual (RepresentativePerson) or a legal person (RepresentativeBusiness).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:choice>
+                <xsd:element name="RepresentativePerson" type="bcomp:PersonNameType" minOccurs="0"
+                    maxOccurs="1"/>
+                <xsd:element name="RepresentativeBusiness" type="bcomp:BusinessType" minOccurs="0"
+                    maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="RepresentativeAddress" type="a2comp:AddressType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="RepresentativeCountry" type="bcomp:CoreLocationType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="RepresentativeChannel" type="code:ChannelType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="RepresentativeCapacity" type="bcomp:CapacityType" minOccurs="1"
+                maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+   
+    <!-- ====================================================================== -->
+    <!-- === Details Regarding the Spouse of a Deceased Person.             === -->
+    <!-- ====================================================================== -->
+    <xsd:complexType name="SpouseType">
+        <xsd:annotation>
+            <xsd:documentation>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:element name="SpouseSurname" type="cvb:PersonFamilyNameType" minOccurs="1"
+                maxOccurs="unbounded"/>
+            <xsd:element name="SpouseGivenName" type="cvb:PersonGivenNameType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="SpouseBirthSurname" type="cvb:PersonFamilyNameType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SpouseMarriageDate" type="cvb:PeriodOfTimeStartDateType"
+                minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="SpouseMarriagePlace" type="bcomp:PlaceType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SpouseMarriageCountry" type="bcomp:CoreLocationType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SpouseContract" type="bcomp:ContractType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="SpousePropertyEffect" type="bcomp:ContractType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SpouseStateOfLaw" type="bcomp:CoreLocationType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="SpouseChoiceOfLaw" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="SpouseTerritorialUnit" type="cvb:AddressAdminUnitLocationTwoType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="SpousePropertyRegime" type="bcomp:PropertyRegimeType"
+                minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

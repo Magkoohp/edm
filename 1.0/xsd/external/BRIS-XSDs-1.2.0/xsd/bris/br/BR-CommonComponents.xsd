@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_2/br/CommonComponents"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+	xmlns:bac="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_2/br/CommonComponents"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.2.0">
+
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+		schemaLocation="../../common/BRIS-BasicComponents.xsd" />
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+		schemaLocation="../../common/BRIS-AggregateComponents.xsd" />
+
+
+	<xsd:element name="BRMessageObject" type="BRMessageObjectType"/>
+
+	<xsd:complexType name="BRMessageObjectType">
+		<xsd:sequence>
+			<xsd:element ref="bac:MessageHeader" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+</xsd:schema>
+

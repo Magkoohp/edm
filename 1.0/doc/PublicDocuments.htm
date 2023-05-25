@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en" content="en">
+	<head>
+		<title>Public Documents XML schema</title>
+		<meta name="description" content="=An XML schema for describing Public Documents Forms">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+		<style>
+			body{
+				color: black;
+	    		background-color: white;
+	    		background-position: top left;
+	    		background-attachment: fixed;
+	    		background-repeat: no-repeat;}
+			.generatedTable tr.even:hover{background-color: #cccccc;}
+			.generatedTable tr.odd:hover{background-color: #cccccc;}
+			.generatedTable {border: 1px solid #ddd;width:100% !important}
+			.generatedTable th{color: white; background-color: #3182CC;vertical-align: top !important;}
+			#namespaces {width:50% !important;}
+			h1, h2, h3 {color: #005A9C; background: white;}
+			h5 {font-weight: 700; color: darkgoldenrod; }
+			:visited {color: #609;background: transparent;}
+			:link {color: #00C;background: transparent;}
+			.modal {background-color: white;}
+			#generatedToC ul { list-style-type: none; }
+	
+	
+	#return-to-top {
+	    position: fixed;
+	    bottom: 20px;
+	    right: 20px;
+	    background: rgb(204, 204, 204);
+	    background: rgba(204, 204, 204, 0.7);
+	    width: 50px;
+	    height: 50px;
+	    display: block;
+	    text-decoration: none;
+	    -webkit-border-radius: 35px;
+	    -moz-border-radius: 35px;
+	    border-radius: 35px;
+	    display: none;
+	    -webkit-transition: all 0.3s linear;
+	    -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	#return-to-top i {
+	    color: #fff;
+	    margin: 0;
+	    position: relative;
+	    left: 16px;
+	    top: 13px;
+	    font-size: 19px;
+	    -webkit-transition: all 0.3s ease;
+	    -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	#return-to-top:hover {
+	    /* background: rgba(49, 130, 204, 0.9); */
+		background: rgba(0, 0, 0, 0.7);
+	}
+	#return-to-top:hover i {
+	    color: #fff;
+	    top: 5px;
+	}
+	
+	
+	/* Extra Things */
+	h3 i{color: #444;}
+		</style>
+	</head>
+	<body>
+		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
+			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-09-22">2017</time></h2>
+			  <dl> 
+				<dt>This version:</dt>
+			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
+			    <dt>Latest published version:</dt>
+			    <dd><a href="http://e-documents.semic.eu/publicdocuments/latest/doc">http://e-documents.semic.eu/publicdocuments/latest/doc</a></dd>
+			        
+			    <dt>Editors:</dt>
+			    	<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Suzanne Wigard" href="mailto:suzanne.wigard@ec.europa.eu">Suzanne Wigard</a>, <a href="https://ec.europa.eu/isa2/home_en">European Commission</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Emidio Stani" href="mailto:emidio.stani@be.pwc.com">Emidio Stani</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Ioana Novacean" href="mailto:ioana.novacean@be.pwc.com">Ioana Novacean</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Inge Gielis" href="mailto:inge.gielis@be.pwc.com">Inge Gielis</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+			    </dl>
+			  
+			    <p>
+			      The English version of this specification is the only normative version. Non-normative translations may also be available.
+			    </p>
+			      <p class="copyright">
+			        <a href="https://ec.europa.eu/info/legal-notice_en#copyright-notice">Copyright</a> ©
+			        2017 
+			        
+			        <a href="https://ec.europa.eu/info/index_en">European Commission</a>, 
+			        
+			        All Rights Reserved.
+				<p>
+					The XML schemas are released under 
+						<a href="https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11">ISA Open Metadata Licence</a>.
+				</p>
+			        
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
+			 	<h2 id="h2_abstract" aria-level="1">Abstract</h2>
+			 		<p align="justify">The <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">Regulation on Public Documents</a> foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.
+					</p>
+			 		      
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="sotd" class="introductory">
+			<h2 id="h2_sotd" aria-level="1">Status of This Document</h2>
+			
+			        
+			  <p align="justify">This document has been reviewed by <a href="https://ec.europa.eu/isa2/home_en">ISA</a> staff members and <a href="http://ec.europa.eu/justice/index_en.htm">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
+			
+			    
+			    
+			  <p align="justify">The original Public Documents XML schemas were developed at <a href="https://ec.europa.eu/isa2/home_en">ISA</a>.</p>
+			  <p align="justify">The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
+			</section>
+			<section id="generatedToC">
+				<h2 id="h2_toc" aria-level="1" class="introductory">Table of Contents</h2>
+				<ul id="toc"></ul>
+			</section>
+			<section id="introduction" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+				<h3 aria-level="1" id="intro">1. Introduction</h3>
+				<p align="justify">The Regulation of the European Parliament and of the Council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.</p>
+			
+				<h3 aria-level="1" id="intro">2. Standards used</h3>
+				<p align="justify">The XML schemas generated contain the <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and the <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a> standards. </p> 
+							
+			</section>
+			
+			<section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
+				<h3 aria-level="1" id="ns">3. Namespaces</h3>
+				<p align = "justify">A full set of namespaces and prefixes used in this document is shown in the table below.</p>
+				
+				<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
+				  <thead>
+					<tr>
+						<th>Prefix</th>
+						<th>Namespace</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr><td>pdc</td><td>http://data.europa.eu/edm/1.0/ns/pdc</td></tr>
+					<tr><td>forms</td><td>http://data.europa.eu/edm/1.0/ns/forms</td></tr>
+				    <tr><td>cva</td><td>http://www.w3.org/ns/corevocabulary/AggregateComponents</td></tr>
+				    <tr><td>cvb</td><td>http://www.w3.org/ns/corevocabulary/BasicComponents</td></tr>
+				    <tr><td>udt</td><td>urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</td></tr>
+				    <tr><td>ext</td><td>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</td></tr>
+				    <tr><td>xs</td><td>http://www.w3.org/2001/XMLSchema</td></tr>
+				  </tbody>
+				</table>
+			</section>
+			
+			<section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
+				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
+				<ul>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="">formBelgium1</a>;</li>
+						<li><a href="">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/croatia#">formCroatia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
+				</ul>
+				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
+				</section>
+			<section id="generatedContent">
+				<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
+				<div class="contentTables">
+						<h4 id="forms">5.8 Package forms</h4>
+						<img alt="UML model of forms package" src="forms.jpeg" width = 100%> UML class diagram </img>
+									<h5 id="AbsenceOfCriminalRecord">5.8.1 Class AbsenceOfCriminalRecord
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the absence of a criminal record of a person. </p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class AbsenceOfCriminalRecordPerson.</td>
+												<td>1..1</td>
+												<td>pdc:AbsenceOfCriminalRecordPerson</td>
+											</tr>
+											<tr>
+												<td>IdentityNumber</td>
+												<td>This property contains the identity number. </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>IDTypeAndNo</td>
+												<td>This property refers to the class IDTypeAndNo</td>
+												<td>1..1</td>
+												<td>forms:IDTypeAndNoChoice</td>
+											</tr>
+											<tr>
+												<td>AbsenceOfACriminalRecord</td>
+												<td>This property contains the boolean value (true or false) regarding the absence of a criminal record.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="AdministrativeDocumentChoice">5.8.2 Class AdministrativeDocumentChoice
+									(choice)
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice between the different types of administrative documents. </p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Certificate</td>
+												<td>This property refers to the class Certificate.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>ExtractFromTheCivilStatusRegister</td>
+												<td>This property refers to the class ExtractFromTheCivilStatus</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>ExtractFromThePopulationRegister</td>
+												<td>This property refers to the class ExtractFromThePopulationRegister.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>VerbatimCopyOfCivilStatusRecords</td>
+												<td>This property refers to the class VerbatimCopyOfCivilStatusRecords. </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>Other</td>
+												<td>This property contains the string value referring to another type of administrative document. </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Birth">5.8.3 Class Birth
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class BirthPerson.</td>
+												<td>1..1</td>
+												<td>pdc:BirthPerson</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToEnterRegisteredPartnership">5.8.4 Class CapacityToEnterRegisteredPartnership
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the capacity to enter into a registered partnership of a couple.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson.</td>
+												<td>1..1</td>
+												<td>pdc:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>IntendedPartner</td>
+												<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson. </td>
+												<td>1..1</td>
+												<td>pdc:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>CanEnterRegisteredPartnership</td>
+												<td>This property refers to the class CanMarry. </td>
+												<td>1..1</td>
+												<td>pdc:CanMarry</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToMarry">5.8.5 Class CapacityToMarry
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the capacity to marry of a couple.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+												<td>1..1</td>
+												<td>pdc:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>IntendedSpouse</td>
+												<td>This property refers to the class CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+												<td>1..1</td>
+												<td>pdc:CapacityToMarryOrEnterRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>CanMarry</td>
+												<td>This property refers to the class CanMarry</td>
+												<td>1..1</td>
+												<td>pdc:CanMarry</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Death">5.8.6 Class Death
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class DeathPerson.</td>
+												<td>1..1</td>
+												<td>pdc:DeathPerson</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="DocumentFromCourtOrTribunalChoice">5.8.7 Class DocumentFromCourtOrTribunalChoice
+									(choice)
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice between different types of documents emanating from a court or tribunal.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>CourtDecision</td>
+												<td>This property refers to the class CourtDecision. </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DocumentEmanatingFromAPublicProsecutor</td>
+												<td>This property refers to the class DocumentEmanatingFromAPublicProsecutor. </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DocumentEmanatingFromAClerkOfACourt</td>
+												<td>This property refers to the class DocumentEmanatingFromAClerkOfACourt. </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DocumentEmanatingFromAJudicialOfficer</td>
+												<td>This property refers to the class DocumentEmanatingFromAJudicialOfficer. </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>Other</td>
+												<td>This property contains the string value referring to another type of document coming from court or tribunal.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="DocumentInfo">5.8.8 Class DocumentInfo
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to information about a document. </p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Kind</td>
+												<td>This property refers to the class DocumentKindChoice.</td>
+												<td>1..1</td>
+												<td>forms:DocumentKindChoice</td>
+											</tr>
+											<tr>
+												<td>IssueDate</td>
+												<td>This property contains the issue date of the document.
+									</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>ReferenceNumber</td>
+												<td>This property contains the reference number of the document.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="DocumentKindChoice">5.8.9 Class DocumentKindChoice
+									(choice)
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice between different types of documents.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>DocumentFromCourtOrTribunal</td>
+												<td>This property refers to the class DocumentFromCourtOrTribunalChoice. </td>
+												<td>1..1</td>
+												<td>forms:DocumentFromCourtOrTribunalChoice</td>
+											</tr>
+											<tr>
+												<td>AdministrativeDocument</td>
+												<td>This property refers to the class AdministrativeDocumentChoice. </td>
+												<td>1..1</td>
+												<td>forms:AdministrativeDocumentChoice</td>
+											</tr>
+											<tr>
+												<td>NotarialAct</td>
+												<td>This property refers to the class NotarialAct. </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>OfficialCertificateOnDocumentSignedByPerson</td>
+												<td>This property refers to the class OfficialCertificateOnDocumentSignedByPerson.  </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DocumentDrawnUpByDiplomaticOrConsularAgent</td>
+												<td>This property refers to the class DocumentDrawnUpByDiplomaticOrConsularAgent.  </td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="DomicileAndOrResidence">5.8.10 Class DomicileAndOrResidence
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the domicile and/or residence of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ConcernedPerson</td>
+												<td>This property refers to the class BirthPerson.</td>
+												<td>1..1</td>
+												<td>pdc:BirthPerson</td>
+											</tr>
+											<tr>
+												<td>Domicile</td>
+												<td>This property refers to the class Address.</td>
+												<td>0..1</td>
+												<td>pdc:Address</td>
+											</tr>
+											<tr>
+												<td>Residence</td>
+												<td>This property refers to the class Address.</td>
+												<td>0..1</td>
+												<td>pdc:Address</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FormHeader">5.8.11 Class FormHeader
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form header of a form.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Country</td>
+												<td>This property refers to the class Country.</td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>AuthorityIssuingForm</td>
+												<td>This property refers to the class Authority.</td>
+												<td>1..1</td>
+												<td>pdc:Authority</td>
+											</tr>
+											<tr>
+												<td>AuthorityIssuingDocument</td>
+												<td>This property refers to the class Authority.</td>
+												<td>1..1</td>
+												<td>pdc:Authority</td>
+											</tr>
+											<tr>
+												<td>DocumentInfo</td>
+												<td>This property refers to the class DocumentInfo. </td>
+												<td>1..1</td>
+												<td>forms:DocumentInfo</td>
+											</tr>
+											<tr>
+												<td>SignatureInfo</td>
+												<td>This property refers to the class SignatureInfo.</td>
+												<td>1..1</td>
+												<td>forms:SignatureInfo</td>
+											</tr>
+											<tr>
+												<td>Title</td>
+												<td>This property contains the title of the form, corresponding to the main subject or life area covered in the form. </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>ImportantNotice</td>
+												<td>This property contains a notice on the purpose of the form. </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>NoteForTheIssuingAuthority</td>
+												<td>This property contains a note for the issuing authority regarding which information is to be mentioned. </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmAbsenceOfCriminalRecord">5.8.12 Class FrmAbsenceOfCriminalRecord
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form AbsenceOfCriminalRecord.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader. </td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class AbsenceOfCriminalRecord.</td>
+												<td>1..1</td>
+												<td>forms:AbsenceOfCriminalRecord</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmBirth">5.8.13 Class FrmBirth
+									
+									</h5>
+									<p><b>Definition:</b> This class contains elements related to the form Birth.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class Birth.</td>
+												<td>1..1</td>
+												<td>forms:Birth</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmCapacityToEnterRegisteredPartnerShip">5.8.14 Class FrmCapacityToEnterRegisteredPartnerShip
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form CapacityToEnterRegisteredPartnership.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class CapacityToEnterRegisteredPartnership.</td>
+												<td>1..1</td>
+												<td>forms:CapacityToEnterRegisteredPartnership</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmCapacityToMarry">5.8.15 Class FrmCapacityToMarry
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form CapacityToMarry.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class CapacityToMarry.</td>
+												<td>1..1</td>
+												<td>forms:CapacityToMarry</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmDeath">5.8.16 Class FrmDeath
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form Death. </p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class Death.</td>
+												<td>1..1</td>
+												<td>forms:Death</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmDomicileAndOrResidence">5.8.17 Class FrmDomicileAndOrResidence
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form DomicileAndOrResidence.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class DomicileAndOrResidence.</td>
+												<td>1..1</td>
+												<td>forms:DomicileAndOrResidence</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmLife">5.8.18 Class FrmLife
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form Life.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class Life.</td>
+												<td>1..1</td>
+												<td>forms:Life</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmMaritalStatus">5.8.19 Class FrmMaritalStatus
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form MaritalStatus.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class MaritalStatus.</td>
+												<td>1..1</td>
+												<td>forms:MaritalStatus</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmMarriage">5.8.20 Class FrmMarriage
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form Marriage.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class Marriage.</td>
+												<td>1..1</td>
+												<td>forms:Marriage</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmRegisteredPartnerShip">5.8.21 Class FrmRegisteredPartnerShip
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form RegisteredPartnership.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class RegisteredPartnership.</td>
+												<td>1..1</td>
+												<td>forms:RegisteredPartnership</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="FrmRegisteredPartnerShipStatus">5.8.22 Class FrmRegisteredPartnerShipStatus
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the form RegisteredPartnershipStatus.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Header</td>
+												<td>This property refers to the class FormHeader.</td>
+												<td>1..1</td>
+												<td>forms:FormHeader</td>
+											</tr>
+											<tr>
+												<td>Body</td>
+												<td>This property refers to the class RegisteredPartnershipStatus.</td>
+												<td>1..1</td>
+												<td>forms:RegisteredPartnershipStatus</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="IDTypeAndNoChoice">5.8.23 Class IDTypeAndNoChoice
+									(choice)
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice between the types of ID used to identify a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>NationalIdentityCardNo</td>
+												<td>This property contains the string value of the number of the national identity card.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>PassportNo</td>
+												<td>This property contains the string value of the passport number.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DrivingLicenceNo</td>
+												<td>This property contains the string value of the driving licence number.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>OtherIDType</td>
+												<td>This property refers to the class OtherIDType.</td>
+												<td>1..1</td>
+												<td>forms:OtherIDType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Life">5.8.24 Class Life
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the life of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class BirthPerson</td>
+												<td>1..1</td>
+												<td>pdc:BirthPerson</td>
+											</tr>
+											<tr>
+												<td>Address</td>
+												<td>This property refers to the class Address.</td>
+												<td>1..1</td>
+												<td>pdc:Address</td>
+											</tr>
+											<tr>
+												<td>IsAlive</td>
+												<td>This property contains the boolean value (true or false) for whether the person is alive.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="MaritalStatus">5.8.25 Class MaritalStatus
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the marital status of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class MaritalOrRegisteredPartnershipStatusPerson.</td>
+												<td>1..1</td>
+												<td>pdc:MaritalOrRegisteredPartnershipStatusPerson</td>
+											</tr>
+											<tr>
+												<td>MaritalStatus</td>
+												<td>This property refers to the class MaritalStatusChoice.</td>
+												<td>1..1</td>
+												<td>pdc:MaritalStatusChoice</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Marriage">5.8.26 Class Marriage
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to a marriage.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>SpouseA</td>
+												<td></td>
+												<td>1..1</td>
+												<td>pdc:Person</td>
+											</tr>
+											<tr>
+												<td>SpouseB</td>
+												<td></td>
+												<td>1..1</td>
+												<td>pdc:Person</td>
+											</tr>
+											<tr>
+												<td>DateOfMarriage</td>
+												<td></td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfMarriage</td>
+												<td></td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="OtherIDType">5.8.27 Class OtherIDType
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to ID types other than national identity cards, passports, or driving licences.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>IDType</td>
+												<td></td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>IDNumber</td>
+												<td></td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="RegisteredPartnership">5.8.28 Class RegisteredPartnership
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to a registered partnership.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>PartnerA</td>
+												<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
+												<td>1..1</td>
+												<td>pdc:MarriageOrRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>PartnerB</td>
+												<td>This property refers to the class MarriageOrRegisteredPartnershipPerson.</td>
+												<td>1..1</td>
+												<td>pdc:MarriageOrRegisteredPartnershipPerson</td>
+											</tr>
+											<tr>
+												<td>DateOfRegisteredPartnership</td>
+												<td>This property contains the date the registered partnership is concluded.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfRegisteredPartnership</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="RegisteredPartnershipStatus">5.8.29 Class RegisteredPartnershipStatus
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the registered partnership status of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Person</td>
+												<td>This property refers to the class MaritalOrRegisteredPartnershipStatusPerson.</td>
+												<td>1..1</td>
+												<td>pdc:MaritalOrRegisteredPartnershipStatusPerson</td>
+											</tr>
+											<tr>
+												<td>RegisteredPartnershipStatus</td>
+												<td>This property refers to the class MaritalStatusChoice.</td>
+												<td>1..1</td>
+												<td>pdc:MaritalStatusChoice</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="SignatureInfo">5.8.30 Class SignatureInfo
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the signature of the official handling the document.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>SurnameForenameOfficial</td>
+												<td>This property contains the surname and forename of the official.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>PositionOfOfficial</td>
+												<td>This property contains the position of the official.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>IssueDate</td>
+												<td>This property contains the issue data of the document.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>Signature</td>
+												<td>Although the signature field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>SealOrStamp</td>
+												<td>Although the seal or stamp field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  </td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+						
+						<h4 id="pdc">5.12 Package pdc</h4>
+						<img alt="UML model of pdc package" src="pdc.jpeg" width = 100%> UML class diagram </img>
+									<h5 id="AbsenceOfCriminalRecordPerson">5.12.1 Class AbsenceOfCriminalRecordPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the absence of a criminal record for a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>This property contains the surname (i.e. last name or family name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the forename (i.e. the first name or given name) of the person. </td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the date of birth of the person.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfBirth</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfBirth</td>
+												<td>This property refers to the class Country.</td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property refers to the class Sex.</td>
+												<td>1..1</td>
+												<td>cls:Sex</td>
+											</tr>
+											<tr>
+												<td>Nationality</td>
+												<td>This property refers to the class Nationality.</td>
+												<td>1..*</td>
+												<td>pdc:Nationality</td>
+											</tr>
+											<tr>
+												<td>PreviousSurname</td>
+												<td>This property contains the previous surname(s) of the person.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>PreviousForename</td>
+												<td>This property contains the previous forename(s) of the person.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Address">5.12.2 Class Address
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to an address.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>StreetPOBox</td>
+												<td>This property contains contains the Street PO Box details of the address.
+									</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Place</td>
+												<td>This property contains the location specification of the address.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Country</td>
+												<td>This property contains the name of the country.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>PostalCode</td>
+												<td>This property contains the postal code of the address</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Authority">5.12.3 Class Authority
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the designation of an authority.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Designation</td>
+												<td>This property contains the designation of the authority.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="BirthPerson">5.12.4 Class BirthPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the birth of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>This property contains the person's surname.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the forename (first name or given name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the date of birth of the person.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfBirth</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfBirth</td>
+												<td>This property refers to the class Country.</td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property refers to the class Sex.</td>
+												<td>1..1</td>
+												<td>cls:Sex</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CanMarry">5.12.5 Class CanMarry
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the capacity to marry of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>HasCapacityToMarry</td>
+												<td>The person concerned has the capacity to marry under the national law of the Member State where the public document is issued.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>AppearsToHaveNoMarriage</td>
+												<td>The person concerned appears to have no marriage in his or her name under the national law of the Member State where the public document is issued.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>NoKnownImpediment</td>
+												<td>There is no known impediment for the person concerned to marry under the national law of the Member State where the public document is issued.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>NoKnownImpedimentIntendedSpouse</td>
+												<td>There is no known impediment to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>NoOppositionknown</td>
+												<td>There is no opposition known to a marriage between the person concerned and his or her intended spouse under the national law of the Member State where the public document is issued.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="CapacityToMarryOrEnterRegisteredPartnershipPerson">5.12.6 Class CapacityToMarryOrEnterRegisteredPartnershipPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the capacity to marry or enter into a registered partnership of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>This property contains the surname (i.e. the last name or family name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the forename (i.e. the first name or given name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the date of birth of the person.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfBirth</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfBirth</td>
+												<td>This property refers to the class Country. </td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property refers to the class Sex.</td>
+												<td>1..1</td>
+												<td>cls:Sex</td>
+											</tr>
+											<tr>
+												<td>Nationality</td>
+												<td>This property refers to the class Nationality.</td>
+												<td>0..*</td>
+												<td>pdc:Nationality</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Country">5.12.7 Class Country
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to a country.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Code</td>
+												<td>This property refers to the class CountryCode.</td>
+												<td>0..1</td>
+												<td>ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContent</td>
+											</tr>
+											<tr>
+												<td>Name</td>
+												<td>This property contains the name of the country.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="DeathPerson">5.12.8 Class DeathPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the death of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>This property contains the surname (i.e. the last name or family name) of the person. </td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the forename (i.e. the first name or given name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the date of birth of the person.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfBirth</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfBirth</td>
+												<td>This property refers to the class Country.</td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>DateOfDeath</td>
+												<td>This property contains the date of death of the person.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfDeath</td>
+												<td>This property refers to the class Place. </td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfDeath</td>
+												<td>This property refers to the class Country.</td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property refers to the class Sex.
+									</td>
+												<td>1..1</td>
+												<td>cls:Sex</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="MaritalOrRegisteredPartnershipStatusPerson">5.12.9 Class MaritalOrRegisteredPartnershipStatusPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the marital or registered partnership status of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>This property contains the surname (i.e. the last name or family name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>SurnameAtBirth</td>
+												<td>This property contains the person's surname at the time of his/her birth.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the person's forename (i.e. first name or given name).</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the person's date of birth.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfBirth</td>
+												<td>This property refers to the class Place.</td>
+												<td>1..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfBirth</td>
+												<td>This property refers to the class Country.</td>
+												<td>1..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property refers to the class Sex.</td>
+												<td>1..1</td>
+												<td>cls:Sex</td>
+											</tr>
+											<tr>
+												<td>Nationality</td>
+												<td>This property refers to the class Nationality.</td>
+												<td>1..*</td>
+												<td>pdc:Nationality</td>
+											</tr>
+											<tr>
+												<td>SurnameBefore</td>
+												<td>This property contains the previous surname of the person.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>SurnameAfter</td>
+												<td>This property contains the future surname of the person.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="MaritalStatusChoice">5.12.10 Class MaritalStatusChoice
+									(choice)
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>DateOfMarriageOrRegisteredPartnership</td>
+												<td>This property contains the date of marriage.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>NotMarried</td>
+												<td>This property refers to the class NotMarriedChoice.</td>
+												<td>1..1</td>
+												<td>pdc:NotMarriedChoice</td>
+											</tr>
+											<tr>
+												<td>Undetermined</td>
+												<td>This property refers to the class Undetermined.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="MarriageOrRegisteredPartnershipPerson">5.12.11 Class MarriageOrRegisteredPartnershipPerson
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the marriage or registered partnership of a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>SurnameAtBirth</td>
+												<td>This property contains the surname of the person at the time of his/her birth.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the forename (i.e. the first name or given name) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the date of birth of the person.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property refers to the class Sex.</td>
+												<td>1..1</td>
+												<td>cls:Sex</td>
+											</tr>
+											<tr>
+												<td>SurnameBefore</td>
+												<td>This property contains the previous surname(s) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>SurnameAfter</td>
+												<td>This property contains the future surname(s) of the person.</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Nationality">5.12.12 Class Nationality
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to a nationality.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Name</td>
+												<td>This property contains the name of the nationality.</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="NotMarriedChoice">5.12.13 Class NotMarriedChoice
+									(choice)
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to the specific situation of not-married individuals.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>NeverMarried</td>
+												<td>This property refers to the class NeverMarried.</td>
+												<td>1..1</td>
+												<td>udt:IndicatorType</td>
+											</tr>
+											<tr>
+												<td>DivorceDate</td>
+												<td>This property contains the date of the divorce.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>WidowshipDate</td>
+												<td>This property contains the date of widowship.</td>
+												<td>1..1</td>
+												<td>udt:DateType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Official">5.12.14 Class Official
+									
+									</h5>
+									<p><b>Definition:</b></p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>cvb:PersonFamilyName</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>cvb:PersonGivenName</td>
+												<td>1..*</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Person">5.12.15 Class Person
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to a person.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Surname</td>
+												<td>This property contains the person's last name.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>SurnameAtBirth</td>
+												<td>This property contains the person's last name at the time of his/her birth.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>Forename</td>
+												<td>This property contains the person's first name or given name.</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>DateOfBirth</td>
+												<td>This property contains the person's date of birth.
+									</td>
+												<td>0..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfBirth</td>
+												<td>This property refers to the class Place.</td>
+												<td>0..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfBirth</td>
+												<td>This property refers to the class Country.</td>
+												<td>0..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>DateOfDeath</td>
+												<td>This property contains the person's date of death (if applicable).</td>
+												<td>0..1</td>
+												<td>udt:DateType</td>
+											</tr>
+											<tr>
+												<td>PlaceOfDeath</td>
+												<td>This property refers to the class Place.</td>
+												<td>0..1</td>
+												<td>pdc:Place</td>
+											</tr>
+											<tr>
+												<td>CountryOfDeath</td>
+												<td>This property refers to the class Country.</td>
+												<td>0..1</td>
+												<td>pdc:Country</td>
+											</tr>
+											<tr>
+												<td>Sex</td>
+												<td>This property contains the sex of the person</td>
+												<td>0..1</td>
+												<td>cls:Sex</td>
+											</tr>
+											<tr>
+												<td>Nationality</td>
+												<td>This property refers to the class Nationality.</td>
+												<td>0..*</td>
+												<td>pdc:Nationality</td>
+											</tr>
+											<tr>
+												<td>Domicile</td>
+												<td>This property refers to the class Address.
+									</td>
+												<td>0..1</td>
+												<td>pdc:Address</td>
+											</tr>
+											<tr>
+												<td>Residence</td>
+												<td>This property refers to the class Address</td>
+												<td>0..1</td>
+												<td>pdc:Address</td>
+											</tr>
+											<tr>
+												<td>SurnameBefore</td>
+												<td>This property contains the past surname of the person (if applicable)</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>SurnameAfter</td>
+												<td>This property contains the future surname of the person (if applicable)</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>PreviousSurname</td>
+												<td>This property contains the previous surname of the person (if applicable)
+									</td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+											<tr>
+												<td>PreviousForename</td>
+												<td>This property contains the previous forename (first name) of the person (if applicable). </td>
+												<td>0..*</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5 id="Place">5.12.16 Class Place
+									
+									</h5>
+									<p><b>Definition:</b>This class contains elements related to a place.</p>
+									<table class="generatedTable table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Property Name</th>
+												<th>Definition</th>
+												<th>Cardinality</th>
+												<th>Data Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Name</td>
+												<td>This property contains the name of the place (geographic location).</td>
+												<td>1..1</td>
+												<td>udt:TextType</td>
+											</tr>
+										</tbody>
+									</table>
+						
+				</div>
+			</section>
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
+				<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
+				<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
+			<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
+					<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+						<dl about class = "bibliography">
+							<dt id : "bib-PD">Public Documents Regulation</dt>
+							<dd rel = "dcterms: requires ">
+							"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191"> 
+								<cite>Regulation (EU) 2016/1191</cite>	 				
+								</a>
+							. July 2016. EU Regulation. URL:
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191</a>
+							</dd>
+							</dt>
+						</dl>
+				</section>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
+					<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
+				</section>
+			</section>
+		</div>
+		<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src='jquery.toc.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
+		<script type="text/javascript">
+		    var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
+			var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex"};
+		</script>
+		<script src='initialize.js'></script>
+	</body>
+</html>

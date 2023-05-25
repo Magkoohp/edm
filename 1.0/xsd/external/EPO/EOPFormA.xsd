@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- ====================================================================== -->
+ <!-- ===== BD00001 EOPFormA Schema Module ===== -->
+ <!-- ====================================================================== -->
+
+ <!-- 
+ Application for a european order for payment
+ 
+
+  Courtesy of Judicial Information Agency of the Dutch Department of Security and Justice
+ 
+ -->
+ <xsd:schema xmlns:bd="http://data.ecodex.eu/epo/document/EOPFormA-3" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:jus="http://data.ecodex.eu/jus/dictionary-0" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:11" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://data.ecodex.eu/epo/document/EOPFormA-3" attributeFormDefault="unqualified" elementFormDefault="qualified" version="3.0">
+<!-- ======================================================================= -->
+<!-- ===== Import of External Business Document Header                 ===== -->
+<!-- ======================================================================= -->
+  <xsd:import schemaLocation="../../../xbielib/SBDH/StandardBusinessDocumentHeader.xsd" namespace="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"/>
+<!-- ======================================================================= -->
+<!-- ===== Imports                                                     ===== -->
+<!-- ======================================================================= -->
+<!-- ===== Import of Unqualified Data Type                            ===== -->
+<!-- ======================================================================= -->
+  <xsd:import schemaLocation="UnqualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11"/>
+<!-- ======================================================================= -->
+<!-- ===== Import of Qualified Data Type                               ===== -->
+<!-- ======================================================================= -->
+  <xsd:import schemaLocation="QualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:11"/>
+<!-- =================================================================== -->
+<!-- ===== Justice. -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="Justice.xsd" namespace="http://data.ecodex.eu/jus/dictionary-0"/>
+<!-- ======================================================================= -->
+<!-- Element Declarations                                                    -->
+<!-- ======================================================================= -->
+<!-- Root Element                                                            -->
+<!-- ======================================================================= -->
+  <xsd:element type="bd:EOPFormAType" name="EOPFormA">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>BD00001</ccts:UniqueID>
+        <ccts:Acronym>RSM</ccts:Acronym>
+        <ccts:Name>EOPFormA</ccts:Name>
+        <ccts:Version>3.0.0.0</ccts:Version>
+        <ccts:Definition>Application for a european order for payment</ccts:Definition>
+        <ccts:ObjectClassTerm>EOP FormA</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+<!-- ================================================================== -->
+<!-- ===== Type Definition                                        ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="EOPFormAType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID>BD00001</ccts:UniqueID>
+        <ccts:Version>3.0.0.0</ccts:Version>
+        <ccts:Definition>Application for a european order for payment</ccts:Definition>
+        <ccts:Acronym>MA</ccts:Acronym>
+        <ccts:ObjectClassTerm>EOP FormA</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+<!-- =================================================================== -->
+<!-- ===== Standard Header Elements                                      -->
+<!-- =================================================================== -->
+      <xsd:element ref="sbdh:StandardBusinessDocumentHeader"/>
+<!-- =================================================================== -->
+<!-- ===== Business Document Content Elements                            -->
+<!-- =================================================================== -->
+      <xsd:element type="jus:CaseType" name="Case">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>EOP FormA</ccts:ObjectClassTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Case</ccts:AssociatedObjectClassTerm>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:StatementType" name="Statement" maxOccurs="3">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:Cardinality>1..3</ccts:Cardinality>
+            <ccts:ObjectClassTerm>EOP FormA</ccts:ObjectClassTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Statement</ccts:AssociatedObjectClassTerm>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:AttachmentType" name="Attachment" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:Cardinality>1..unbounded</ccts:Cardinality>
+            <ccts:ObjectClassTerm>EOP FormA</ccts:ObjectClassTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Attachment</ccts:AssociatedObjectClassTerm>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

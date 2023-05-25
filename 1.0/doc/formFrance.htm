@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en" content="en">
+	<head>
+		<title>Public Documents XML schema</title>
+		<meta name="description" content="=An XML schema for describing Public Documents Forms">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+		<style>
+			body{
+				color: black;
+	    		background-color: white;
+	    		background-position: top left;
+	    		background-attachment: fixed;
+	    		background-repeat: no-repeat;}
+			.generatedTable tr.even:hover{background-color: #cccccc;}
+			.generatedTable tr.odd:hover{background-color: #cccccc;}
+			.generatedTable {border: 1px solid #ddd;width:100% !important}
+			.generatedTable th{color: white; background-color: #3182CC;vertical-align: top !important;}
+			#namespaces {width:50% !important;}
+			h1, h2, h3 {color: #005A9C; background: white;}
+			h5 {font-weight: 700; color: darkgoldenrod; }
+			:visited {color: #609;background: transparent;}
+			:link {color: #00C;background: transparent;}
+			.modal {background-color: white;}
+			#generatedToC ul { list-style-type: none; }
+	
+	
+	#return-to-top {
+	    position: fixed;
+	    bottom: 20px;
+	    right: 20px;
+	    background: rgb(204, 204, 204);
+	    background: rgba(204, 204, 204, 0.7);
+	    width: 50px;
+	    height: 50px;
+	    display: block;
+	    text-decoration: none;
+	    -webkit-border-radius: 35px;
+	    -moz-border-radius: 35px;
+	    border-radius: 35px;
+	    display: none;
+	    -webkit-transition: all 0.3s linear;
+	    -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	#return-to-top i {
+	    color: #fff;
+	    margin: 0;
+	    position: relative;
+	    left: 16px;
+	    top: 13px;
+	    font-size: 19px;
+	    -webkit-transition: all 0.3s ease;
+	    -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	    -o-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	}
+	#return-to-top:hover {
+	    /* background: rgba(49, 130, 204, 0.9); */
+		background: rgba(0, 0, 0, 0.7);
+	}
+	#return-to-top:hover i {
+	    color: #fff;
+	    top: 5px;
+	}
+	
+	
+	/* Extra Things */
+	h3 i{color: #444;}
+		</style>
+	</head>
+	<body>
+		<div id="mybody" style="width:90%;float:left;padding:0em 1em">
+			  <h1 class="title p-name" id="title" property="dcterms:title">PublicDocuments</h1>
+			  <h2 id="ejustice-schema-GETDATE" property="dcterms:issued" datatype="xsd:dateTime" content="GETDATE"><abbr title="e-Justice">e-Justice</abbr> XML Schema on Public Documents <time class="dt-published" datetime="2017-09-22">2017</time></h2>
+			  <dl> 
+				<dt>This version:</dt>
+			    <dd><a class="u-url" href="http://e-documents.semic.eu/publicdocuments/1.0/doc">http://e-documents.semic.eu/publicdocuments/1.0/doc</a></dd>
+			    <dt>Latest published version:</dt>
+			    <dd><a href="http://e-documents.semic.eu/publicdocuments/latest/doc">http://e-documents.semic.eu/publicdocuments/latest/doc</a></dd>
+			        
+			    <dt>Editors:</dt>
+			    	<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Suzanne Wigard" href="mailto:suzanne.wigard@ec.europa.eu">Suzanne Wigard</a>, <a href="https://ec.europa.eu/isa2/home_en">European Commission</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Emidio Stani" href="mailto:emidio.stani@be.pwc.com">Emidio Stani</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Ioana Novacean" href="mailto:ioana.novacean@be.pwc.com">Ioana Novacean</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+					<dd class="p-author h-card vcard" rel="bibo:editor" inlist="">
+						<span typeof="foaf:Person">
+							<a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Inge Gielis" href="mailto:inge.gielis@be.pwc.com">Inge Gielis</a>, <a href="https://www.pwc.be">PwC</a>
+						</span>
+					</dd>
+			    </dl>
+			  
+			    <p>
+			      The English version of this specification is the only normative version. Non-normative translations may also be available.
+			    </p>
+			      <p class="copyright">
+			        <a href="https://ec.europa.eu/info/legal-notice_en#copyright-notice">Copyright</a> ©
+			        2017 
+			        
+			        <a href="https://ec.europa.eu/info/index_en">European Commission</a>, 
+			        
+			        All Rights Reserved.
+				<p>
+					The XML schemas are released under 
+						<a href="https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11">ISA Open Metadata Licence</a>.
+				</p>
+			        
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
+			 	<h2 id="h2_abstract" aria-level="1">Abstract</h2>
+			 		<p align="justify">The <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">Regulation on Public Documents</a> foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.
+					</p>
+			 		      
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="sotd" class="introductory">
+			<h2 id="h2_sotd" aria-level="1">Status of This Document</h2>
+			
+			        
+			  <p align="justify">This document has been reviewed by <a href="https://ec.europa.eu/isa2/home_en">ISA</a> staff members and <a href="http://ec.europa.eu/justice/index_en.htm">DG Justice</a> staff members. It is a stable document and may be used as reference material or cited from another document. ISA's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web.</p>
+			
+			    
+			    
+			  <p align="justify">The original Public Documents XML schemas were developed at <a href="https://ec.europa.eu/isa2/home_en">ISA</a>.</p>
+			  <p align="justify">The Public Documents XML schemas incorporate terms from pre-existing vocabularies, such as <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a>, where stable terms with appropriate meanings could be found, such as cvb:PersonFamilyName and udt:TextType.  Informal summary definitions of these terms are included here for convenience, while complete definitions are available in the provided authoritative references.  Changes to definitions in those references, if any, will supersede the summaries given in this specification.</p>
+			</section>
+			<section id="generatedToC">
+				<h2 id="h2_toc" aria-level="1" class="introductory">Table of Contents</h2>
+				<ul id="toc"></ul>
+			</section>
+			<section id="introduction" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+				<h3 aria-level="1" id="intro">1. Introduction</h3>
+				<p align="justify">The Regulation of the European Parliament and of the Council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union foresees the use of multilingual standard forms suitable for electronic exchange in order to facilitate the translation of the public documents to which they are attached.
+			This project aims to create the technical representations of the standardised forms for the Regulation on Public Documents as XML schema files (xsd).
+			In order to maximize semantic and technical interoperability, the XML schemas use existing standards or results from previous projects where possible, and have - at the core - a common subset of each form while additional elements are included, if needed, for each Member State of the EU.</p>
+			
+				<h3 aria-level="1" id="intro">2. Standards used</h3>
+				<p align="justify">The XML schemas generated contain the <a href="https://joinup.ec.europa.eu/asset/core_vocabularies/description">Core Vocabularies</a> and the <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL</a> standards. </p> 
+							
+			</section>
+			
+			<section id="namespaces-1" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter">
+				<h3 aria-level="1" id="ns">3. Namespaces</h3>
+				<p align = "justify">A full set of namespaces and prefixes used in this document is shown in the table below.</p>
+				
+				<table id="namespaces" class="generatedTable table table-striped table-bordered nowrap">
+				  <thead>
+					<tr>
+						<th>Prefix</th>
+						<th>Namespace</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr><td>pdc</td><td>http://data.europa.eu/edm/1.0/ns/pdc</td></tr>
+					<tr><td>forms</td><td>http://data.europa.eu/edm/1.0/ns/forms</td></tr>
+				    <tr><td>cva</td><td>http://www.w3.org/ns/corevocabulary/AggregateComponents</td></tr>
+				    <tr><td>cvb</td><td>http://www.w3.org/ns/corevocabulary/BasicComponents</td></tr>
+				    <tr><td>udt</td><td>urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</td></tr>
+				    <tr><td>ext</td><td>urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</td></tr>
+				    <tr><td>xs</td><td>http://www.w3.org/2001/XMLSchema</td></tr>
+				  </tbody>
+				</table>
+			</section>
+			
+			<section id="vocabulary-overview" rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" class="informative">
+				<h3 aria-level="1" id="overview">4. Vocabulary Overview</h3>
+				<p align="justify">The XML schemas are based on a UML class diagram. Currently, the following main packages distinguish themselves within the class diagram:</p>
+				<ul>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/spain#">formSpain</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/france#">formFrance</a>;</li>
+						<li><a href="">formBelgium1</a>;</li>
+						<li><a href="">formSlovakia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/finland#">formFinland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/cyprus#">formCyprus</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/latvia#">formLatvia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms">forms</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/poland#">formPoland</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/croatia#">formCroatia</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/austria#">formAustria</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/pdc">pdc</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/romania#">formRomania</a>;</li>
+						<li><a href="http://data.europa.eu/edm/1.0/ns/forms/czechrepublic#">formCzechRepublic</a>;</li>
+				</ul>
+				<p align="justify"> The UML class diagram illustrations for each package are available in their respective sections. </p>
+				</section>
+			<section id="generatedContent">
+				<h3 id="VocabularySpecification">5. Vocabulary Specification</h3>
+				<div class="contentTables">
+				<h4 id="formFrance">5.1 Package formFrance</h4>
+				<img alt="UML model of formFrance package" src="formFrance.jpeg" width = 100%> UML class diagram </img>
+							<h5 id="AbsenceOfCriminalRecord">5.1.1 Class AbsenceOfCriminalRecord
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>PublicDocumentVerificationWebsite</td>
+										<td>This property contains the URL of the public document verification website.</td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Birth">5.1.2 Class Birth
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>KeyReferences</td>
+										<td>This property refers to the class KeyReferencesChoice.</td>
+										<td>1..1</td>
+										<td>formFrance:KeyReferencesChoice</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="BirthPerson">5.1.3 Class BirthPerson
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>DeclaredByOther</td>
+										<td>This property relates to the class DeclaredByOtherChoice.</td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>DeclaredByParent</td>
+										<td>This property relates to the class DeclaredByParentChoice.</td>
+										<td>1..1</td>
+										<td>formFrance:DeclaredByParentChoice</td>
+									</tr>
+									<tr>
+										<td>BirthTime</td>
+										<td>This property contains the time of birth of the person concerned by the form.</td>
+										<td>1..1</td>
+										<td>udt:TimeType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="CapacityToMarry">5.1.4 Class CapacityToMarry
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>MarriagePublished</td>
+										<td>This property contains the boolean value of whether there is a marriage published concerning the person concerned by the form. </td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>AdditionalInformation</td>
+										<td>This form contains additional information. </td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="ConsentNeededChoice">5.1.5 Class ConsentNeededChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice of whether consent is needed.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>ConsentNeeded</td>
+										<td>This property refers to the class ConsentNeeded.</td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>NoConsentNeeded</td>
+										<td>This class relates to the class NoConsentNeeded.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DeathDeclarer">5.1.6 Class DeathDeclarer
+							
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the person declaring a death. </p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Person</td>
+										<td>This property refers to the class Person.</td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>RelationshipToDeceased</td>
+										<td>This class contains information about the relationship to the deceased of the person declaring the death. </td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DeathPerson">5.1.7 Class DeathPerson
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>FormerSpouseOrPartner</td>
+										<td>This property refers to the class FormerSpouseOrPartnerChoice.</td>
+										<td>1..1</td>
+										<td>formFrance:FormerSpouseOrPartnerChoice</td>
+									</tr>
+									<tr>
+										<td>TimeOfDeath</td>
+										<td>This property contains the time of death of the person concerned by the form. </td>
+										<td>1..1</td>
+										<td>udt:TimeType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DeclaredByParentChoice">5.1.8 Class DeclaredByParentChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice of which parent declared the person concerned by the form.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>DeclaredByFather</td>
+										<td>This property refers to the class DeclaredByFather.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>DeclaredByMother</td>
+										<td>This property refers to the class DeclaredByMother.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>DeclaredByFatherAndMother</td>
+										<td>This property relates to the class DeclaredByFatherAndMother.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Divorce">5.1.9 Class Divorce
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>DivorcePerson</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>DivorceDate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>NatureOfDivorceDecision</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>DivorceAuthority</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="DocumentInfo">5.1.10 Class DocumentInfo
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>DateOfDecision</td>
+										<td>This property contains the date the decision mentioned in the form was taken. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>CertificateOfficial</td>
+										<td>This property refers to the class Official. </td>
+										<td>1..1</td>
+										<td>pdc:Official</td>
+									</tr>
+									<tr>
+										<td>DateOfAuthorisation</td>
+										<td>This property contains the date when an authorisation was given. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>NatureOfDecision</td>
+										<td>This property contains the nature of the decision mentioned in the form.</td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>AuthorisationAuthority</td>
+										<td>This property refers to the class Authority.</td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+									<tr>
+										<td>OtherMentions</td>
+										<td>This property contains other mentions. </td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>IssueTime</td>
+										<td>This property contains the time of issue of the form.</td>
+										<td>1..1</td>
+										<td>udt:TimeType</td>
+									</tr>
+									<tr>
+										<td>DecisionAuthority</td>
+										<td>This property refers to the class Authority. </td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FormerSpouseOrPartner">5.1.11 Class FormerSpouseOrPartner
+							
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the former spouse or partner of the person concerned by the form. </p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>FormerSpouseOrPartner</td>
+										<td>This property refers to the class Person. </td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="FormerSpouseOrPartnerChoice">5.1.12 Class FormerSpouseOrPartnerChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice of whether the person concerned by the form has a former spouse or partner.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>FormerSpouseOrPartner</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formFrance:FormerSpouseOrPartner</td>
+									</tr>
+									<tr>
+										<td>NoFormerOrPartnerSpouse</td>
+										<td>This property relates to the class NoFormerSpouseOrPartner.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="KeyReferencesChoice">5.1.13 Class KeyReferencesChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice of marital status.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Marriage</td>
+										<td></td>
+										<td>1..1</td>
+										<td>forms:Marriage</td>
+									</tr>
+									<tr>
+										<td>Divorce</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formFrance:Divorce</td>
+									</tr>
+									<tr>
+										<td>LegalSeparation</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formFrance:LegalSeparation</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipChange</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formFrance:RegisteredPartnershipChange</td>
+									</tr>
+									<tr>
+										<td>MarriageAnnulment</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formFrance:MarriageAnnulment</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="LegalSeparation">5.1.14 Class LegalSeparation
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>SeparationPerson</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>SeparationDate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>NatureOfSeparationDecision</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>RulingCourt</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Life">5.1.15 Class Life
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>PersonAppearedBeforeAuthority</td>
+										<td>This property contains the boolean value of whether the person concerned by the form appeared in front of an authority. </td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>PresentedID</td>
+										<td>This property contains the boolean value of whether the person concerned by the form presented an ID.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Marriage">5.1.16 Class Marriage
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>FourthWitness</td>
+										<td>This property refers to the class Person. </td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>FirstWitness</td>
+										<td>This property refers to the class Person. </td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>DeclarationOfSpousalAndUnionPronouncement</td>
+										<td>This property contains the boolean value of whether a declaration of spousal and union pronouncement exists.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>SecondWitness</td>
+										<td>This property refers to the class Person. </td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>ThirdWitness</td>
+										<td>This property refers to the class Person. </td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>MarriageContractDate</td>
+										<td>This property contains the date of the marriage contract. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>MarriageContractNotaryPlace</td>
+										<td>This property refers to the class Place.</td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="MarriageAnnulment">5.1.17 Class MarriageAnnulment
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>AnnulmentDate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>NatureOfAnnulmentDecision</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>RulingCourt</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="MarriageOrRegisteredPartnershipPerson">5.1.18 Class MarriageOrRegisteredPartnershipPerson
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>FormerSpouseOrPartner</td>
+										<td>This property refers to the class FormerSpouseOrPartnerChoice.</td>
+										<td>1..1</td>
+										<td>formFrance:FormerSpouseOrPartnerChoice</td>
+									</tr>
+									<tr>
+										<td>ConsentNeededForConcernedPerson</td>
+										<td>This property refers to the class ConsentNeededChoice. </td>
+										<td>1..1</td>
+										<td>formFrance:ConsentNeededChoice</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="Person">5.1.19 Class Person
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Father</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>Mother</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>AdoptiveParent</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Person</td>
+									</tr>
+									<tr>
+										<td>Profession</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+									<tr>
+										<td>Age</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:TextType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="RegisteredPartnership">5.1.20 Class RegisteredPartnership
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>DateOfModification</td>
+										<td>This property contains the date of modification of a registered partnership. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>DateOfEntryIntoEffectOfDissolution</td>
+										<td>This property contains the date of entry into effect of the dissolution of the registered partnership. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>ReasonForDissolution</td>
+										<td>This property relates to the class RegisteredPartnershipDissolutionChoice. </td>
+										<td>1..1</td>
+										<td>formFrance:RegisteredPartnershipDissolutionChoice</td>
+									</tr>
+									<tr>
+										<td>DateOfEntryIntoEffectOfModification</td>
+										<td>This property contains the date of entry into effect of the modification of the registered partnership. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>DateOfPartnershipDissolution</td>
+										<td>This property contains the date of dissolution of the registered partnership. </td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="RegisteredPartnershipChange">5.1.21 Class RegisteredPartnershipChange
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>RegisteredPartnershipChangeDate</td>
+										<td></td>
+										<td>1..1</td>
+										<td>udt:DateType</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipChangePlace</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+									<tr>
+										<td>RulingCourt</td>
+										<td></td>
+										<td>1..1</td>
+										<td>pdc:Authority</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipChange</td>
+										<td></td>
+										<td>1..1</td>
+										<td>formFrance:RegisteredPartnershipChangeChoice</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="RegisteredPartnershipChangeChoice">5.1.22 Class RegisteredPartnershipChangeChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice of types of change of registered partnership.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>RegisteredPartnershipModification</td>
+										<td>This property relates to the class RegisteredPartnershipModification.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipDissolution</td>
+										<td>This property refers to the class RegisteredPartnershipDissolutionChoice.</td>
+										<td>1..1</td>
+										<td>formFrance:RegisteredPartnershipDissolutionChoice</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipAnnulment</td>
+										<td>This property refers to the class RegisteredPartnershipAnnulment.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="RegisteredPartnershipDissolutionChoice">5.1.23 Class RegisteredPartnershipDissolutionChoice
+							(choice)
+							</h5>
+							<p><b>Definition:</b>This class contains elements related to the choice of how the registered partnership of the person concerned by the form was dissolved.</p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>RegisteredPartnershipDissolvedByDeath</td>
+										<td>This property relates to the class RegisteredPartnershipDissolvedByDeath.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipDissolvedByMarriage</td>
+										<td>This property refers to the class RegisteredPartnershipDissolvedByMarriage.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+									<tr>
+										<td>RegisteredPartnershipDissolvedByRequest</td>
+										<td>This property relates to the class RegisteredPartnershipDissolvedByRequest.</td>
+										<td>1..1</td>
+										<td>udt:IndicatorType</td>
+									</tr>
+								</tbody>
+							</table>
+							<h5 id="SignatureInfo">5.1.24 Class SignatureInfo
+							
+							</h5>
+							<p><b>Definition:</b></p>
+							<table class="generatedTable table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Property Name</th>
+										<th>Definition</th>
+										<th>Cardinality</th>
+										<th>Data Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>SignaturePlace</td>
+										<td>This property refers to the class Place.</td>
+										<td>1..1</td>
+										<td>pdc:Place</td>
+									</tr>
+								</tbody>
+							</table>
+							</div>
+			</section>
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="acknowledgements" class="appendix">
+				<h3 id="h2_acknowledgements" aria-level="1"><span class="secno">A. </span>Acknowledgements</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="change-history" class="appendix">
+				<h3 id="h2_change-history" aria-level="1"><span class="secno">B. </span>Change history</h3>
+			</section>
+			
+			<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="references" class="appendix">
+			<h3 id="h2_references" aria-level="1"><span class="secno">C. </span>References</h3>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="normative-references">
+					<h4 id="h3_normative-references" aria-level="2"><span class="secno">C.1 </span>Normative references</h4>
+						<dl about class = "bibliography">
+							<dt id : "bib-PD">Public Documents Regulation</dt>
+							<dd rel = "dcterms: requires ">
+							"Regulation of the European Parliament and of the council of 6 July 2016 on promoting the free movement of citizens by simplifying the requirements for presenting certain public documents in the European Union."
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191"> 
+								<cite>Regulation (EU) 2016/1191</cite>	 				
+								</a>
+							. July 2016. EU Regulation. URL:
+								<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191">http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R1191</a>
+							</dd>
+							</dt>
+						</dl>
+				</section>
+			
+				<section rel="bibo:Chapter" resource="#ref" typeof="bibo:Chapter" id="informative-references">
+					<h4 id="h3_informative-references" aria-level="2"><span class="secno">C.2 </span>Informative references</h4>
+				</section>
+			</section>
+		</div>
+		<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src='jquery.toc.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+		<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'></script>
+		<script src='https://cdn.datatables.net/responsive/2.1.1/js/responsive.semanticui.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js'></script>
+		<script type="text/javascript">
+		    var base_url = "http://e-documents.semic.eu/publicdocuments/latest/ns/";
+			var url_array = {pdc:base_url+"pdc",forms:base_url+"forms",cls:base_url+"codelist/sex","formFrance":""};
+		</script>
+		<script src='initialize.js'></script>
+	</body>
+</html>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (x64) (http://www.altova.com) by Altova
+	XMLSpy 2016 Professional Edition, Installed for 10 users (European Commission
+	DIGIT) -->
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+	xmlns:pref="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.2.0">
+
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+		schemaLocation="../../xsd/common/BRIS-BasicComponents.xsd" />
+
+	<xsd:element name="Address" type="AddressType" />
+	<xsd:element name="AccountDocumentLink" type="ExternalReferenceType" />
+	<xsd:element name="BranchEUIDs" type="BranchEUIDsType" />
+	<xsd:element name="BusinessRegister" type="BusinessRegisterType" />
+	<xsd:element name="BusinessRegisterReference" type="BusinessRegisterReferenceType" />
+	<xsd:element name="Company" type="CompanyType" />
+	<xsd:element name="CompanyAlternateIdentifiers" type="CompanyAlternateIdentifiersType" />
+	<xsd:element name="CompanyNames" type="CompanyNamesType" />
+	<xsd:element name="CompanySummary" type="CompanySummaryType" />
+	<xsd:element name="CompanyItem" type="CompanyItemType" />
+	<xsd:element name="Countries" type="CountriesType" />
+	<xsd:element name="DisclosureCompany" type="NotificationCompanyType" />
+	<xsd:element name="Document" type="DocumentType" />
+	<xsd:element name="Documents" type="DocumentsType" />
+	<xsd:element name="EmailDocumentLink" type="ExternalReferenceType" />
+	<xsd:element name="ExternalReference" type="ExternalReferenceType" />
+	<xsd:element name="FaultError" type="FaultErrorType" />
+	<xsd:element name="LegislationReferences" type="LegislationReferencesType" />
+	<xsd:element name="ManageSubscriptionRequest" type="ManageSubscriptionRequestType" />
+	<xsd:element name="ManageSubscriptionStatus" type="ManageSubscriptionStatusType" />
+	<xsd:element name="MessageHeader" type="MessageHeaderType" />
+	<xsd:element name="NotificationCompany" type="NotificationCompanyType" />
+	<xsd:element name="NotificationContext" type="NotificationContextType" />
+	<xsd:element name="Particular" type="ParticularType" />
+	<xsd:element name="Particulars" type="ParticularsType" />
+	<xsd:element name="RecipientOrganisation" type="BusinessRegisterType" />
+	<xsd:element name="ResultingCompany" type="NotificationCompanyType" />
+	<xsd:element name="TestData" type="TestDataType" />
+	<xsd:element name="UpdateLEDStatus" type="UpdateLEDStatusType" />
+	<xsd:element name="UpdateLED" type="UpdateLEDType" />
+	<xsd:element name="Warnings" type="WarningsType" />
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:PostalCode" minOccurs="0" />
+			<xsd:element ref="bbc:City" minOccurs="0" />
+			<xsd:element ref="bbc:AddressLine1" minOccurs="0" />
+			<xsd:element ref="bbc:AddressLine2" minOccurs="0" />
+			<xsd:element ref="bbc:AddressLine3" minOccurs="0" />
+			<xsd:element ref="bbc:Country" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BranchEUIDsType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:BranchEUID" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BusinessRegisterType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:BusinessRegisterID" />
+			<xsd:element ref="bbc:BusinessRegisterName" />
+			<xsd:element ref="bbc:BusinessRegisterCountry" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BusinessRegisterReferenceType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:BusinessRegisterID" />
+			<xsd:element ref="bbc:BusinessRegisterCountry" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyType">
+		<xsd:sequence>
+			<xsd:element ref="CompanyNames" />
+			<xsd:element ref="bbc:CompanyRegistrationNumber" />
+			<xsd:element name="CompanyRegisteredOffice" type="AddressType" />
+			<xsd:element ref="bbc:CompanyLegalForm" />
+			<xsd:element ref="bbc:CompanyEUID" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyAlternateIdentifiersType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:CompanyAlternateID" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyNamesType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:CompanyNameLanguageSpecific"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompanySummaryType">
+		<xsd:sequence>
+			<xsd:element ref="Company" />
+			<xsd:element ref="BusinessRegisterReference" />
+			<xsd:element ref="bbc:Relevance" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyItemType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:CompanyItemExplanatoryLabel" />
+			<xsd:element ref="bbc:CompanyItemValidityStartDate"
+				minOccurs="0" />
+			<xsd:element ref="bbc:CompanyItemValidityEndDate"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CountriesType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:Country" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentsType">
+		<xsd:sequence>
+			<xsd:element name="Document" type="DocumentType"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentType">
+		<xsd:sequence>
+			<xsd:element name="CompanyItem" type="CompanyItemType" />
+			<xsd:element ref="bbc:DocumentID" />
+			<xsd:element ref="bbc:DocumentFormat" />
+			<xsd:element ref="bbc:DocumentLanguageCode" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element ref="bbc:DocumentFee" />
+			<xsd:element ref="bbc:DocumentSize" minOccurs="0" />
+			<xsd:element ref="bbc:DocumentPublicationDate" minOccurs="0" />
+			<xsd:element ref="bbc:DocumentPurchasable" />
+			<xsd:element ref="bbc:DocumentImmediateDelivery"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ExternalReferenceType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:ExpiryDate" />
+			<xsd:element ref="bbc:URI" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FaultErrorType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:FaultErrorCode" />
+			<xsd:element ref="bbc:FaultErrorDescription" />
+			<xsd:element ref="bbc:FaultErrorSource" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LegislationReferencesType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:LegislationReference" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ManageSubscriptionRequestType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:CompanyEUID" />
+			<xsd:element ref="bbc:BranchEUID" minOccurs="0" />
+			<xsd:element ref="bbc:ManageSubscriptionCode" />
+			<xsd:element ref="bbc:ManageSubscriptionID" />
+			<xsd:element ref="bbc:ManageSubscriptionDateTime" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ManageSubscriptionStatusType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:ManageSubscriptionStatusCode" />
+			<xsd:element ref="bbc:SubscriptionStatusCode" />
+			<xsd:element ref="bbc:ManageSubscriptionID" />
+			<xsd:element ref="bbc:ManageSubscriptionProcessedDateTime" />
+			<xsd:element ref="bbc:CompanyEUID" />
+			<xsd:element ref="bbc:BranchEUID" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MessageHeaderType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:CorrelationID" />
+			<xsd:element ref="bbc:MessageID" />
+			<xsd:element ref="TestData" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NotificationCompanyType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:BusinessRegisterName" />
+			<xsd:element ref="bbc:CompanyEUID" />
+			<xsd:element ref="bbc:CompanyName" />
+			<xsd:element name="CompanyRegisteredOffice" type="AddressType"
+				minOccurs="0" />
+			<xsd:element ref="CompanyAlternateIdentifiers" minOccurs="0" />
+			<xsd:element ref="bbc:CompanyLegalForm" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NotificationContextType">
+		<xsd:sequence>
+			<xsd:element name="LegislationReferences" type="LegislationReferencesType"
+				minOccurs="0" />
+			<xsd:element name="IssuingOrganisation" type="BusinessRegisterType" />
+			<xsd:element name="IssuingDateTime" type="bbc:DateTimeType" />
+			<xsd:element ref="bbc:EffectiveDate" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularsType">
+		<xsd:sequence>
+			<xsd:element name="Particular" type="ParticularType"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularType">
+		<xsd:sequence>
+			<xsd:element name="CompanyItem" type="CompanyItemType" />
+			<xsd:choice>
+				<xsd:element ref="bbc:ParticularStringValue" />
+				<xsd:element ref="bbc:ParticularDateValue" />
+				<xsd:element ref="bbc:ParticularIntegerValue" />
+				<xsd:element ref="bbc:ParticularDecimalValue" />
+				<xsd:element ref="bbc:ParticularAmountValue" />
+				<xsd:element ref="bbc:ParticularBooleanValue" />
+				<xsd:element name="ParticularAddressValue" type="AddressType" />
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TestDataType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:TestSessionID" minOccurs="0" />
+			<xsd:element ref="bbc:TestPackageID" />
+			<xsd:element ref="bbc:TestCaseID" />
+			<xsd:element ref="bbc:TestConditionID" />
+			<xsd:element ref="bbc:TestExecutionID" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateLEDStatusType">
+		<xsd:sequence>
+			<xsd:element ref="Company" minOccurs="0" />
+			<xsd:element ref="bbc:UpdateLEDStatusCode" />
+			<xsd:element ref="bbc:UpdateLEDUpdateID" />
+			<xsd:element ref="bbc:UpdateLEDProcessedDateTime" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateLEDType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:UpdateLEDCode" />
+			<xsd:element ref="bbc:UpdateLEDUpdateID" />
+			<xsd:element ref="bbc:UpdateLEDDateTime" />
+			<xsd:element ref="Company" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="WarningsType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:Warning" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

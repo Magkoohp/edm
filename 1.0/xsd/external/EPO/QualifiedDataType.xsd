@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- ====================================================================== -->
+ <!-- =====  Qualified Data Type Schema Module                         ===== -->
+ <!-- ====================================================================== -->
+ <!--
+  Courtesy of Judicial Information Agency of the Dutch Department of Security and Justice
+ 
+
+ -->
+ <xsd:schema xmlns:clmeCODEXCommuncationChannelsCode="http://data.ecodex.eu/codelist-CommuncationChannelsCode" xmlns:clmeCODEXRoleCode="http://data.ecodex.eu/codelist-RoleCode" xmlns:clmEUFreeFromLetterCode="http://data.ecodex.eu/codelist-FreeFromLetterCode" xmlns:clmeCODEXSpecificsCode="http://data.ecodex.eu/codelist-SpecificsCode" xmlns:clmISOCurrencyCode="http://data.ecodex.eu/codelist-CurrencyCode" xmlns:clmeCODEXWayOfPaymentCode="http://data.ecodex.eu/codelist-WayOfPaymentCode" xmlns:clmEUIdentificationCode="http://data.ecodex.eu/codelist-IdentificationCode" xmlns:clm63055="urn:un:unece:uncefact:codelist:standard:6:3055:D09B" xmlns:clmISOCountryCode="http://data.ecodex.eu/codelist-CountryCode" xmlns:clmEUEULanguageCode="http://data.ecodex.eu/codelist-EULanguageCode" xmlns:clmeCODEXUsageOfAddressCode="http://data.ecodex.eu/codelist-UsageOfAddressCode" xmlns:clmeCODEXSpecificationOfSumCode="http://data.ecodex.eu/codelist-SpecificationOfSumCode" xmlns:clmeCODEXTypeOfEvidenceCode="http://data.ecodex.eu/codelist-TypeOfEvidenceCode" xmlns:clmeCODEXDecisionsCode="http://data.ecodex.eu/codelist-DecisionsCode" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:clmeCODEXGroundsJurisdictionCode="http://data.ecodex.eu/codelist-GroundsJurisdictionCode" xmlns:clmeCODEXKindOfAgreementCode="http://data.ecodex.eu/codelist-KindOfAgreementCode" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:11" xmlns:clmeCODEXCombinedTypeOfInterestCode="http://data.ecodex.eu/codelist-CombinedTypeOfInterestCode" xmlns:clmIANAIANAMimeMediaTypeCode="http://data.ecodex.eu/codelist-IANAMimeMediaTypeCode" xmlns:clmeCODEXComplaintsCode="http://data.ecodex.eu/codelist-ComplaintsCode" xmlns:clmEUTypeOfStatementCode="http://data.ecodex.eu/codelist-TypeOfStatementCode" xmlns:clmeCODEXPeriodCode="http://data.ecodex.eu/codelist-PeriodCode" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:11" version="1.8" xmlns="urn:un:unece:uncefact:data:standard:QualifiedDataType:11">
+<!-- ======================================================================= -->
+<!-- ===== Imports                                                     ===== -->
+<!-- ======================================================================= -->
+<!-- ===== Import of Unqualified Data Type                            ===== -->
+<!-- ======================================================================= -->
+  <xsd:import schemaLocation="UnqualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11"/>
+<!-- ======================================================================= -->
+<!-- ===== Imports of Code List Agency                                 ===== -->
+<!-- ======================================================================= -->
+  <xsd:import schemaLocation="../../codelist/standard/UNECE_AgencyIdentificationCode_D09B.xsd" namespace="urn:un:unece:uncefact:codelist:standard:6:3055:D09B"/>
+<!-- ======================================================================= -->
+<!-- ===== Imports of Code Lists                                       ===== -->
+<!-- ======================================================================= -->
+  <xsd:import schemaLocation="../../codelist/standard/Europeanunion_TypeOfStatement_.xsd" namespace="http://data.ecodex.eu/codelist-TypeOfStatementCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/Europeanunion_FreeFromLetter_.xsd" namespace="http://data.ecodex.eu/codelist-FreeFromLetterCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/IANA_IANAMimeMediaType_.xsd" namespace="http://data.ecodex.eu/codelist-IANAMimeMediaTypeCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/Europeanunion_EULanguage_.xsd" namespace="http://data.ecodex.eu/codelist-EULanguageCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_GroundsJurisdiction_.xsd" namespace="http://data.ecodex.eu/codelist-GroundsJurisdictionCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_Decisions_.xsd" namespace="http://data.ecodex.eu/codelist-DecisionsCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_UsageOfAddress_.xsd" namespace="http://data.ecodex.eu/codelist-UsageOfAddressCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_WayOfPayment_.xsd" namespace="http://data.ecodex.eu/codelist-WayOfPaymentCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_SpecificationOfSum_.xsd" namespace="http://data.ecodex.eu/codelist-SpecificationOfSumCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/ISO_Currency_.xsd" namespace="http://data.ecodex.eu/codelist-CurrencyCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_CommuncationChannels_.xsd" namespace="http://data.ecodex.eu/codelist-CommuncationChannelsCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_Role_.xsd" namespace="http://data.ecodex.eu/codelist-RoleCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/Europeanunion_Identification_.xsd" namespace="http://data.ecodex.eu/codelist-IdentificationCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/ISO_Country_.xsd" namespace="http://data.ecodex.eu/codelist-CountryCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_CombinedTypeOfInterest_.xsd" namespace="http://data.ecodex.eu/codelist-CombinedTypeOfInterestCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_Period_.xsd" namespace="http://data.ecodex.eu/codelist-PeriodCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_Complaints_.xsd" namespace="http://data.ecodex.eu/codelist-ComplaintsCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_Specifics_.xsd" namespace="http://data.ecodex.eu/codelist-SpecificsCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_TypeOfEvidence_.xsd" namespace="http://data.ecodex.eu/codelist-TypeOfEvidenceCode"/>
+  <xsd:import schemaLocation="../../codelist/standard/eCODEX_KindOfAgreement_.xsd" namespace="http://data.ecodex.eu/codelist-KindOfAgreementCode"/>
+<!-- ================================================================== -->
+<!-- ===== Type Definitions                                       ===== -->
+<!-- ================================================================== -->
+<!-- ===== Type Definition: TypeOfStatementType                   ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="TypeOfStatementCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Type Of Statement Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Type Of Statement</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmEUTypeOfStatementCode:TypeOfStatementContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="EU" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: FreeFromLetterType                    ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="FreeFromLetterCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Free From Letter Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Free From Letter</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmEUFreeFromLetterCode:FreeFromLetterContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="EU" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: IANAMimeMediaTypeType                 ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="IANAMimeMediaTypeCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>IANA Mime Media Type Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>A list of all the mime types</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>IANA Mime Media Type</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmIANAIANAMimeMediaTypeCode:IANAMimeMediaTypeContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="IANA" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: EULanguageType                        ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="EULanguageCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>EU Language Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>A subset of the ISO 639-2 code list containing only official eu languages</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>EU Language</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmEUEULanguageCode:EULanguageContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="EU" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: GroundsJurisdictionType               ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="GroundsJurisdictionCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Grounds Jurisdiction Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Grounds Jurisdiction</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXGroundsJurisdictionCode:GroundsJurisdictionContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: DecisionsType                         ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="DecisionsCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Decisions Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>types of decisions</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Decisions</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXDecisionsCode:DecisionsContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: UsageOfAddressType                    ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="UsageOfAddressCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Usage Of Address Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Usage Of Address</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXUsageOfAddressCode:UsageOfAddressContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: WayOfPaymentType                      ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="WayOfPaymentCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Way Of Payment Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Way Of Payment</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXWayOfPaymentCode:WayOfPaymentContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: SpecificationOfSumType                ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="SpecificationOfSumCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Specification Of Sum Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Specification Of Sum</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXSpecificationOfSumCode:SpecificationOfSumContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: CurrencyType                          ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="CurrencyCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Currency Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>The code according to codelist ISO 4217</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Currency</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmISOCurrencyCode:CurrencyContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="ISO" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: CommuncationChannelsType              ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="CommuncationChannelsCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Communcation Channels Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Communcation Channels</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXCommuncationChannelsCode:CommuncationChannelsContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: RoleType                              ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="RoleCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Role Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Role</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXRoleCode:RoleContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: IdentificationType                    ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="IdentificationCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Identification Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Identification</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmEUIdentificationCode:IdentificationContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="EU" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: CountryType                           ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="CountryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Country Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>The code according to codelist ISO 3166-1 </ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Country</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmISOCountryCode:CountryContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="ISO" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: CombinedTypeOfInterestType            ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="CombinedTypeOfInterestCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Combined Type Of Interest Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Combined Type Of Interest</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXCombinedTypeOfInterestCode:CombinedTypeOfInterestContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: PeriodType                            ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="PeriodCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Period Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Period</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXPeriodCode:PeriodContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: ComplaintsType                        ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="ComplaintsCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Complaints Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Complaints</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXComplaintsCode:ComplaintsContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: SpecificsType                         ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="SpecificsCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Specifics Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Specifics</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXSpecificsCode:SpecificsContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: TypeOfEvidenceType                    ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="TypeOfEvidenceCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Type Of Evidence Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Type Of Evidence</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXTypeOfEvidenceCode:TypeOfEvidenceContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+<!-- ================================================================== -->
+<!-- ===== Type Definition: KindOfAgreementType                   ===== -->
+<!-- ================================================================== -->
+  <xsd:complexType name="KindOfAgreementCodeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Acronym>DT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Kind Of Agreement Code. Type</ccts:DictionaryEntryName>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:DataTypeQualifierTerm>Kind Of Agreement</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clmeCODEXKindOfAgreementCode:KindOfAgreementContentType">
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listID"/>
+        <xsd:attribute use="optional" fixed="eCODEX" type="clm63055:AgencyIdentificationCodeContentType" name="listAgencyID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listVersionID"/>
+        <xsd:attribute use="optional" fixed="" type="xsd:token" name="listURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="NameMaxLength120NameType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A string of characters of maximum length 120</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>NameMaxLength120 Name. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>NameMaxLength120</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:NameType">
+      <xsd:maxLength value="120"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="NameMaxLength50NameType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A string of max 50 characters </ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>NameMaxLength50 Name. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>NameMaxLength50</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:NameType">
+      <xsd:maxLength value="50"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SixThreePercentType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>This patters allow 3 digits before the decimal marker and 3 digits after the decimal marker, like in 125.567 %</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Percent</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>SixThree Percent. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>Decimal</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>SixThree</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:PercentType">
+      <xsd:pattern value="[0-9]{1,3}\.[0-9]{1,3}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StringMaxLength128TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A string of characters of maximum length 128.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>String MaxLength128 Text. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>String MaxLength128</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:TextType">
+      <xsd:maxLength value="128"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StringMaxLength120TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A string of characters of maximum length 120</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>StringMaxLength120 Text. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>StringMaxLength120</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:TextType">
+      <xsd:maxLength value="120"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StringMaxLength16384TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A string of maximum length 16384</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>StringMaxLength16384 Text. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>StringMaxLength16384</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:TextType">
+      <xsd:maxLength value="16384"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StringMaxLength200TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A string of characters of maximum length 200</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>StringMaxLength200 Text. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>StringMaxLength200</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:TextType">
+      <xsd:maxLength value="200"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StringMaxLength20TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>StringMaxLength20 Text. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>StringMaxLength20</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:TextType">
+      <xsd:maxLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="StringMaxLength50TextType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>StringMaxLength50 Text. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>StringMaxLength50</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:TextType">
+      <xsd:maxLength value="50"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TwelveTwoAmountType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A data format for money. The format allows a maximum of 10 positions before the decimal marker (point) and requires 2 position after the decimal marker. The first position should not be a zero.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Amount</ccts:PrimaryRepresentationTerm>
+        <ccts:DictionaryEntryName>TwelveTwo Amount. Type</ccts:DictionaryEntryName>
+        <ccts:PrimitiveType>Decimal</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>TwelveTwo</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="udt:AmountType">
+      <xsd:pattern value="[0-9]{1,10}\.[0-9]{1,2}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

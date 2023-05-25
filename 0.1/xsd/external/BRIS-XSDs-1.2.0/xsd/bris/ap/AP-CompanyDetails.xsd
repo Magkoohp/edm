@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Based on Messaging Model Version : 0.37 -->
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_2/ap/CompanyDetails"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:apcc="http://ec.europa.eu/bris/v1_2/ap/CommonComponents"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+	xmlns:bac="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_2/ap/CompanyDetails"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.2.0">
+
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/ap/CommonComponents"
+		schemaLocation="AP-CommonComponents.xsd" />
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/BasicComponents"
+		schemaLocation="../../common/BRIS-BasicComponents.xsd" />
+	<xsd:import
+		namespace="http://ec.europa.eu/bris/v1_2/common/AggregateComponents"
+		schemaLocation="../../common/BRIS-AggregateComponents.xsd" />
+
+	<xsd:element name="AP-CompanyDetailsRequest">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="apcc:APMessageObjectType">
+					<xsd:sequence>
+						<xsd:element ref="bbc:CompanyRegistrationNumber" />
+						<xsd:element ref="bac:BusinessRegisterReference" />
+						<xsd:element ref="bbc:EndUserCountry" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="AP-CompanyDetailsResponse">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="apcc:APMessageObjectType">
+					<xsd:sequence>
+						<xsd:element ref="bac:BusinessRegisterReference" />
+						<xsd:element ref="bac:Company" />
+						<xsd:element ref="bac:Documents" minOccurs="0" />
+						<xsd:element ref="bac:Particulars" minOccurs="0" />
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
+

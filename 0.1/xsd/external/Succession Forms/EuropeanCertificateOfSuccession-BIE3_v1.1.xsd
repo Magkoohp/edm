@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================================== -->
+<!-- === European Certificate of Succession - Business Data Type XML Schema      === -->
+<!-- =============================================================================== -->
+<!--
+    Schema agency: European Commission / Estonian Centre for Registers and Information Systems
+    Schema version: 1.1
+    Schema date: 31 May 2016
+    Copyright  (C) - 2016 - Estonian Centre for Registers and Information Systems. All Rights Reserved. Licenced to the European Union under conditions.
+-->
+<xsd:schema targetNamespace="urn:ec:ejustice:succession:common:ecs-bie3:1:standard"
+    xmlns:bcomp="urn:ec:ejustice:succession:common:ecs-bie3:1:standard"
+    xmlns:code="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+    xmlns:a2comp="urn:ec:ejustice:succession:common:ecs-bie2:1:standard"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+    xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+    xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+    xmlns:nc="http://niem.gov/niem/iso_3166/2.0"
+    xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- ====================================================================================== -->
+    <!-- ===   Imports                                                                      === -->
+    <!-- ====================================================================================== -->
+    <!-- ====================================================================================== -->
+    <!-- === Import of core vocabulary elements  (cvb)                                      === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents"
+        schemaLocation="../common/EuropeanCoreVocabulary-BasicComponents-1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of Business Code list elements  (code)                                  === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:codelist:ecs-codes1:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-codes1_v1.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of Aggregate elements  (a2comp)                                         === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:ec:ejustice:succession:common:ecs-bie2:1:standard"
+        schemaLocation="EuropeanCertificateOfSuccession-BIE2_v1.1.xsd"/>
+
+    <!-- ====================================================================================== -->
+    <!-- === Import of data type elements  (udt)                                            === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+        schemaLocation="http://docs.oasis-open.org/ubl/prd2-UBL-2.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of country codes                                                        === -->
+    <!-- ====================================================================================== -->
+    <xsd:import namespace="http://niem.gov/niem/iso_3166/2.0"
+        schemaLocation="https://release.niem.gov/niem/iso_3166/2.0/iso_3166.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Import of country codes                                                        === -->
+    <!-- ====================================================================================== -->
+    <xsd:import
+        namespace="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006"
+        schemaLocation="http://www.unece.org/fileadmin/DAM//uncefact/standard/ISO_ISOTwoletterCountryCode_SecondEdition2006.xsd"/>
+    <!-- ====================================================================================== -->
+    <!-- === Element Declarations                                                           === -->
+    <!-- ====================================================================================== -->
+    <xsd:element name="AnnexList" type="bcomp:AnnexListType"/>
+    <xsd:element name="Applicable" type="bcomp:ApplicableType"/>
+    <xsd:element name="ApplicantCompanyName" type="cvb:LegalEntityLegalNameType"/>
+    <xsd:element name="Description" type="bcomp:DescriptionType"/>
+    <xsd:element name="Asset" type="bcomp:AssetType"/>
+    <xsd:element name="BirthDate" type="bcomp:OccasionType"/>
+    <xsd:element name="Business" type="bcomp:BusinessType"/>
+    <xsd:element name="BusinessAddress" type="a2comp:AddressType"/>
+    <xsd:element name="BusinessChannel" type="code:ChannelType"/>
+    <xsd:element name="BusinessName" type="cvb:LegalEntityLegalNameType"/>
+    <xsd:element name="BusinessRegisterDesignation" type="cvb:LegalEntityCompanyTypeCodeType"/>
+    <xsd:element name="BusinessRegisterName" type="cvb:LegalEntityLegalNameType"/>
+    <xsd:element name="BusinessRegistrationPlace" type="bcomp:PlaceType"/>
+    <xsd:element name="BusinessRegistrationCountry" type="bcomp:CoreLocationType"/>
+    <xsd:element name="BusinessRegistrationDate" type="xsd:date"/>
+    <xsd:element name="BusinessRegistrationNumber" type="cvb:LegalEntityLegalIDType"/>
+    <xsd:element name="Capacity" type="bcomp:CapacityType"/>
+    <xsd:element name="Copy" type="bcomp:CopyType"/>
+    <xsd:element name="Contract" type="bcomp:ContractType"/>
+    <xsd:element name="CoreLocation" type="bcomp:CoreLocationType"/>
+    <xsd:element name="CompetenceArticle" type="code:ArticleType"/>
+    <xsd:element name="ISOCode" type="ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentType"/>
+    <xsd:element name="CountryCode" type="bcomp:CountryCodeType"/>
+    <xsd:element name="CountryName" type="cvb:LocationGeographicNameType"/>
+    <xsd:element name="Disqualified" type="bcomp:DisqualifiedType"/>
+    <xsd:element name="File" type="bcomp:FileType"/>
+    <xsd:element name="Identification" type="bcomp:IdentificationType"/>
+    <xsd:element name="Legacy" type="bcomp:LegacyType"/>
+    <xsd:element name="MemberState" type="code:EUStateType"/>
+    <xsd:element name="IndividualName" type="bcomp:PersonNameType"/>
+    <xsd:element name="Occasion" type="bcomp:OccasionType"/>
+    <xsd:element name="Organisation" type="bcomp:OrganisationType"/>
+    <xsd:element name="NaturalPersonName" type="cvb:PersonGivenNameType"/>
+    <xsd:element name="PersonName" type="bcomp:PersonNameType"/>
+    <xsd:element name="Place" type="bcomp:PlaceType"/>
+    <xsd:element name="PlaceTown" type="cvb:AddressPostNameType"/>
+    <xsd:element name="PlaceRegion" type="cvb:AddressAdminUnitLocationTwoType"/>
+    <xsd:element name="Powers" type="bcomp:PowersType"/>
+    <xsd:element name="Relation" type="bcomp:RelationType"/>
+    <xsd:element name="Restriction" type="bcomp:RestrictionType"/>
+    <xsd:element name="Specification" type="bcomp:SpecificationType"/>
+    <xsd:element name="Testation" type="bcomp:TestationType"/>
+
+
+    <!-- ========================= Type Definitions ================================== -->
+    <!-- ===== Business Information Entity Type Definitions                      ===== -->
+    <!-- ============================================================================= -->
+    
+    <xsd:complexType name="ActionToType">
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:element name="Activity" type="code:ActionType" minOccurs="0"
+                    maxOccurs="unbounded">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Definition>Identification of the powers mandated to the person specified in section 1 of the ECS Annex VI.</ccts:Definition>
+                            <ccts:DefaultIndicator/>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="Other" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:Definition>Other powers not mentioned in the previous list of options.</ccts:Definition>
+                            <ccts:DefaultIndicator/>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="OtherSpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+    
+    <xsd:complexType name="AnnexListType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="EN">
+                Annexes included in the certificate.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="AnnexI" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="AnnexII" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="AnnexIII" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="AnnexIV" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="AnnexV" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="AnnexVI" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Annex0" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="ApplicableType">
+        <xsd:sequence>
+            <xsd:element name="ApplicableJurisdiction" type="bcomp:CoreLocationType" minOccurs="1"
+                maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:element name="ApplicableArticle21-1" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Indication whether the deceased had his habitual residence in the state of applicable law (Article 21(1) of the Regulation 650/2012).</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ApplicableArticle22-1" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Indication whether the deceased chose the state of applicable law of his Nationality (Article 22(1) of Regulation 650/2012).</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:sequence>
+                    <xsd:element name="ApplicableArticle21-2" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation xml:lang="en">Indication whether the deceased was manifestly more connected with that state than with the State of his habitual residence (Article 21(2) of Regulation 650/2012).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="ApplicableArticle21-2Specification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+               <xsd:sequence>
+                   <xsd:element name="ApplicableArticle34-1" type="xsd:boolean" minOccurs="0"
+                       maxOccurs="1">
+                       <xsd:annotation>
+                           <xsd:documentation xml:lang="en">Indication whether the law of a third State applied under Article 21(1) of the Regulation is referring to the law of that State (Article 34(1) of Regulation 650/2012).</xsd:documentation>
+                       </xsd:annotation>
+                   </xsd:element>
+                   <xsd:element name="ApplicableArticle34-1Specification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+               </xsd:sequence>
+               <xsd:sequence>
+                   <xsd:element name="ApplicableArticle36-37" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                   <xsd:element name="ApplicableArticle36-37Specification" type="xsd:string" minOccurs="0" maxOccurs="1"/>  
+               </xsd:sequence>
+               <xsd:sequence>
+                   <xsd:element name="ApplicableArticle30" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                   <xsd:element name="ApplicableArticle30Specification" type="xsd:string" minOccurs="0" maxOccurs="1"/>  
+               </xsd:sequence>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="AssetType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">Heir's rights to the share of estate.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="AssetOwnership" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AssetOtherRights" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AssetRightsOfOthers" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AssetRegistrationNumber" type="xsd:string" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="AssetRegistrationAuthorityName" type="cvb:LegalEntityLegalNameType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AssetRegistrationAuthorityDesignation"
+                type="cvb:LegalEntityCompanyTypeCodeType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AssetDetails" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AssetIncludedDocument" type="bcomp:DocumentType" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="BasisType">
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:element name="DispositionOfProperty" type="xsd:boolean"
+                    minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="CourtDecision" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1"/>
+                <xsd:element name="Agreement" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1"/>
+                <xsd:element name="Law" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="BusinessType">
+        <xsd:annotation>
+            <xsd:documentation>Details on an organisation (legal persons as applicants, representatives, heirs, legatees, executors).
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="bcomp:BusinessName" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessRegistrationNumber" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessRegisterName" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessRegisterDesignation" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessRegistrationDate" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessRegistrationPlace" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessRegistrationCountry" minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessAddress" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="bcomp:BusinessChannel" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="CapacityType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Annex II. Representative capacity. One option is indicated.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1">
+                <xsd:element name="CapacityGuardian" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="CapacityParent" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="CapacityAuthorisedPerson" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="CapacityAttorney" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:sequence>
+                    <xsd:element name="CapacityOther" type="bcomp:SpecificationType" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CapacityOtherSpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!--============================================================================-->
+    <!--Determining of the competence of the authority issuing an ECS.         =====-->
+    <!--============================================================================-->
+    <xsd:complexType name="CompetenceType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:UniqueID></ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:DictionaryEntryName>Competence</ccts:DictionaryEntryName>
+                <ccts:Definition>Legal basis of the Jurisdiction according to article 64 of Regulation (EU) No 650/2012.</ccts:Definition>
+                <ccts:Cardinality>1..1</ccts:Cardinality>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="1">
+            <xsd:element ref="bcomp:CompetenceArticle"/>
+            <xsd:element name="CompetenceAdditional" type="xsd:string" maxOccurs="1" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:Definition>Additional elements on the basis of which the issuing authority considered itself competent to Issue the ECS.</ccts:Definition>
+                        <ccts:DefaultIndicator/>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="ContractType">
+        <xsd:sequence>
+            <xsd:element name="ContractIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="ContractDate" type="cvb:PeriodOfTimeStartDateType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="CopyType">
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="CopyReciever" type="bcomp:PersonNameType" minOccurs="1"
+                maxOccurs="unbounded"/>
+            <xsd:element name="CopyValidity" type="xsd:date" minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element name="CopyIssueDate" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="CoreLocationType">
+        <xsd:annotation>
+            <xsd:documentation>
+                    <ccts:Definition>An identifiable geographic place.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+                <xsd:element ref="code:EUState" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <ccts:DictionaryEntryName>Core Location. Location_ EUState. Code</ccts:DictionaryEntryName>
+                                <ccts:Definition>A choice of an EU state, which has adopted the Regulation 650/2012, or another state, in connection with the addresses, nationality, and places of issue of various documents etc.</ccts:Definition>
+                                <ccts:Cardinality>0..n</ccts:Cardinality>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element ref="bcomp:CountryName" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                                <ccts:DictionaryEntryName>Core Location. Location Geographic_ Name. Text</ccts:DictionaryEntryName>
+                                <ccts:Definition>A name of a country or nationality not listed previously, according to ISO 3166, or as a free text.</ccts:Definition>
+                                <ccts:Cardinality>0..n</ccts:Cardinality>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element ref="bcomp:CountryCode" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                            <ccts:DictionaryEntryName>Core Location. Location Cpuntry Code_ Code. Code</ccts:DictionaryEntryName>
+                            <ccts:Definition>A country code according to ISO 3166.</ccts:Definition>
+                            <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="CountryCodeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">A possible list of country codes. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="bcomp:ISOCode"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="DescriptionType">
+        <xsd:sequence minOccurs="0">
+            <xsd:element name="DescriptionIssued" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="DescriptionIssuePlace" type="bcomp:PlaceType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="DescriptionCountry" type="bcomp:CoreLocationType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="DescriptionAuthorityName" type="cvb:LegalEntityLegalNameType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="DescriptionAuthorityDesignation"
+                type="cvb:LegalEntityCompanyTypeCodeType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="DescriptionRegistrationDate" type="xsd:date" minOccurs="0" maxOccurs="1"/>    
+            <xsd:element name="DescriptionRegister" type="bcomp:OrganisationType" minOccurs="0" maxOccurs="1"/> 
+            <xsd:element name="DescriptionNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="DescriptionOtherNumber" type="xsd:string" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="DesignationOfHeirType">
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:element name="DesignationOfHeirDispositionOfProperty" type="xsd:boolean"
+                    minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="DesignationOfHeirOperationOfLaw" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="DispositionType">
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:choice>
+                <xsd:element name="DispositionWill" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="DispositionJointWill" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="DispositionAgreement" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="DispositionDescription" type="bcomp:DescriptionType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+
+
+    <xsd:complexType name="DisqualifiedType">
+        <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1">
+                <xsd:element name="DisqualifiedUnderDisposition" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1"/>
+                <xsd:element name="DisqualifiedByLaw" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="DisqualifiedByCourt" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+  
+
+    <!-- ========================================================================= -->
+    <!-- === Various documents presented for the issuance of an ECS.           === -->
+    <!-- ========================================================================= -->
+    <xsd:complexType name="DocumentType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <ccts:DictionaryEntryName>Document. Details</ccts:DictionaryEntryName>
+                <ccts:Definition>Documents, which are considered in a succession proceeding.</ccts:Definition>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="DocumentKind" type="cvb:InputTypeCodeType" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Document. Input_ Type. Code</ccts:DictionaryEntryName>
+                        <ccts:Definition>Type of a document, which is considered in a succession proceeding.</ccts:Definition>
+                        <ccts:Cardinality>0..n</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DocumentNumber" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Document. Input_ Number. Text</ccts:DictionaryEntryName>
+                        <ccts:Definition>A set of characters identifying a document.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DocumentIssuePlace" type="bcomp:PlaceType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Document. Issue place_ Place. Place</ccts:DictionaryEntryName>
+                        <ccts:Definition>A town and/or municipality of issue of a document.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DocumentIssueCountry" type="bcomp:CoreLocationType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Document Issue Country_ Core Location. Core Location</ccts:DictionaryEntryName>
+                        <ccts:Definition>A country of issue of a document.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DocumentIssueDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:DictionaryEntryName>Document Issue Date_ Date. Dete</ccts:DictionaryEntryName>
+                        <ccts:Definition>A country of issue of a document.</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="FileType">
+        <xsd:sequence minOccurs="1" maxOccurs="1">
+            <xsd:element name="FileNumber" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="FileOpeningDate" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="HasPowersType">
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="HasPowersIndication" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:choice>
+                <xsd:sequence>
+                    <xsd:element name="HasPowersPersonName" type="bcomp:PersonNameType"/>
+                    <xsd:element name="HasPowersCompanyName" type="cvb:LegalEntityLegalNameType" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:choice>
+            <xsd:element name="HasPowersGovernance" type="bcomp:PowersType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="IdentificationType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                A unique identification code, which identifies a person in the state of nationality.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="IdentificationIDCode" type="xsd:string"/>
+            <xsd:element name="IdentificationSocialCode" type="xsd:string"/>
+            <xsd:element name="IdentificationTaxCode" type="xsd:string"/>
+            <xsd:element name="IdentificationOther" type="bcomp:OtherNumberType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    
+
+
+    <xsd:complexType name="LegacyType">
+        <xsd:annotation>
+            <xsd:documentation>Conditions related to acceptance of the legacy.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:choice>
+                <xsd:element name="LegacyAcceptanceNoConditions" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:sequence>
+                    <xsd:element name="LegacyAcceptanceConditions" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="LegacyAcceptanceConditionsSpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+                <xsd:element name="LegacyAcceptanceNotRequired" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="LegacyWaived" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            </xsd:choice>
+            <xsd:element name="LegacyShare" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="LecacyAsset" type="bcomp:AssetType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="LegacyRestriction" type="bcomp:RestrictionType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="LegacyOtherInformation" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="OccasionType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">A date of an occasion, which may have missing elements.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OccasionDay" type="xsd:gDay"/>
+            <xsd:element name="OccasionMonth" type="xsd:gMonth"/>
+            <xsd:element name="OccasionYear" type="xsd:gYear"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+
+    <xsd:complexType name="OrganisationType">
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="OrganisationName" type="cvb:LegalEntityLegalNameType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="OrganisationDesignation" type="cvb:LegalEntityCompanyTypeCodeType"
+                minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+
+
+    <xsd:complexType name="OtherNumberType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Another unique identification code, which identifies a person in the state of nationality.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OtherNumberKind" type="xsd:string"/>
+            <xsd:element name="OtheNumberIdentifier" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="PersonDeathDateType">
+        <xsd:simpleContent>
+            <xsd:extension base="udt:DateType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="PersonNameType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                An individual's full name. Applied in case of a representative and in other roles.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PersonNameSurname" type="cvb:PersonFamilyNameType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="PersonNameGivenName" type="cvb:PersonGivenNameType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+  
+  
+    
+    <xsd:complexType name="PlaceType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                A geographic location, indicating a town/municipality, and a region.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element ref="bcomp:PlaceTown" minOccurs="0" maxOccurs="1"/>
+            <xsd:element ref="bcomp:PlaceRegion" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+ 
+
+    <!-- ======================================================================= -->
+    <!-- ===  Details of Powers Given.                                       === -->
+    <!-- ======================================================================= -->
+    <xsd:complexType name="PowersType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">Purpose of the Powers given.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:element name="ExecuteWill" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="AdministerEstate" type="xsd:boolean" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+                <xsd:element name="ExtentWholeEstate" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:sequence>
+                    <xsd:element name="ExtentExceptions" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="ExtentExceptionsSpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+                <xsd:sequence>
+                    <xsd:element name="ExtentSpecificParts" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="ExtentSpecificPartsSpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:choice>
+            <xsd:element name="Determined" type="bcomp:ActionToType" minOccurs="1"
+                maxOccurs="unbounded"/>
+            <xsd:element name="AdditionalInformation" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Definition>If selecting one or more of the options above does not give an exact indication of the powers vested in the executor of the will/administrator of the estate, then all necessary further specifications may be added.</ccts:Definition>
+                        <ccts:DefaultIndicator/>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Residual" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <ccts:Definition>Specification whether any of the powers referred to in section 4 are exercised as residual powers in accordance with the second subparagraph of Article 29(2) or the first subparagraph of Article 29(3) of Regulation (EU) No 650/2012.</ccts:Definition>
+                        <ccts:DefaultIndicator/>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ExecutorDesignatorBasis" type="bcomp:BasisType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="DerivedFromBasis" type="bcomp:BasisType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="DutiesDerivedBasis" type="bcomp:BasisType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="RestrictionsToPowers" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+
+
+    <!-- ====================================================================== -->
+    <!-- === Details on Properti Regime.                                    === -->
+    <!-- ====================================================================== -->
+    <xsd:complexType name="PropertyRegimeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                <ccts:UniqueID></ccts:UniqueID>
+                <ccts:Version>1</ccts:Version>
+                <ccts:DictionaryEntryName>Regime</ccts:DictionaryEntryName>
+                <ccts:Definition>Applied matrimonial property regime or other equivalent property regime of the deceased. (ECS Annex III, points 6-9)</ccts:Definition>
+                <ccts:Cardinality>0..1</ccts:Cardinality>
+                <ccts:ObjectClassTermName>Regime</ccts:ObjectClassTermName>          
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:sequence>
+                    <xsd:element name="PropertyRegimeChoice" type="code:RegimeAppliedType" minOccurs="0"
+                        maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation xml:lang="en">
+                                <ccts:UniqueID>ESCB11</ccts:UniqueID>
+                                <ccts:Version>1</ccts:Version>
+                                <ccts:Definition>List of choices of applicable matrimonial property regime or other equivalent property regime of the deceased. (ECS Annex III, point 7)</ccts:Definition>
+                                <ccts:Cardinality>0..1</ccts:Cardinality>
+                                <ccts:ObjectClassTermName>Regime Choice</ccts:ObjectClassTermName>   
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="PropertyRegimeOther" type="xsd:string" minOccurs="0"
+                        maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation xml:lang="en">
+                                <ccts:UniqueID>ESCB12</ccts:UniqueID>
+                                <ccts:Version>1</ccts:Version>
+                                <ccts:Definition>Other applicable matrimonial property regime or other equivalent property regime of the deceased, not listed previously (ECS Annex III, point 7)</ccts:Definition>
+                                <ccts:Cardinality>0..1</ccts:Cardinality>
+                                <ccts:ObjectClassTermName>Regime Other</ccts:ObjectClassTermName>   
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:choice>
+            <xsd:element name="PropertyRegimeOriginalLanguage" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCB13</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:Definition>Applied property regime in the original language. (ECS Annex III, point 8)</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                        <ccts:ObjectClassTermName>Original Language</ccts:ObjectClassTermName>   
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PropertyRegimeLegalProvision" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        <ccts:UniqueID>ESCB14</ccts:UniqueID>
+                        <ccts:Version>1</ccts:Version>
+                        <ccts:Definition>References to any legal provisions regarding the property regime. (ECS Annex III, point 8)</ccts:Definition>
+                        <ccts:Cardinality>0..1</ccts:Cardinality>
+                        <ccts:ObjectClassTermName>Legal Provision</ccts:ObjectClassTermName>   
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="PropertyRegimeLiquidated" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:UniqueID>ESCB15</ccts:UniqueID>
+                            <ccts:Version>1</ccts:Version>
+                            <ccts:Definition>The property relations based on the matrimonial property regime or other equivalent property regime of the deceased and the person referred to point 1 have been liquidated and the assets shared (ECS Annex III, point 9)</ccts:Definition>
+                            <ccts:Cardinality>0..1</ccts:Cardinality>
+                            <ccts:ObjectClassTermName>Liquidated</ccts:ObjectClassTermName>   
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="PropertyRegimeNotLiquidated" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            <ccts:UniqueID>ESCB16</ccts:UniqueID>
+                            <ccts:Version>1</ccts:Version>
+                            <ccts:Definition>The property relations based on the matrimonial property regime or other equivalent property regime of the deceased and the person referred to point 1 have not been liquidated and the assets shared. (ECS Annex III, point 9)</ccts:Definition>
+                            <ccts:Cardinality>0..1</ccts:Cardinality>
+                            <ccts:ObjectClassTermName>Not Liquidated</ccts:ObjectClassTermName>   
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    
+
+    <xsd:complexType name="RelationType">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:choice>
+                <xsd:element name="RelationKind" type="code:RelationshipType"/>
+                <xsd:element name="RelationOther" type="xsd:string"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="RestrictionType">
+        <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1">
+                <xsd:element name="RestrictionByDispositionOfProperty" type="xsd:boolean"
+                    minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="RestrictionByApplicableLaw" type="xsd:boolean" minOccurs="0"
+                    maxOccurs="1"/>
+                <xsd:element name="RestrictionDetails" type="xsd:string" minOccurs="0"
+                    maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="SpecificationType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">An additional field for providing additional details regarding previously made selection.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Specification" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="SuccessionType">
+        <xsd:annotation>
+            <xsd:documentation>Details about a succession.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:element name="SuccessionAcceptance" type="bcomp:SuccessionAcceptanceType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="SuccessionDesignationOfHeir" type="bcomp:DesignationOfHeirType" minOccurs="1" maxOccurs="2"/>
+            <xsd:element name="SuccessionWaived" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="SuccessionReservedShare" type="xsd:boolean" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SuccessionWaivedRightsToReservedShare" type="xsd:boolean"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="SuccessionDisqualified" type="bcomp:DisqualifiedType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SuccessionRightsToShare" type="xsd:string" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SuccessionAsset" type="bcomp:AssetType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="SuccessionRestriction" type="bcomp:RestrictionType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="SuccessionOtherInformation" type="xsd:string" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="SuccessionAcceptanceType">
+        <xsd:choice>
+            <xsd:element name="SuccessionAcceptanceNoCondition" type="xsd:boolean" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:sequence>
+               <xsd:element name="SuccessionAcceptanceBenefitOfInventory" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="SuccessionAcceptanceBenefitOfInventorySpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:sequence>
+                <xsd:element name="SuccessionAcceptanceOtherCondition" type="xsd:boolean" minOccurs="0" maxOccurs="1"/> 
+                <xsd:element name="SuccessionAcceptanceOtherConditionSpecification" type="xsd:string" minOccurs="0" maxOccurs="1"/> 
+            </xsd:sequence>
+            <xsd:element name="SuccessionAcceptanceNotRequired" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="TestationType">
+        <xsd:sequence minOccurs="1" maxOccurs="1">
+            <xsd:choice>
+                <xsd:element name="TestationIntestate" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                <xsd:sequence>
+                    <xsd:choice>
+                        <xsd:element name="TestationTestate" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                        <xsd:element name="TestationPartial" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+                    </xsd:choice>
+                    <xsd:element name="Disposition" type="bcomp:DispositionType"  minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:choice>
+            <xsd:element name="RevokedDisposition" type="bcomp:DispositionType" minOccurs="0"/>
+            <xsd:element name="OtherRelevantInformation" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+</xsd:schema>

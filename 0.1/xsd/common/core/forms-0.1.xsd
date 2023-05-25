@@ -1,0 +1,1750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/forms"
+	xmlns="http://e-documents.semic.eu/publicdocuments/0.1/ns/forms"
+	xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"	
+	xmlns:pdc="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"	
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"	
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.1">
+	<xs:annotation>	
+		<xs:documentation xml:lang="en">
+	        Public Documents XML schema 0.1
+	        Copyright (C) European Union, 2017
+	        Licensed under the ISA Open Metadata Licence
+	        Original authors:
+	        Suzanne Wigard (suzanne.wigard@ec.europa.eu),
+	        Emidio Stani (emidio.stani@be.pwc.com),
+	        Ioana Novacean (ioana.novacean@be.pwc.com)
+		</xs:documentation>
+	</xs:annotation>
+	<!-- ===== Imports======================================== -->
+	<xs:import namespace="http://e-documents.semic.eu/publicdocuments/0.1/ns/pdc"
+			   schemaLocation="../../../xsd/common/core/pdc-AggregatedComponents-0.1.xsd"/>
+	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+			   schemaLocation="../../external/UBL-2.1/xsdrt/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===================================================== -->
+	<xs:complexType name="AbsenceOfCriminalRecordType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to the absence of a criminal record of a person. 
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Person" type="pdc:AbsenceOfCriminalRecordPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			<xs:element name="IdentityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the identity number. 
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			
+			<xs:element name="IDTypeAndNo" minOccurs="1" maxOccurs="1">
+			<xs:complexType>
+				<xs:choice>
+					<xs:element name="NationalIdentityCardNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the string value of the number of the national identity card.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					
+					<xs:element name="PassportNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the string value of the passport number.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					
+					<xs:element name="DrivingLicenceNo" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+						<xs:annotation>
+						    <xs:documentation>
+								This property contains the string value of the driving licence number.
+						    </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+					
+					
+					<xs:element name="OtherIDType" type="OtherIDTypeType" minOccurs="1" maxOccurs="1"/>
+					
+					
+					
+				</xs:choice>
+			</xs:complexType>
+			</xs:element>
+			
+			
+			<xs:element name="AbsenceOfACriminalRecord" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the boolean value (true or false) regarding the absence of a criminal record.
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			
+			
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	
+	
+	
+	
+	
+	<xs:complexType name="BirthType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to the birth of a person.
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="CapacityToEnterRegisteredPartnershipType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to the capacity to enter into a registered partnership of a couple.
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			<xs:element name="IntendedPartner" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			<xs:element name="CanEnterRegisteredPartnership" type="pdc:CanMarryType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="CapacityToMarryType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to the capacity to marry of a couple.
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Person" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			<xs:element name="IntendedSpouse" type="pdc:CapacityToMarryOrEnterRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			<xs:element name="CanMarry" type="pdc:CanMarryType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<xs:complexType name="DeathType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to the death of a person.
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Person" type="pdc:DeathPersonType" minOccurs="1" maxOccurs="1"/>
+			
+			
+			
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<xs:complexType name="DocumentInfoType">
+		<xs:annotation>
+		    <xs:documentation>
+			This class contains elements related to information about a document. 
+		    </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Kind" minOccurs="1" maxOccurs="1">
+			<xs:complexType>
+				<xs:choice>
+					<xs:element name="DocumentFromCourtOrTribunal" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="CourtDecision" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="DocumentEmanatingFromAPublicProsecutor" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="DocumentEmanatingFromAClerkOfACourt" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="DocumentEmanatingFromAJudicialOfficer" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xs:annotation>
+								    <xs:documentation>
+										This property contains the string value referring to another type of document coming from court or tribunal.
+								    </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							
+							
+							
+							
+						</xs:choice>
+					</xs:complexType>
+					</xs:element>
+					
+					
+					<xs:element name="AdministrativeDocument" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Certificate" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="ExtractFromTheCivilStatusRegister" minOccurs="1" maxOccurs="1" type="ExtractFromTheCivilStatusRegisterType"/>
+							
+							
+							<xs:element name="ExtractFromThePopulationRegister" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="VerbatimCopyOfCivilStatusRecords" minOccurs="1" maxOccurs="1">
+							<xs:complexType/>
+							</xs:element>
+							
+							
+							<xs:element name="Other" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+								<xs:annotation>
+								    <xs:documentation>
+										This property contains the string value referring to another type of administrative document. 
+								    </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							
+							
+							
+							
+						</xs:choice>
+					</xs:complexType>
+					</xs:element>
+					
+					
+					<xs:element name="NotarialAct" minOccurs="1" maxOccurs="1">
+					<xs:complexType/>
+					</xs:element>
+					
+					
+					<xs:element name="OfficialCertificateOnDocumentSignedByPerson" minOccurs="1" maxOccurs="1">
+					<xs:complexType/>
+					</xs:element>
+					
+					
+					<xs:element name="DocumentDrawnUpByDiplomaticOrConsularAgent" minOccurs="1" maxOccurs="1">
+					<xs:complexType/>
+					</xs:element>
+					
+					
+					
+				</xs:choice>
+			</xs:complexType>
+			</xs:element>
+			
+			
+			<xs:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				<xs:annotation>
+				    <xs:documentation>
+						This property contains the issue date of the document.
+				
+				    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			
+			
+			<xs:element name="ReferenceNumber " minOccurs="1" maxOccurs="1" type="ReferenceNumberType"/>
+				
+				    
+				
+				    
+				
+				    
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	
+	
+	
+				
+				    
+				
+				    
+	<xs:complexType name="DomicileAndOrResidenceType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the domicile and/or residence of a person.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="ConcernedPerson" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Domicile" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Residence" type="pdc:AddressType" minOccurs="0" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="ExtractFromTheCivilStatusRegisterType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to extracts from the civil status register. 
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	
+				
+				    
+				
+				    
+	<xs:complexType name="FormHeaderType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form header of a form.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Country" type="pdc:CountryType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="AuthorityIssuingForm" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="AuthorityIssuingDocument" type="pdc:AuthorityType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="DocumentInfo" type="DocumentInfoType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="SignatureInfo" type="SignatureInfoType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="ExtensionHeader" type="cec:UBLExtensionsType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains potential future extensions to the header of each form. 
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Title" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the title of the form, corresponding to the main subject or life area covered in the form. 
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="ImportantNotice" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains a notice on the purpose of the form. 
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="NoteForTheIssuingAuthority" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains a note for the issuing authority regarding which information is to be mentioned. 
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmAbsenceOfCriminalRecord" type="FrmAbsenceOfCriminalRecordType"/>
+				
+				    <xs:complexType name="FrmAbsenceOfCriminalRecordType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form AbsenceOfCriminalRecord.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="AbsenceOfCriminalRecordType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmBirth" type="FrmBirthType"/>
+				
+				    <xs:complexType name="FrmBirthType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		 This class contains elements related to the form Birth.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="BirthType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmCapacityToEnterRegisteredPartnerShip" type="FrmCapacityToEnterRegisteredPartnerShipType"/>
+				
+				    <xs:complexType name="FrmCapacityToEnterRegisteredPartnerShipType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form CapacityToEnterRegisteredPartnership.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="CapacityToEnterRegisteredPartnershipType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmCapacityToMarry" type="FrmCapacityToMarryType"/>
+				
+				    <xs:complexType name="FrmCapacityToMarryType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form CapacityToMarry.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="CapacityToMarryType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmDeath" type="FrmDeathType"/>
+				
+				    <xs:complexType name="FrmDeathType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form Death. 
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="DeathType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmDomicileAndOrResidence" type="FrmDomicileAndOrResidenceType"/>
+				
+				    <xs:complexType name="FrmDomicileAndOrResidenceType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form DomicileAndOrResidence.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="DomicileAndOrResidenceType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmLife" type="FrmLifeType"/>
+				
+				    <xs:complexType name="FrmLifeType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form Life.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="LifeType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmMaritalStatus" type="FrmMaritalStatusType"/>
+				
+				    <xs:complexType name="FrmMaritalStatusType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form MaritalStatus.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="MaritalStatusType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmMarriage" type="FrmMarriageType"/>
+				
+				    <xs:complexType name="FrmMarriageType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form Marriage.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="MarriageType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmRegisteredPartnerShip" type="FrmRegisteredPartnerShipType"/>
+				
+				    <xs:complexType name="FrmRegisteredPartnerShipType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form RegisteredPartnership.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="RegisteredPartnershipType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:element name="FrmRegisteredPartnerShipStatus" type="FrmRegisteredPartnerShipStatusType"/>
+				
+				    <xs:complexType name="FrmRegisteredPartnerShipStatusType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the form RegisteredPartnershipStatus.
+				
+				    				Stereotype xsdGlobalElement
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Header" type="FormHeaderType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Body" type="RegisteredPartnershipStatusType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	
+				
+				    
+				
+				    
+	<xs:complexType name="LifeType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the life of a person.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Person" type="pdc:BirthPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Address" type="pdc:AddressType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="IsAlive" type="udt:IndicatorType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the boolean value (true or false) for whether the person is alive.
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="MaritalStatusType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the marital status of a person.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Person" type="pdc:MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="MaritalStatus" minOccurs="1" maxOccurs="1">
+				
+				    		<xs:complexType>
+				
+				    			<xs:choice>
+				
+				    				<xs:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    					<xs:annotation>
+				
+				    					    <xs:documentation>
+				
+				    							This property contains the date of marriage.
+				
+				    					    </xs:documentation>
+				
+				    					</xs:annotation>
+				
+				    				</xs:element>
+				
+				    				
+				
+				    				
+				
+				    				
+				
+				    				<xs:element name="NotMarried" minOccurs="1" maxOccurs="1">
+				
+				    				<xs:complexType>
+				
+				    					<xs:choice>
+				
+				    						<xs:element name="NeverMarried" minOccurs="1" maxOccurs="1">
+				
+				    						<xs:complexType/>
+				
+				    						</xs:element>
+				
+				    						
+				
+				    						
+				
+				    						<xs:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    							<xs:annotation>
+				
+				    							    <xs:documentation>
+				
+				    									This property contains the date of the divorce.
+				
+				    							    </xs:documentation>
+				
+				    							</xs:annotation>
+				
+				    						</xs:element>
+				
+				    						
+				
+				    						
+				
+				    						
+				
+				    						<xs:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    							<xs:annotation>
+				
+				    							    <xs:documentation>
+				
+				    									This property contains the date of widowship.
+				
+				    							    </xs:documentation>
+				
+				    							</xs:annotation>
+				
+				    						</xs:element>
+				
+				    						
+				
+				    						
+				
+				    						
+				
+				    						
+				
+				    					</xs:choice>
+				
+				    				</xs:complexType>
+				
+				    				</xs:element>
+				
+				    				
+				
+				    				
+				
+				    				<xs:element name="Undetermined" minOccurs="1" maxOccurs="1">
+				
+				    				<xs:complexType/>
+				
+				    				</xs:element>
+				
+				    				
+				
+				    				
+				
+				    				
+				
+				    			</xs:choice>
+				
+				    		</xs:complexType>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="MarriageType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to a marriage.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="SpouseA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="SpouseB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the date of the marriage.
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="PlaceOfMarriage" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	
+				
+				    
+				
+				    
+	
+				
+				    
+				
+				    
+	<xs:complexType name="OtherIDTypeType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to ID types other than national identity cards, passports, or driving licences.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="IDType" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="IDNumber" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="ReferenceNumberType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to a document's reference number.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="RegisteredPartnershipType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to a registered partnership.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="PartnerA" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="PartnerB" type="pdc:MarriageOrRegisteredPartnershipPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="DateOfRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the date the registered partnership is concluded.
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="PlaceOfRegisteredPartnership" type="pdc:PlaceType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="RegisteredPartnershipStatusType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the registered partnership status of a person.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="Person" type="pdc:MaritalOrRegisteredPartnershipStatusPersonType" minOccurs="1" maxOccurs="1"/>
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="RegisteredPartnershipStatus" minOccurs="1" maxOccurs="1">
+				
+				    		<xs:complexType>
+				
+				    			<xs:choice>
+				
+				    				<xs:element name="DateOfMarriageOrRegisteredPartnership" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    					<xs:annotation>
+				
+				    					    <xs:documentation>
+				
+				    							This property contains the date of marriage.
+				
+				    					    </xs:documentation>
+				
+				    					</xs:annotation>
+				
+				    				</xs:element>
+				
+				    				
+				
+				    				
+				
+				    				
+				
+				    				<xs:element name="NotMarried" minOccurs="1" maxOccurs="1">
+				
+				    				<xs:complexType>
+				
+				    					<xs:choice>
+				
+				    						<xs:element name="NeverMarried" minOccurs="1" maxOccurs="1">
+				
+				    						<xs:complexType/>
+				
+				    						</xs:element>
+				
+				    						
+				
+				    						
+				
+				    						<xs:element name="DivorceDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    							<xs:annotation>
+				
+				    							    <xs:documentation>
+				
+				    									This property contains the date of the divorce.
+				
+				    							    </xs:documentation>
+				
+				    							</xs:annotation>
+				
+				    						</xs:element>
+				
+				    						
+				
+				    						
+				
+				    						
+				
+				    						<xs:element name="WidowshipDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    							<xs:annotation>
+				
+				    							    <xs:documentation>
+				
+				    									This property contains the date of widowship.
+				
+				    							    </xs:documentation>
+				
+				    							</xs:annotation>
+				
+				    						</xs:element>
+				
+				    						
+				
+				    						
+				
+				    						
+				
+				    						
+				
+				    					</xs:choice>
+				
+				    				</xs:complexType>
+				
+				    				</xs:element>
+				
+				    				
+				
+				    				
+				
+				    				<xs:element name="Undetermined" minOccurs="1" maxOccurs="1">
+				
+				    				<xs:complexType/>
+				
+				    				</xs:element>
+				
+				    				
+				
+				    				
+				
+				    				
+				
+				    			</xs:choice>
+				
+				    		</xs:complexType>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	<xs:complexType name="SignatureInfoType">
+				
+				    	<xs:annotation>
+				
+				    	    <xs:documentation>
+				
+				    		This class contains elements related to the signature of the official handling the document.
+				
+				    	    </xs:documentation>
+				
+				    	</xs:annotation>
+				
+				    	<xs:sequence>
+				
+				    		<xs:element name="SurnameForenameOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the surname and forename of the official.
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="PositionOfOfficial" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the position of the official.
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					This property contains the issue data of the document.
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="Signature" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					Although the signature field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		<xs:element name="SealOrStamp" type="udt:TextType" minOccurs="1" maxOccurs="1" >
+				
+				    			<xs:annotation>
+				
+				    			    <xs:documentation>
+				
+				    					Although the seal or stamp field is not really meaningful in the digital version of the form (unless it would contain a digital signature), this field has been introduced as a simple text element, to serve as a placeholder in the creation of a printable version of this form.  
+				
+				    			    </xs:documentation>
+				
+				    			</xs:annotation>
+				
+				    		</xs:element>
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    		
+				
+				    	</xs:sequence>
+				
+				    	
+				
+				    </xs:complexType>
+				
+				    
+				
+				    
+				
+				    
+	
+				
+				    
+				
+				    
+	
+</xs:schema>

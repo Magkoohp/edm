@@ -1,0 +1,2450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- ====================================================================== -->
+ <!-- ===== Reusable Aggregate Business Information Entity Schema Module ===== -->
+ <!-- ===== Justice ===== -->
+ <!--
+
+  Courtesy of Judicial Information Agency of the Dutch Department of Security and Justice
+ 
+
+ -->
+ <xsd:schema xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11" xmlns:epo="http://data.ecodex.eu/epo/dictionary-0" xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:ec="http://data.ecodex.eu/ec/dictionary-0" xmlns:jus="http://data.ecodex.eu/jus/dictionary-0" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:11" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://data.ecodex.eu/jus/dictionary-0" version="1.8" xmlns="http://data.ecodex.eu/jus/dictionary-0">
+<!-- =================================================================== -->
+<!-- ===== Imports                                                       -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Import of Unqualified DataType Schema Module                  -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="UnqualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:11"/>
+<!-- =================================================================== -->
+<!-- ===== Import of Qualified DataType Schema Module                    -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="QualifiedDataType.xsd" namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:11"/>
+<!-- =================================================================== -->
+<!-- ===== Import of Business Information Entity Schema Module           -->
+<!-- ===== European Core -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="EuropeanCore.xsd" namespace="http://data.ecodex.eu/ec/dictionary-0"/>
+<!-- =================================================================== -->
+<!-- ===== Import of Business Information Entity Schema Module           -->
+<!-- ===== EPO -->
+<!-- =================================================================== -->
+  <xsd:import schemaLocation="EPO.xsd" namespace="http://data.ecodex.eu/epo/dictionary-0"/>
+<!-- =================================================================== -->
+<!-- ===== Element Declarations                                          -->
+<!-- =================================================================== -->
+  <xsd:element type="jus:AddressType" name="Address">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Structured Address&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Address. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:AddressLineType" name="AddressLine">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Unstructered address information or complete unstructured address&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Address Line. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Address Line</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:AgreementType" name="Agreement">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A negotiated and typically legally binding arrangement between parties as to a course of action: a trade agreement a verbal agreement to sell &#13;.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Agreement. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Agreement</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:AttachmentType" name="Attachment">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A file that is added to the message</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Attachment. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Attachment</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:AuthorityType" name="Authority">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A person or organization having political or administrative power and control &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Authority. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:BankAccountType" name="BankAccount">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Bank Account. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Bank Account</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:CaseType" name="Case">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A legal action, especially one to be decided in a court of law, but not limited to be decided in a court of law&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Case. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:CaseIdentificationType" name="CaseIdentification">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An identifier for uniquely identifying a case  within the context of a registry&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Case Identification. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Identification</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Case</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:CityType" name="City">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Term used generically today to denote any urban form but applied particularly to large urban settlements.&#13;There are, however, no agreed definitions to separate a city from the large metropolis or the smaller town. &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>City. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>City</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:ClaimType" name="Claim">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A demand for something based on the assertion of a right </ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Claim. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:ClaimItemType" name="ClaimItem">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Claim Item. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:CommunicationType" name="Communication">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Specification of possible means of communication with for a specific partner (e.g. telephone, mobile phone, e-mail, fax, e-codex infrastructure).</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Communication. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Communication</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:CountryType" name="Country">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A nation or state&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Country. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Country</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:CreditCardAccountType" name="CreditCardAccount">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Credit Card Account. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:DecisionType" name="Decision">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>a conclusion or resolution reached after consideration by an authority&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Decision. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Decision</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:EvidenceType" name="Evidence">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>The available body of facts or information indicating whether a belief or proposition is true or valid &#13;.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Evidence. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Evidence</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:FilingType" name="Filing">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Submitting a statement which starts an official procedure at an authority &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Filing. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Filing</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:IdentificationType" name="Identification">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An identifier for uniquely identifying a natural or legal person within the context of a registry&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Identification. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Identification</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:InterestType" name="Interest">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>1. under the terms of the financial instrument agreed between them or derived from a legal basis, interest is the amount that the debtor becomes liable to pay to the creditor over a given period of time without reducing the amount of principal outstanding. &#13;.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Interest. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:InvolvementType" name="Involvement">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>the fact or condition of being associated with or participating in something.&#13; &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Involvement. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Involvement</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:JurisdictionType" name="Jurisdiction">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Jurisdiction signifies the district or geographical limits within which the judgments or orders of a court can be enforced or executed. </ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Jurisdiction. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Jurisdiction</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:LegalPersonType" name="LegalPerson">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An individual or group that is allowed by law to take legal action, as plaintiff or defendent. It may include natural persons as well as fictitious persons (such as corporations).</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Legal Person. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Legal Person</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:PartSumType" name="PartSum">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An amount of payment&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Part Sum. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Part</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:PartyType" name="Party">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>"A natural person or legal person involved in a  proceeding ( case) in a specific role (e.g. claimant, defendant, representative, witness). &#13;Note: The possible roles of a party depend on the proceeding type (case type) of the claim. Typical roles of parties in civil cases are e.g. claimant, defendant, representative of claimant/defendant. Typical roles of parties in criminal cases are e.g. offender, victim, witness, representative of offender/victim.  "&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Party. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:PaymentType" name="Payment">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>the action or process of paying someone or something or of being paid &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Payment. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Payment</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:PeriodType" name="Period">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition> A length or portion of time specified by start date and end date&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Period. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Period</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:ReasonType" name="Reason">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>The explanation of the cause or ground. A cause, explanation, or justification to  decision. This including force majeure or due to extraordinary  circumstance without any fault on his part&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Reason. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Reason</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:ReferencedAuthorityType" name="ReferencedAuthority">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A person or organization having political or administrative power and control &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Referenced Authority. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:ReferencedPartyType" name="ReferencedParty">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A natural person or legal person involved in a  proceeding ( case) in a specific role (e.g. claimant, defendant, representative, witness). &#13;Note: The possible roles of a party depend on the proceeding type (case type) of the claim. Typical roles of parties in civil cases are e.g. claimant, defendant, representative of claimant/defendant. Typical roles of parties in criminal cases are e.g. offender, victim, witness, representative of offender/victim.  &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Referenced Party. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:SignatureType" name="Signature">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A distinctive mark for recognizing the identity of a party OR Formality which serves as a method of authentication&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Signature. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Signature</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:StatementType" name="Statement">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A manifestation of will by a party to sue or oppose a legal claim&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Statement. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element type="jus:SumType" name="Sum">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An amount of payment&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Sum. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+<!-- =================================================================== -->
+<!-- ===== Type Definitions                                              -->
+<!-- =================================================================== -->
+<!-- =================================================================== -->
+<!-- ===== Type Definition: AddressType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="AddressType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Structured Address&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Address. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:StringMaxLength20TextType" name="PostalCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Postal Code</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Address. Postal Code. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:AddressLineType" name="AddressLine" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Address Line</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Address Line</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Address. Address Line. Address Line</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:UsageOfAddressCodeType" name="UsageCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Codelist how the specified address is used</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Usage</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Address. Usage. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:CityType" name="City" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>City</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>City</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Address. City. City</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:CountryType" name="Country">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A nation or state of the address</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Country</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Country</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Address. Country. Country</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: AddressLineType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="AddressLineType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Unstructered address information or complete unstructured address&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Address Line. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Address Line</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="Description">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The unstructured address or a part thereof</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address Line</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Address Line. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:NumericType" name="LineNumberNumeric">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The order of the line in the unstructured address</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Address Line</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Line Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Numeric</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Address Line. Line Number. Numeric</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: AgreementType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="AgreementType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A negotiated and typically legally binding arrangement between parties as to a course of action: a trade agreement a verbal agreement to sell &#13;.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Agreement. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Agreement</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:KindOfAgreementCodeType" name="KindCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Codelist of the type of agreement to which the claim relates&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Agreement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Kind</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Agreement. Kind. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A description of the agreement&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Agreement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Agreement. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: AttachmentType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="AttachmentType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A file that is added to the message</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Attachment. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Attachment</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:IdentifierType" name="ContentID">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.A unique identifier for the attached file that contains the actual data</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Attachment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Content ID</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Attachment. Content ID. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:IANAMimeMediaTypeCodeType" name="ContentTypeCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>An item in a code list describing the format of the file</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Attachment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Content Type</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Attachment. Content Type. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="ContentDescription" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A description of the contents of the attached file</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Attachment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Content Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Attachment. Content Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: AuthorityType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="AuthorityType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A person or organization having political or administrative power and control &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Authority. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Name">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Name of the authority</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Authority. Name. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:AddressType" name="Address">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The address of the authority.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Address</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Address</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Authority. Address. Address</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: BankAccountType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="BankAccountType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Bank Account. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Bank Account</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:IdentifierType" name="NumberID" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The number of the bank account assigned by the bank to identify the contract between the bank and one or more parties</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Bank Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Bank Account. Number. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IdentifierType" name="IBANID" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Bank Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>IBAN</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Bank Account. IBAN. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IdentifierType" name="BICID" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>An ISO code assigned by SWIFT to identify a financial institution for the purpose of financial transactions</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Bank Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>BIC</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Bank Account. BIC. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+      <xsd:element type="qdt:StringMaxLength50TextType" name="AccountHolder" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The name of the account</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Bank Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Account Holder</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Bank Account. Account Holder. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: CaseType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="CaseType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A legal action, especially one to be decided in a court of law, but not limited to be decided in a court of law&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Case. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="jus:CaseIdentificationType" name="IdentificationCaseIdentification" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A unique identifier for a case</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Identification</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Identification</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Case</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:DictionaryEntryName>Case. Identification. Case. Identification</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:FilingType" name="Filing">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.The act of filing the document that is the starting point of a  case.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Filing</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Filing</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Case. Filing. Filing</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:AuthorityType" name="CourtAuthority">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The court where the case has been filed.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Court</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Authority</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Case. Court. Authority</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:JurisdictionType" name="Jurisdiction" maxOccurs="5">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>the ground for jurisdiction of the court as to the case in question</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..5</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Jurisdiction</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Jurisdiction</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Case. Jurisdiction. Jurisdiction</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:ClaimType" name="Claim">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A demand for something based on the assertion of a right </ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Claim</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Claim</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Case. Claim. Claim</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:DecisionType" name="Decision">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>a conclusion or resolution reached after consideration by an authority</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Decision</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Decision</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Case. Decision. Decision</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:PartyType" name="InvolvedParty" minOccurs="2" maxOccurs="20">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A person named as a party to an action or suit. For some purposes, a party who will really litigate the controversy, as distinguished from one defaulting in the action or consenting to judgment. .</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>2..20</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Case</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Involved Party</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Party</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Case. Involved Party. Party</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: CaseIdentificationType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="CaseIdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An identifier for uniquely identifying a case  within the context of a registry&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Case Identification. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Identification</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Case</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:IdentifierType" name="NumberID">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>An identifier assigned to a case in some registry</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Identification</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Case</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Case Identification. Number. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: CityType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="CityType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Term used generically today to denote any urban form but applied particularly to large urban settlements.&#13;There are, however, no agreed definitions to separate a city from the large metropolis or the smaller town. &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>City. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>City</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:NameMaxLength50NameType" name="NameName">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The name of the city</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>City</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>City. Name. Name</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: ClaimType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="ClaimType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A demand for something based on the assertion of a right </ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Claim. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="jus:SumType" name="PrincipalSum">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Principal</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Sum</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim. Principal. Sum</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:ClaimItemType" name="ClaimItem" maxOccurs="50">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..50</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Claim Item</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Claim Item</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim. Claim Item. Claim Item</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:SumType" name="ContractualPenaltySum" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Contractual Penalty</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Sum</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim. Contractual Penalty. Sum</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:SumType" name="CostSum" minOccurs="0" maxOccurs="20">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..20</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Cost</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Sum</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim. Cost. Sum</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="epo:AdditionalSpecificationsType" name="AdditionalSpecifications">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A group of indicators for claims relating to consumer contracts&#13;.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Additional Specifications</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Additional Specifications</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim. Additional Specifications. Additional Specifications</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: ClaimItemType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="ClaimItemType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Claim Item. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="jus:EvidenceType" name="Evidence" minOccurs="0" maxOccurs="50">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..50</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Evidence</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Evidence</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim Item. Evidence. Evidence</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:AgreementType" name="WithRespectToAgreement">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>With Respect To Agreement</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Agreement</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim Item. With Respect To Agreement. Agreement</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Claim Item. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:DateType" name="Date" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Date</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Claim Item. Date. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:PeriodType" name="Period" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Period</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Period</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim Item. Period. Period</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:ReasonType" name="Reason" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Reason</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Reason</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim Item. Reason. Reason</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:SumType" name="Sum">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Sum</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Sum</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Claim Item. Sum. Sum</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IdentifierType" name="IdentifierID" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Claim Item</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Claim Item. Identifier. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: CommunicationType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="CommunicationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Specification of possible means of communication with for a specific partner (e.g. telephone, mobile phone, e-mail, fax, e-codex infrastructure).</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Communication. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Communication</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:CommuncationChannelsCodeType" name="ChannelCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The code specifying the channel or manner in which a communication can be made, such as telephone or email..</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Communication</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Channel</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Communication. Channel. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="CompleteNumber" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A text string of characters that make up the complete number for this communication..</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Communication</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Complete Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Communication. Complete Number. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IdentifierType" name="URIID" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The unique identifier of the Uniform Resource Identifier (URI) for this communication, such as a web or an email address.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Communication</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>URI</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Communication. URI. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: CountryType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="CountryType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A nation or state&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Country. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Country</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:CountryCodeType" name="CountryCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Code according to ISO 3166-1</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Country</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Country Code</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Country. Country Code. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Name of the country if not in iso code list.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Country</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Country. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: CreditCardAccountType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="CreditCardAccountType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Credit Card Account. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:IdentifierType" name="NumberID">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A number identififying an account with a credit card company.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Credit Card Account. Number. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:NameMaxLength50NameType" name="CompanyName">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The name of the credit card company</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Company</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Credit Card Account. Company. Name</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:DateType" name="ExpiryDate">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The date marking the last date the credit card is valid</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Expiry Date</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Credit Card Account. Expiry Date. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IdentifierType" name="SecurityNumberID" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Security Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Credit Card Account. Security Number. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength50TextType" name="AccountHolder">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Credit Card Account</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Account Holder</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Credit Card Account. Account Holder. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: DecisionType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="DecisionType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>a conclusion or resolution reached after consideration by an authority&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Decision. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Decision</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+      <xsd:element type="jus:PaymentType" name="Payment">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Decision</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Payment</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Payment</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Decision. Payment. Payment</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: EvidenceType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="EvidenceType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>The available body of facts or information indicating whether a belief or proposition is true or valid &#13;.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Evidence. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Evidence</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Detail of the evidence</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Evidence</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Evidence. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:TypeOfEvidenceCodeType" name="TypeOfEvidenceCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A value from a code list denoting the nature of the evidence.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Evidence</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Type Of Evidence</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Evidence. Type Of Evidence. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+      <xsd:element type="udt:DateType" name="Date" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The date the evidence is provided</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Evidence</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Date</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Evidence. Date. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: FilingType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="FilingType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Submitting a statement which starts an official procedure at an authority &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Filing. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Filing</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+<!--ABIE property  suppressed-->
+      <xsd:element type="udt:DateType" name="DateReceivedByCourtDate" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Acknowledgment of the reception by the destination court</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Filing</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Date Received By Court</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Filing. Date Received By Court. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:PaymentType" name="Payment">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Information regarding the payment in connection with the filing</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Filing</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Payment</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Payment</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Filing. Payment. Payment</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:EULanguageCodeType" name="LanguageCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The language of the filing document</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Filing</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Language</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Filing. Language. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: IdentificationType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An identifier for uniquely identifying a natural or legal person within the context of a registry&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Identification. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Identification</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:IdentifierType" name="NumberID">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>An identifier assigned to a natural person or a legal person in some registry.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Identification</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Number</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Identification. Number. Identifier</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: InterestType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="InterestType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>1. under the terms of the financial instrument agreed between them or derived from a legal basis, interest is the amount that the debtor becomes liable to pay to the creditor over a given period of time without reducing the amount of principal outstanding. &#13;.</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Interest. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:SixThreePercentType" name="RatePercent" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>ratio, usually expressed as a percentage per annum, of the amount that a debtor has to pay to the creditor over a given period of time to the amount of the principal of the loan, deposit or debt security </ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Rate</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Percent</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Interest. Rate. Percent</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:SixThreePercentType" name="OverBaseECBRatePercent" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Relation with the base ECB Rate&#13;&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Rate</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Over Base ECB</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Percent</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Interest. Over Base ECB Rate. Percent</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:PeriodType" name="PeriodOfInterestPeriod">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The period during which interest is calculated, charged or accorded</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Period Of Interest</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Period</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Interest. Period Of Interest. Period</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:PeriodCodeType" name="PerPeriodCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The period the interest rate is based on</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Per Period</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Interest. Per Period. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="TextPerPeriod" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The period the interest rate is based on in text, in case the code list does not contain the value needed</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Per Period</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Text</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Interest. Text Per Period. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:PartSumType" name="OnPartSum">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Basis for determining the interest.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>On</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Sum</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Part</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:DictionaryEntryName>Interest. On. Part. Sum</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:CombinedTypeOfInterestCodeType" name="TypeOfInterestCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Type Of Interest</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Interest. Type Of Interest. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength128TextType" name="TextTypeOfInterest" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Interest</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Type Of Interest</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Text</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Interest. Text Type Of Interest. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: InvolvementType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="InvolvementType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>the fact or condition of being associated with or participating in something.&#13; &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Involvement. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Involvement</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:RoleCodeType" name="RoleCode" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>"Role of the party involved in a court case (specified by code-list ""Role""). &#13;Note: The possible roles of a party depend on the type of court proceeding (case type). Typical roles of parties in civil cases are e.g. claimant, defendant, representative of claimant/defendant. Typical roles of parties in criminal cases are e.g. offender, victim, witness, representative of offender/victim. "&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..unbounded</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Involvement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Role</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Involvement. Role. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: JurisdictionType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="JurisdictionType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>Jurisdiction signifies the district or geographical limits within which the judgments or orders of a court can be enforced or executed. </ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Jurisdiction. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Jurisdiction</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:GroundsJurisdictionCodeType" name="GroundCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The basis for the jurisdiction of the court in the case</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Jurisdiction</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Ground</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Jurisdiction. Ground. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Explanation" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The basis for the jurisdiction of the court in the case</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Jurisdiction</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Explanation</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Jurisdiction. Explanation. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: LegalPersonType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="LegalPersonType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An individual or group that is allowed by law to take legal action, as plaintiff or defendent. It may include natural persons as well as fictitious persons (such as corporations).</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Legal Person. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Legal Person</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="Name">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The name of a company or organisation</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Legal Person</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Legal Person. Name. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: PartSumType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="PartSumType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An amount of payment&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Part Sum. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Part</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:TwelveTwoAmountType" name="Amount" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The total of payment awarded to the claimant, including the principal and, where applicable, interest, contractual penalties and costs;&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Part</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Amount</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Amount</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Part Sum. Amount. Amount</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:CodeType" name="CurrencyCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A system of money in general use in a particular country&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Part</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Currency</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Part Sum. Currency. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The list of the  circumstances and the types of evidence that are usually produced in support of pecuniary claims, provided in the application form&#13;.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Part</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Part Sum. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: PartyType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="PartyType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>"A natural person or legal person involved in a  proceeding ( case) in a specific role (e.g. claimant, defendant, representative, witness). &#13;Note: The possible roles of a party depend on the proceeding type (case type) of the claim. Typical roles of parties in civil cases are e.g. claimant, defendant, representative of claimant/defendant. Typical roles of parties in criminal cases are e.g. offender, victim, witness, representative of offender/victim.  "&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Party. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="ec:PersonType" name="Person" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Natural person (individual)&#13;</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Person</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Person</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Party. Person. Person</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:LegalPersonType" name="LegalPerson" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Legal person (organisation or company)&#13;</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Legal Person</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Legal Person</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Party. Legal Person. Legal Person</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:CommunicationType" name="Communication" minOccurs="0" maxOccurs="3">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Specification of possible means of communication with this party (e.g. telephone, mobile phone, e-mail, fax). &#13;</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..3</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Communication</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Communication</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Party. Communication. Communication</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:InvolvementType" name="Involvement">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Specification of the role of the party&#13;</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Involvement</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Involvement</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Party. Involvement. Involvement</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:IdentificationType" name="Identification" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A(Optional) Identification code for this party (e.g. person number, number from the company register)&#13;</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Identification</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Identification</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Party. Identification. Identification</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:AddressType" name="Address" maxOccurs="2">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Address of the party</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..2</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Address</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Address</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Party. Address. Address</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="OtherDetails" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>(Optional) Other information that helps to identify the person (e.g. date of birth, position of the named person in the company or organisation concerned)&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Other Details</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Party. Other Details. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: PaymentType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="PaymentType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>the action or process of paying someone or something or of being paid &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Payment. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Payment</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+      <xsd:element type="qdt:WayOfPaymentCodeType" name="WayOfPaymentCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The way the intended party receives the amount due.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Payment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Way Of Payment</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Payment. Way Of Payment. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="OtherWayOfPayment" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The way the intended party receives the amount due.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Payment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Other Way Of Payment</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Payment. Other Way Of Payment. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+      <xsd:element type="jus:BankAccountType" name="BankAccount" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Payment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Bank Account</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Bank Account</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Payment. Bank Account. Bank Account</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:CreditCardAccountType" name="CreditCardAccount" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Payment</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Credit Card Account</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Credit Card Account</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Payment. Credit Card Account. Credit Card Account</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: PeriodType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="PeriodType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition> A length or portion of time specified by start date and end date&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Period. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Period</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:DateType" name="StartDate" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>the start date of the perdiod</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Period</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Start Date</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Period. Start Date. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:DateType" name="EndDate" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>the end date of the period</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Period</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>End Date</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Period. End Date. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Period</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Period. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: ReasonType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="ReasonType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>The explanation of the cause or ground. A cause, explanation, or justification to  decision. This including force majeure or due to extraordinary  circumstance without any fault on his part&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Reason. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Reason</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:ComplaintsCodeType" name="DescriptionCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Short standardized explanation by use of a code list</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Reason</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Reason. Description. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength16384TextType" name="TextualDescription" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.Description of the reason in free format</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Reason</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:PropertyQualifierTerm>Textual</ccts:PropertyQualifierTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Reason. Textual Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:SpecificsCodeType" name="SpecificsCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A more detailed description other details (e.g. place of purchace, date of purchase, place of delivery date of delivery) of a claim defined by code-list "Specifics"&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Reason</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Specifics</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Reason. Specifics. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: ReferencedAuthorityType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="ReferencedAuthorityType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A person or organization having political or administrative power and control &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Referenced Authority. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+<!--ABIE property  suppressed-->
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Name" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Authority</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Referenced Authority. Name. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: ReferencedPartyType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="ReferencedPartyType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A natural person or legal person involved in a  proceeding ( case) in a specific role (e.g. claimant, defendant, representative, witness). &#13;Note: The possible roles of a party depend on the proceeding type (case type) of the claim. Typical roles of parties in civil cases are e.g. claimant, defendant, representative of claimant/defendant. Typical roles of parties in criminal cases are e.g. offender, victim, witness, representative of offender/victim.  &#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Referenced Party. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="ec:PersonType" name="Person" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A natural person that has an involvement in an act, action, event or agreement</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Person</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Person</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Referenced Party. Person. Person</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:LegalPersonType" name="LegalPerson" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A non natural person that has an involvement in an act, action, event or agreement</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Party</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Referenced</ccts:ObjectClassQualifierTerm>
+            <ccts:PropertyTerm>Legal Person</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Legal Person</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Referenced Party. Legal Person. Legal Person</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: SignatureType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="SignatureType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A distinctive mark for recognizing the identity of a party OR Formality which serves as a method of authentication&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Signature. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Signature</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="udt:DateType" name="DateOfSigningDate">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Time stated in terms of day, month, and year when the act of signing has taken place&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Signature</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Date Of Signing</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Date</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Signature. Date Of Signing. Date</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:NameMaxLength120NameType" name="NameOfPersonSigningName">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Name of natural person who signs the form/document and who is bound by it</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Signature</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Name Of Person Signing</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Name</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Signature. Name Of Person Signing. Name</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength120TextType" name="PlaceOfSigning">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>An area with definite or indefinite boundaries&#13;(town, country, building..) where the act of signing has taken place</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Signature</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Place Of Signing</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Signature. Place Of Signing. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: StatementType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="StatementType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>A manifestation of will by a party to sue or oppose a legal claim&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Statement. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:TypeOfStatementCodeType" name="TypeCode">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Type</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Statement. Type. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+<!--ABIE property  suppressed-->
+      <xsd:element type="qdt:StringMaxLength16384TextType" name="Specification" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Clear details in order to identify and to support the procedure&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Specification</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Statement. Specification. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:SignatureType" name="Signature">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A distinctive mark indicating identity OR Formality which serves as a method of authentication.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Signature</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Signature</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Statement. Signature. Signature</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+      <xsd:element type="jus:ReferencedPartyType" name="PartyReferencedParty" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Party associated with the statement</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Party</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Party</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Referenced</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:DictionaryEntryName>Statement. Party. Referenced. Party</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+      <xsd:element type="jus:ReferencedAuthorityType" name="CourtReferencedAuthority" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Statement</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Court</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Authority</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Referenced</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:DictionaryEntryName>Statement. Court. Referenced. Authority</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+<!--ABIE property  suppressed-->
+    </xsd:sequence>
+  </xsd:complexType>
+<!-- =================================================================== -->
+<!-- ===== Type Definition: SumType -->
+<!-- =================================================================== -->
+  <xsd:complexType name="SumType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:Definition>An amount of payment&#13;</ccts:Definition>
+        <ccts:Acronym>ABIE</ccts:Acronym>
+        <ccts:DictionaryEntryName>Sum. Details</ccts:DictionaryEntryName>
+        <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+        <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element type="qdt:TwelveTwoAmountType" name="Amount" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The total of payment awarded to the claimant, including the principal and, where applicable, interest, contractual penalties and costs;&#13;</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Amount</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Amount</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Sum. Amount. Amount</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="udt:IndicatorType" name="AmountUnknownIndicator" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Indicating that the amount has yet to be determined</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Amount Unknown</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Indicator</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Sum. Amount Unknown. Indicator</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:CurrencyCodeType" name="CurrencyCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>A system of money in general use in a particular country</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Currency</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Sum. Currency. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:SpecificationOfSumCodeType" name="SpecificationCode" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Clear details in order to identify and to support the procedure</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Specification</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Sum. Specification. Code</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="jus:InterestType" name="Interest" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>Interest that is to be calculated with respect to the sum.</ccts:Definition>
+            <ccts:Acronym>ASBIE</ccts:Acronym>
+            <ccts:Cardinality>0..unbounded</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Interest</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:AssociatedObjectClassTerm>Interest</ccts:AssociatedObjectClassTerm>
+            <ccts:DictionaryEntryName>Sum. Interest. Interest</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element type="qdt:StringMaxLength200TextType" name="Description" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:Definition>The list of the  circumstances and the types of evidence that are usually produced in support of pecuniary claims, provided in the application form</ccts:Definition>
+            <ccts:Acronym>BBIE</ccts:Acronym>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Sum</ccts:ObjectClassTerm>
+            <ccts:PropertyTerm>Description</ccts:PropertyTerm>
+            <ccts:BusinessProcessContextValue>EPO</ccts:BusinessProcessContextValue>
+            <ccts:PrimaryRepresentationTerm>Text</ccts:PrimaryRepresentationTerm>
+            <ccts:DictionaryEntryName>Sum. Description. Text</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
